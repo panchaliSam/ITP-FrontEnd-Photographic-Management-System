@@ -8,7 +8,7 @@ import logo from '../images/V De Silva Logo PNG.png';
 
 function NavScrollExample() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-body-tertiary"style={{ backgroundColor: 'Grey' }}>
       <Container fluid>
         <Navbar.Brand href="#">
         <img 
@@ -73,4 +73,4 @@ function NavScrollExample() {
   );
 }
 
-export default NavScrollExample;
+export default NavScrollExample; 
