@@ -1,0 +1,32 @@
+.sidebar {
+    position: fixed;
+    top: 60%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 150px; /* Adjust the width as needed */
+    background-color: #272727; /* Set background color to black */
+    height: 400px; /* Set the desired height */
+    border-top-right-radius: 20px; /* Radius for top right corner */
+    border-bottom-right-radius: 20px; /* Radius for bottom right corner */
+  }
+  
+  .sidebar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sidebar a {
+    display: block;
+    color: white; /* Set font color to white */
+    padding: 16px;
+    text-decoration: none;
+    font-weight: bold; /* Set font weight to bold */
+  }
+  
+  
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  
