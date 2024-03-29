@@ -1,0 +1,231 @@
+.footer {
+    background-color: #343434;
+    width: 100%;
+    bottom: 0;
+    left: 0; 
+}
+
+.sb_footer {
+    display: flex;
+    flex-direction: column;
+}
+img{
+    width: 250px;
+    height: auto;
+    margin-top: 5px;
+}
+.input-button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 500px;
+    max-width: 990px;
+  }
+.send-message-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 2px;
+    background-color: #E6B31E;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    height: 40px;
+    margin-left: 0.2rem;
+    margin-right: 1rem;
+}
+  
+.send-message-button:hover {
+    background-color: #000000;
+    color: white;
+}
+.socialmedia h4 {
+    margin-right: 1rem;
+    color: white;
+    font-size: 18px;
+    margin-top: 1.2rem;
+}
+.socialmedia p{
+    margin-right: 1rem;
+    color: white;
+    font-size: 14px;
+    margin-top: 0.2rem;
+}
+.social-icon {
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.social-icon:hover {
+    color: #E6B31E;
+  }
+.footer-content input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 2px;
+    background-color: white;
+    color: #343434;
+    font-size: 1rem;
+  }
+.sb_footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 2rem;
+    margin-top: 50px;
+}
+
+.sb_footer-links_div {
+    width: 150px;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+.sb_footer-links_div a{
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+.sb_footer-links_div p:hover {
+    color: #E6B31E;
+}
+.sb_footer-links_div h4 {
+    font-size: 18px;
+    line-height: 17px;
+    margin-bottom: 0.9rem;
+}
+
+.sb_footer-links_div p {
+    font-size: 17px;
+    line-height: 15px;
+    margin: 0.5rem 0;
+    cursor: pointer;
+}
+
+.sb_footer-below {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0.2rem;
+    align-items: center;
+}
+
+.sb_footer-below-links {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.sb_footer-below-links a {
+    font-size: 11px;
+    line-height: 15px;
+    margin-left: 1rem;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.sb_footer-below-links a :hover {
+    color: #E6B31E;
+}
+hr {
+    color: white !important;
+    width: 100%;
+}
+
+.sb_footer-copyright {
+    font-size: 10px;
+    line-height: 15px;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    margin-right: 20px;
+}
+
+@media screen and (max-width:850px) {
+    .sb_footer-heading h1 {
+        font-size: 44px;
+        line-height: 50px;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .footer {
+        background-color: #343434; 
+      }
+    .sb_footer-heading h1 {
+        font-size: 34px;
+        line-height: 42px;
+    }
+    .sb_footer-links div {
+        margin: 1rem 0;
+    }
+    .sb_footer-below {
+        flex-direction: column;
+        justify-content: left;
+    }
+    .sb_footer-below-links {
+        flex-direction: column;
+    }
+    .sb_footer-below-links p {margin-left: 0rem;
+        margin-top: 1rem;
+    }
+    .socialmedia {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    .socialmedia h4 {
+        font-size: 14px;
+     }
+    .social-icon {
+        font-size: 1.2rem;
+        margin-right: 0.5rem;
+      }
+    .footer-content {
+        flex-direction: column;
+        width: 100%;
+    }
+    .input-button-container {
+        width: 100%;
+    }
+    .send-message-button {
+        width: 100%;
+    }
+  .sb_footer-links {
+    flex-direction: column;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width:400px) {
+    .sb_footer-heading h1 {
+        font-size: 27px;
+        line-height: 38px;
+    }
+    .socialmedia h4 {
+        font-size: 10px;
+        line-height: 13px;
+        margin-bottom: 0.9rem;
+      }
+      .social-icon {
+        font-size: 1rem;
+        margin-right: 0.5rem;
+      }
+}
