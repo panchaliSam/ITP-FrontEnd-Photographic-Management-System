@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import EventPhotoDetails from "../components/eventPhotoAlbum";
 
-const Home = () => {
+const EventPhotos= () => {
     const [eventPhoto, setEventPhoto] = useState(null);
     const [error, setError] = useState(null);
 
@@ -38,4 +38,4 @@ const Home = () => {
     );
 }
 
-export default Home;
+export default EventPhotos;

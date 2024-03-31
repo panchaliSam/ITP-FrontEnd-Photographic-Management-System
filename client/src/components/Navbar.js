@@ -1,3 +1,5 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -6,21 +8,21 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from '../images/V De Silva Logo PNG.png';
 
-function NavScrollExample() {
+function NavScrollExample() {  
   return (
-    <Navbar expand="lg" className="bg-body-tertiary"style={{ backgroundColor: 'Grey' }}>
+    <Navbar expand="lg" className="bg-body-tertiary" style={{ backgroundColor: 'Grey' }}>
       <Container fluid>
         <Navbar.Brand href="#">
-        <img 
+          <img 
             src={logo} 
             alt="Logo"
             style={{
-                top: 0,
-                left: '30px',
-                height: '110px',
-                width: '110px'
-                    }} 
-        />
+              top: 0,
+              left: '30px',
+              height: '110px',
+              width: '110px'
+            }} 
+          />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -46,25 +48,16 @@ function NavScrollExample() {
             </NavDropdown>
             <NavDropdown title="Explore" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action10">Images</NavDropdown.Item>
-              <NavDropdown.Item href="#action11">Wallpaers</NavDropdown.Item>
+              <NavDropdown.Item href="#action11">Wallpapers</NavDropdown.Item>
               <NavDropdown.Item href="#action11">Backgrounds</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action12">Something else here</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#action13">Pacakages</Nav.Link>
-            {/* <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link> */}
           </Nav>
           <Form className="d-flex">
-            {/* <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button> */}
-            <Button variant="outline-success" style={{ marginRight: '10px' }}>SignIn</Button>
+            <Link to="/signin" className="nav-link">
+              <Button variant="outline-success"style={{ marginRight: '10px' }}>SignIn</Button>
+            </Link>
             <Button variant="outline-success" style={{ marginRight: '10px' }}>SignUp</Button>
           </Form>
         </Navbar.Collapse>
@@ -73,4 +66,4 @@ function NavScrollExample() {
   );
 }
 
-export default NavScrollExample; 
+export default NavScrollExample;
