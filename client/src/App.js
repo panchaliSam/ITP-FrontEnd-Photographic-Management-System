@@ -4,30 +4,40 @@ import{BrowserRouter, Routes, Route} from 'react-router-dom'
 //pages and compoenets
 // import Home from './pages/Home'
 import Navbar from './components/Navbar'
-// import Sidebar from './components/Sidebar'
-import UserSelectPhotos from './pages/UserSelectPhotos'
+import Sidebar from './components/Sidebar'
+// import UserSelectPhotos from './pages/UserSelectPhotos'
 import Footer from './components/Footer'
 import HomeGallery from './components/homePageGallery'
+import HomePageCard from './components/homePageCard'
+import UserLoginPage from './components/UserManagement/userLogin'
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Navbar/>
-        {/* <Sidebar/> */}
-        <HomeGallery/>
-          <div className="pages">
           <Routes>
-            {/* <Route
-              path='/'
-              element={<Home />}
-            /> */}
             <Route
-              path='/api/eventPhotoAlbum/photos/65f285703a6187d5d7cb6f30'
-              element={<UserSelectPhotos />}
+              path='/'
+              element={<>
+                <HomeGallery />
+                <br></br>
+                <HomePageCard />
+              </>}
+            />
+            <Route
+              path='/signin'
+              element={<UserLoginPage/>}
+            />
+            <Route
+              path='/selectPhotos'
+              element={<>
+                <Sidebar />
+                <br></br>
+              </>}
             />
           </Routes>
-          </div>
+          <br></br>
         <Footer/>
       </BrowserRouter>
     </div>
@@ -35,3 +45,26 @@ function App() {
 }
 
 export default App;
+
+
+      //  {/* <Sidebar/> */}
+      //  <HomeGallery/>
+      //  <br></br>
+      //    <HomePageCard/>
+      //      <br></br>
+      //        <div className="pages">
+      //          <Routes>
+      //            <Route
+      //              path='/home'
+      //              element={<Home />}
+      //            />
+      //          <Route
+      //            path='/api/eventPhotoAlbum/photos/:id'
+      //            element={<UserSelectPhotos />}
+      //          />
+      //            <Route
+      //              path='/signIn'
+      //              element={<UserLoginPage/>}
+      //            />                  
+      //          </Routes>
+      //        </div>
