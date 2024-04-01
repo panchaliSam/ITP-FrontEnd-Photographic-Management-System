@@ -18,19 +18,19 @@ const Sidebar = () => {
           }} 
         />
       </a>
-      <a href="#photos">
+      <a href="/selectPhotos">
         <FontAwesomeIcon icon={faImage} style={{ color: "#ffffff", marginRight: '5px' }} />
         Photos
       </a>
-      <a href="#videos">
+      <a href="/viewVideos">
         <FontAwesomeIcon icon={faVideo} style={{ color: "#ffffff", marginRight: '5px' }} />
         Videos
       </a>
-      <a href="#albums">
+      <a href="/viewAlbum">
         <FontAwesomeIcon icon={faPhotoFilm} style={{ marginRight: '5px' }} />
         Albums
       </a>
-      <a href="#payment">
+      <a href="/paymentHistory">
         <FontAwesomeIcon icon={faCreditCard} style={{ color: "#ffffff", marginRight: '5px' }} />
         Payment
       </a>
