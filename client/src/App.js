@@ -36,6 +36,27 @@ function App() {
                 <br></br>
               </>}
             />
+            <Route
+              path='/viewVideos'
+              element={<>
+                <Sidebar />
+                <br></br>
+              </>}
+            />
+            <Route
+              path='/viewAlbum'
+              element={<>
+                <Sidebar />
+                <br></br>
+              </>}
+            />
+            <Route
+              path='/paymentHistory'
+              element={<>
+                <Sidebar />
+                <br></br>
+              </>}
+            />
           </Routes>
           <br></br>
         <Footer/>
