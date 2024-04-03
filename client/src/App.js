@@ -10,6 +10,7 @@ import Footer from './components/Footer'
 import HomeGallery from './components/homePageGallery'
 import HomePageCard from './components/homePageCard'
 import UserLoginPage from './components/UserManagement/userLogin'
+import EventPhotos from './pages/EventManagement/selectPhotosAlbum'
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
               path='/selectPhotos'
               element={<>
                 <Sidebar />
+                <EventPhotos/>
                 <br></br>
               </>}
             />
