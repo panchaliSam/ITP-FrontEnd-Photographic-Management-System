@@ -31,7 +31,7 @@ function NavScrollExample() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
             <NavDropdown title="Company" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">About</NavDropdown.Item>
               <NavDropdown.Item href="#action4">History</NavDropdown.Item>
