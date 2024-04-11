@@ -11,6 +11,7 @@ import HomeGallery from './components/homePageGallery'
 import HomePageCard from './components/homePageCard'
 import UserLoginPage from './components/UserManagement/userLogin'
 import EventPhotos from './pages/EventManagement/selectPhotosAlbum'
+import Album from './pages/EventManagement/album'
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
               path='/viewAlbum'
               element={<>
                 <Sidebar />
+                <Album/>
                 <br></br>
               </>}
             />
