@@ -10,8 +10,10 @@ import Footer from './components/Footer'
 import HomeGallery from './components/homePageGallery'
 import HomePageCard from './components/homePageCard'
 import UserLoginPage from './components/UserManagement/userLogin'
+
+//Import pages - Event Management
 import EventPhotos from './pages/EventManagement/selectPhotosAlbum'
-import Album from './pages/EventManagement/album'
+import Album from './pages/EventManagement/photoAlbum'
 
 function App() {
   return (
