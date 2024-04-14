@@ -44,8 +44,8 @@ const PhotoAlbum = () => {
                 </label>
                 <button onClick={handleViewDetails}>View Details</button>
             </form>
-            <div>
-                <h2>Event Details</h2>
+            <h2>Event Details</h2>
+            <div className="eventCard">                
                 <p>Event Name: {albumDetails.eventName}</p>
                 <p>Event Type: {albumDetails.eventType}</p>
                 <p>Staff Name: {albumDetails.staffName}</p>

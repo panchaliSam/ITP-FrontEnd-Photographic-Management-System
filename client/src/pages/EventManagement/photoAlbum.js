@@ -8,7 +8,7 @@ const AlbumDetails = () => {
 
     return (
         <div>
-            <h1>Album Details Page</h1>
+            <h1><center>Album Details Page</center></h1>
             <PhotoAlbum
                 photoAlbumId={photoAlbumId}
                 userId={userId}
