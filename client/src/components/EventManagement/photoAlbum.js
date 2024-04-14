@@ -7,12 +7,23 @@ const PhotoAlbum = () => {
     const [eventId, setEventId] = useState('');
     const [staffId, setStaffId] = useState('');
     const [albumDetails, setAlbumDetails] = useState({});
+    const [staffDetails, setStaffDetails] = useState({});
 
     const fetchAlbumDetails = async () => {
         try {
             // Fetch event details
-            const eventResponse = await axios.get(`/api/eventAlbum/albumDetails/${eventId}/${staffId}`);
+            const eventResponse = await axios.get(`/api/eventAlbum/albumDetails/${eventId}`);
             setAlbumDetails(eventResponse.data);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
+
+    const fetchStaffDetails = async () => {
+        try {
+            // Fetch staff details
+            const staffResponse = await axios.get(`/api/eventAlbum/staffDetails/${staffId}`);
+            setStaffDetails(staffResponse.data);
         } catch (error) {
             console.error('Error fetching data:', error);
         }
@@ -21,6 +32,7 @@ const PhotoAlbum = () => {
     const handleViewDetails = async (e) => {
         e.preventDefault();
         fetchAlbumDetails();
+        fetchStaffDetails();
     };
 
     return (
@@ -48,7 +60,7 @@ const PhotoAlbum = () => {
             <div className="eventCard">                
                 <p>Event Name: {albumDetails.eventName}</p>
                 <p>Event Type: {albumDetails.eventType}</p>
-                <p>Staff Name: {albumDetails.staffName}</p>
+                <p>Staff Name: {staffDetails.empName}</p>
             </div>
         </div>
     );
