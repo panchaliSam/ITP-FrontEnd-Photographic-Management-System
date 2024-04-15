@@ -47,19 +47,21 @@ const AllAlbums = () => {
                 <thead>
                     <tr>
                         <th>Album ID</th>
-                        <th>User ID</th>
-                        <th>Event ID</th>
-                        <th>Staff ID</th>
+                        <th>User Name</th>
+                        <th>Event Name</th>
+                        <th>Event Type</th>
+                        <th>Staff Name</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     {albums.map(album => (
                         <tr key={album._id}>
-                            <td>{album.photoAlbumId}</td>
-                            <td>{album.userId}</td>
-                            <td>{album.eventId}</td>
-                            <td>{album.staffId}</td>
+                            <td>{album.albumId}</td>
+                            <td>{album.userName}</td>
+                            <td>{album.eventName}</td>
+                            <td>{album.eventType}</td>
+                            <td>{album.staffName}</td>
                             <td className="actions">
                                 <button className="view-button" onClick={() => handleView(album)}>
                                     <Link to={`/customerDetails/${album.eventId}`} className="button-link">View</Link>
