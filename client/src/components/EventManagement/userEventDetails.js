@@ -27,13 +27,13 @@ const CustomerDetails = () => {
         <div className="customerDetails">
             <h2>Customer Details</h2>
             <div className="customerInfoCard">
-                <p>Customer Name: {customerData.customer_name}</p>
+                <p>Customer Name: {customerData.userName}</p>
                 <p>Event Name: {customerData.eventName}</p>
                 <p>Event Type: {customerData.eventType}</p>
                 <p>Event Location: {customerData.eventLocation}</p>
                 <p>Event Date: {customerData.eventDate}</p>
                 <p>Start Time: {customerData.startTime}</p>
-                <p>Photographer: {customerData.photographer}</p>
+                {/* <p>Photographer: {customerData.photographer}</p> */}
             </div>
             {error && <p className="error">{error}</p>}
         </div>
