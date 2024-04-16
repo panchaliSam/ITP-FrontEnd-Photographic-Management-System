@@ -95,6 +95,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomeGallery from './components/homePageGallery';
 import HomePageCard from './components/homePageCard';
+import SideBar from './components/Sidebar'
 
 //User Management - Import Pages
 import UserLoginPage from './components/UserManagement/userLogin';
@@ -107,6 +108,7 @@ import AllAlbums from './pages/EventManagement/allAlbums';
 
 //Event Management - Import Components
 import CustomerDetails from './components/EventManagement/userEventDetails'; 
+import EditPhotoAlbum from './components/EventManagement/editPhotoAlbum'; 
 
 function App() {
   return (
@@ -129,6 +131,7 @@ function App() {
           <Route
             path='/selectPhotos'
             element={<>
+              <SideBar/>
               <EventPhotos />
               <br />
             </>}
@@ -136,12 +139,14 @@ function App() {
           <Route
             path='/viewVideos'
             element={<>
+              <SideBar/>
               <br />
             </>}
           />
           <Route
             path='/viewAlbum'
             element={<>
+              <SideBar/>
               <Album />
               <br />
             </>}
@@ -149,6 +154,7 @@ function App() {
           <Route
             path='/paymentHistory'
             element={<>
+              <SideBar/>
               <br />
             </>}
           />
@@ -167,6 +173,7 @@ function App() {
             </>}
           />
           <Route path='/customerDetails/:eventId' element={<CustomerDetails />} />
+          <Route path='/editAlbum/:photoAlbumId' element={<EditPhotoAlbum />} />
         </Routes>
         <br />
         <Footer />
