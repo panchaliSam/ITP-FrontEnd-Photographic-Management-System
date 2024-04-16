@@ -16,7 +16,7 @@ const EditAlbum = () => {
                 setAlbumData(response.data);
             } catch (error) {
                 console.error('Error fetching album data:', error);
-                setError('Error fetching album data');
+                setError('Error fetching album data. Please try again later.');
             }
         };
 
@@ -29,11 +29,14 @@ const EditAlbum = () => {
             .then(() => {
                 setNewUrls('');
                 setSuccess(true);
-                setTimeout(() => setSuccess(false), 3000);
+                setTimeout(() => {
+                    setSuccess(false);
+                    window.location.reload(); // Reload the page after 3 seconds
+                }, 3000);
             })
             .catch(error => {
                 console.error('Error adding URLs:', error);
-                setError('Error adding URLs');
+                setError('Error adding URLs. Please check your input and try again.');
             });
     };
 

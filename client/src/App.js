@@ -172,8 +172,18 @@ function App() {
               <br />
             </>}
           />
-          <Route path='/customerDetails/:eventId' element={<CustomerDetails />} />
-          <Route path='/editAlbum/:photoAlbumId' element={<EditPhotoAlbum />} />
+          <Route
+           path='/customerDetails/:eventId'
+           element={<CustomerDetails />} 
+          />
+          <Route
+            path='/editAlbum/:photoAlbumId/:userId/:eventId/:staffId'
+            element={<>
+            <CustomerDetails />
+            <br/>
+            <EditPhotoAlbum />
+            </>}
+          />
         </Routes>
         <br />
         <Footer />
