@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import EventUserDetails from './userEventDetails'; // Import the EventUserDetails component
+// Import the EventUserDetails component
+import EventUserDetails from './userEventDetails'; 
 import { Link } from 'react-router-dom';
 
 const AllAlbums = () => {
     const [albums, setAlbums] = useState([]);
     const [error, setError] = useState('');
     const [selectedAlbum, setSelectedAlbum] = useState(null); // State to store selected album
+    const [deletionSuccess, setDeletionSuccess] = useState(false);
+    const [showPopup, setShowPopup] = useState(false); // State to control popup visibility
 
     useEffect(() => {
         const fetchAlbums = async () => {
@@ -20,29 +23,46 @@ const AllAlbums = () => {
         };
 
         fetchAlbums();
-    }, []);
+    }, [deletionSuccess]); // Add deletionSuccess to dependency array
 
-    const handleDelete = async (id) => {
-        try {
-            await axios.delete(`/api/albums/${id}`);
-            setAlbums(albums.filter(album => album._id !== id));
-        } catch (error) {
-            console.error('Error deleting album:', error);
-            setError('Error deleting album');
+    const handleDelete = async (photoAlbumId) => {
+        const confirmDelete = window.confirm("Are you sure you want to delete this album?");
+        if (confirmDelete) {
+            try {
+                await axios.delete(`/api/album/albumPhotos/${photoAlbumId}`);
+                setAlbums(albums.filter(album => album.photoAlbumId !== photoAlbumId));
+                setDeletionSuccess(true); // Set deletion success state
+                setShowPopup(true); // Show popup
+            } catch (error) {
+                console.error('Error deleting album:', error);
+                setError('Error deleting album');
+            }
         }
     };
+    
 
     const handleView = (album) => {
-        setSelectedAlbum(album); // Set the selected album
+        // Set the selected album
+        setSelectedAlbum(album); 
     };
 
     const handleEdit = (id) => {
         console.log(`Edit album with ID ${id}`);
     };
 
+    useEffect(() => {
+        if (showPopup) {
+            setTimeout(() => {
+                // Hide popup after 3 seconds
+                setShowPopup(false); 
+            }, 3000);
+        }
+    }, [showPopup]);
+
     return (
         <div className="allAlbums">
             {error && <p className="error">{error}</p>}
+            {showPopup && <p className="popup">Deleted successfully!</p>}
             <table>
                 <thead>
                     <tr>
@@ -67,13 +87,13 @@ const AllAlbums = () => {
                                     <Link to={`/customerDetails/${album.eventId}`} className="button-link">View</Link>
                                 </button>
                                 <button className="edit-button" onClick={() => handleEdit(album._id)}>Edit</button>
-                                <button className="delete-button" onClick={() => handleDelete(album._id)}>Delete</button>
+                                <button className="delete-button" onClick={() => handleDelete(album.albumId)}>Delete</button>
                             </td>
                         </tr>
                     ))}
                 </tbody>
             </table>
-            {selectedAlbum && <EventUserDetails eventId={selectedAlbum.eventId} />} {/* Pass the eventId of the selected album */}
+            {selectedAlbum && <EventUserDetails eventId={selectedAlbum.eventId} />}
         </div>
     );
 };
