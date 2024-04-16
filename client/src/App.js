@@ -108,6 +108,7 @@ import AllAlbums from './pages/EventManagement/allAlbums';
 
 //Event Management - Import Components
 import CustomerDetails from './components/EventManagement/userEventDetails'; 
+import EditPhotoAlbum from './components/EventManagement/editPhotoAlbum'; 
 
 function App() {
   return (
@@ -172,6 +173,7 @@ function App() {
             </>}
           />
           <Route path='/customerDetails/:eventId' element={<CustomerDetails />} />
+          <Route path='/editAlbum/:photoAlbumId' element={<EditPhotoAlbum />} />
         </Routes>
         <br />
         <Footer />

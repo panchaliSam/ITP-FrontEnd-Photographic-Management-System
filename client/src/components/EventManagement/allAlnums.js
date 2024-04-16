@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 // Import the EventUserDetails component
 import EventUserDetails from './userEventDetails'; 
-import { Link } from 'react-router-dom';
+import EditAlbum from './editPhotoAlbum';
 
 const AllAlbums = () => {
     const [albums, setAlbums] = useState([]);
@@ -86,7 +88,9 @@ const AllAlbums = () => {
                                 <button className="view-button" onClick={() => handleView(album)}>
                                     <Link to={`/customerDetails/${album.eventId}`} className="button-link">View</Link>
                                 </button>
-                                <button className="edit-button" onClick={() => handleEdit(album._id)}>Edit</button>
+                                <button className="edit-button" onClick={() => handleEdit(album._id)}>
+                                <Link to={`/editAlbum/${album.albumId}`} className="button-link">Edit</Link>
+                                </button>
                                 <button className="delete-button" onClick={() => handleDelete(album.albumId)}>Delete</button>
                             </td>
                         </tr>
@@ -94,6 +98,7 @@ const AllAlbums = () => {
                 </tbody>
             </table>
             {selectedAlbum && <EventUserDetails eventId={selectedAlbum.eventId} />}
+            {selectedAlbum && <EditAlbum albumId={selectedAlbum.photoAlbumId} />}
         </div>
     );
 };
