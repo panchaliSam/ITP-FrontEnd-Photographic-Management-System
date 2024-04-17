@@ -59,7 +59,7 @@ const EditAlbum = () => {
                     onChange={(e) => setNewUrls(e.target.value)}
                     placeholder="Enter URLs separated by comma"
                 />
-                <button onClick={handleAddUrl}>Add URLs</button>
+                <button className="addButton" onClick={handleAddUrl}>Add URLs</button>
             </div>
             {success && <p className="success">URLs added successfully!</p>}
             {error && <p className="error">{error}</p>}

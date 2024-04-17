@@ -25,7 +25,7 @@ const CustomerDetails = () => {
 
     return (
         <div className="customerDetails">
-            <h2>Customer Details</h2>
+            <h2><center>Customer Details</center></h2>
             <div className="customerInfoCard">
                 <p>Customer Name: {customerData.userName}</p>
                 <p>Event Name: {customerData.eventName}</p>
