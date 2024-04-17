@@ -16,7 +16,7 @@ const EditAlbum = () => {
                 setAlbumData(response.data);
             } catch (error) {
                 console.error('Error fetching album data:', error);
-                setError('Error fetching album data. Please try again later.');
+                setError('Error fetching album data');
             }
         };
 
@@ -29,14 +29,11 @@ const EditAlbum = () => {
             .then(() => {
                 setNewUrls('');
                 setSuccess(true);
-                setTimeout(() => {
-                    setSuccess(false);
-                    window.location.reload(); // Reload the page after 3 seconds
-                }, 3000);
+                setTimeout(() => setSuccess(false), 3000);
             })
             .catch(error => {
                 console.error('Error adding URLs:', error);
-                setError('Error adding URLs. Please check your input and try again.');
+                setError('Error adding URLs');
             });
     };
 
@@ -59,7 +56,7 @@ const EditAlbum = () => {
                     onChange={(e) => setNewUrls(e.target.value)}
                     placeholder="Enter URLs separated by comma"
                 />
-                <button className="addButton" onClick={handleAddUrl}>Add URLs</button>
+                <button onClick={handleAddUrl}>Add URLs</button>
             </div>
             {success && <p className="success">URLs added successfully!</p>}
             {error && <p className="error">{error}</p>}
