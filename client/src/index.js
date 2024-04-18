@@ -10,6 +10,9 @@ import './styles/EventManagement/album.css'
 import './styles/EventManagement/customerEvent.css'
 import './styles/EventManagement/allAlbums.css'
 
+//User Management System
+import './styles/UserManagement/userSideBar.css'
+
 import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

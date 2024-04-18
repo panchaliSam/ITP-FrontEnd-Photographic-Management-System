@@ -1,40 +1,48 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
 
-const CustomerDetails = () => {
-    const { eventId } = useParams(); // Get eventId from URL params
-    const [customerData, setCustomerData] = useState({});
-    const [error, setError] = useState('');
+const UserEvents = ({ userId }) => {
+  const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        const fetchCustomerDetails = async () => {
-            try {
-                const customerResponse = await axios.get(`/api/details/userEventDetails/${eventId}`);
-                setCustomerData(customerResponse.data);
-            } catch (error) {
-                setError('Error fetching data');
-                console.error('Error fetching data: ', error);
-            }
-        };
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await axios.get(`api/events/events/userEvents/${userId}`);
+        console.log('Response Data:', response.data);
+        setEvents(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching events:', error);
+        setLoading(false);
+      }
+    };
 
-        if (eventId) {
-            fetchCustomerDetails();
-        }
-    }, [eventId]);
+    fetchEvents();
+  }, [userId]);
 
-    return (
-        <div className="customerDetails">
-            <h2>Event Details</h2>
-            <div className="customerInfoCard">
-                <p>Event Name: {customerData.eventName}</p>
-                <p>Event Type: {customerData.eventType}</p>
-                <p>Event Location: {customerData.eventLocation}</p>
-                <p>Event Date: {customerData.eventDate}</p>
-            </div>
-            {error && <p className="error">{error}</p>}
-        </div>
-    );
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (events.length === 0) {
+    return <div>No events found for this user.</div>;
+  }
+
+  return (
+    <div>
+      <h2>Events for User {userId}</h2>
+      <ul>
+        {events.map((event, index) => (
+          <li key={index}>
+            <strong>Event Name:</strong> {event.eventName}<br />
+            <strong>Event Type:</strong> {event.eventType}<br />
+            <strong>Event Date:</strong> {event.eventDate}<br />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 
-export default CustomerDetails;
+export default UserEvents;

@@ -102,7 +102,7 @@ function LoginPage() {
       const userId = response.data.userId;
 
       // Redirect to dashboard page with user ID as URL parameter
-      window.location.href = `/dashboard/${userId}`;
+      window.location.href = `/userAccount/${userId}`;
     } catch (error) {
       console.error('Login error:', error.response?.data?.message || 'An error occurred');
       setError(error.response?.data?.message || 'An error occurred');
