@@ -1,11 +1,14 @@
 .sidebar-container {
+    position: fixed; /* Fix the position of the sidebar */
+    top: 50px; /* Adjust the top position as needed */
+    left: 0; /* Align the sidebar to the left */
     background-color: #a3a3a3;
     border-radius: 0 8px 8px 0;
     padding: 20px;
     width: 200px;
-    margin-top: 50px;
-  }
-  
+    margin-top: 150px;
+}
+
   .top {
     text-align: center;
     margin-bottom: 20px;
