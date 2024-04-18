@@ -8,7 +8,8 @@ const UserEvents = ({ userId }) => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get(`api/events/events/userEvents/${userId}`);
+        console.log('Response Data:');
+        const response = await axios.get(`/api/events/events/userEvents/${userId}`);
         console.log('Response Data:', response.data);
         setEvents(response.data);
         setLoading(false);

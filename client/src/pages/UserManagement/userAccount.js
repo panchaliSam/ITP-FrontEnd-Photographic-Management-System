@@ -3,10 +3,10 @@ import { useParams } from 'react-router-dom'; // Import useParams from react-rou
 import UserSideBar from '../../components/UserManagement/userAccountSideBar';
 
 const Dashboard = () => {
-  const { userId } = useParams(); // Get userId from URL parameters
+  const { userId } = useParams();
   return (
     <div>
-      <UserSideBar userId={userId} /> {/* Pass userId as a prop to UserSideBar */}
+      <UserSideBar userId={userId} /> 
     </div>
   );
 };
