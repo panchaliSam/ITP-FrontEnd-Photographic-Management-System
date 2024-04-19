@@ -25,7 +25,7 @@ const EditAlbum = () => {
 
     const handleAddUrl = () => {
         const urlsArray = newUrls.split(',').map(url => url.trim());
-        axios.put(`/api/album/albumPhotos/${photoAlbumId}/${userId}/${eventId}/${staffId}`, { albumURL: urlsArray })
+        axios.put(`/api/album/albumPhotos/${photoAlbumId}`, { albumURL: urlsArray })
             .then(() => {
                 setNewUrls('');
                 setSuccess(true);
