@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 
 const UserEvents = () => {
   const { userId } = useParams();
@@ -43,7 +41,7 @@ const UserEvents = () => {
 
   return (
     <div style={{ marginLeft: '250px', marginTop: '100px' }}>
-      <div style={{  display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
         <input
           type="text"
           placeholder="Search by event type"
@@ -51,23 +49,17 @@ const UserEvents = () => {
           onChange={handleSearch}
           style={{ marginRight: '10px', width: '200px' }}
         />
-        <Button variant="primary">Search</Button>
+        <button style={{ backgroundColor: '#007bff', color: '#ffffff', border: 'none', padding: '5px 10px', borderRadius: '5px' }}>Search</button>
       </div>
       {events.map((event, index) => (
-        <Card key={index} style={{ width: '18rem', marginBottom: '20px' }}>
-          <Card.Body>
-            <Card.Title>{event.eventName}</Card.Title>
-            <Card.Text>
-              <br />
-              <strong>Event Type:</strong> {event.eventType}
-              <br />
-              <strong>Event Date:</strong> {event.eventDate}
-            </Card.Text>
-            <Link to={`/userAccount/${userId}/myEvents/${event.reservationId}/viewAlbum`}>
-              <Button variant="primary">View</Button>
-            </Link>
-          </Card.Body>
-        </Card>
+        <div key={index} style={{ border: '1px solid #ccc', borderRadius: '5px', padding: '10px', marginBottom: '20px', maxWidth: '500px' }}>
+          <div style={{ fontWeight: 'bold' }}>Event Name: {event.eventName}</div>
+          <div style={{ marginTop: '5px' }}>Event Type: {event.eventType}</div>
+          <div style={{ marginTop: '5px' }}>Event Date: {event.eventDate}</div>
+          <Link to={`/userAccount/${userId}/myEvents/${event.reservationId}/viewAlbum`} style={{ marginTop: '10px' }}>
+            <button style={{ backgroundColor: '#007bff', color: '#ffffff', border: 'none', padding: '5px 10px', borderRadius: '5px' }}>View</button>
+          </Link>
+        </div>
       ))}
     </div>
   );
