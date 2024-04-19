@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link, useParams } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-const UserEvents = ({ userId }) => {
+const UserEvents = () => {
+  const { userId } = useParams();
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
@@ -16,7 +18,6 @@ const UserEvents = ({ userId }) => {
           url = `/api/events/search/${userId}?eventType=${encodeURIComponent(searchTerm)}`;
         }
         const response = await axios.get(url);
-        console.log('Response Data:', response.data);
         setEvents(response.data);
         setLoading(false);
       } catch (error) {
@@ -62,7 +63,9 @@ const UserEvents = ({ userId }) => {
               <br />
               <strong>Event Date:</strong> {event.eventDate}
             </Card.Text>
-            <Button variant="primary">View</Button>
+            <Link to={`/userAccount/${userId}/myEvents/${event.reservationId}`}>
+              <Button variant="primary">View</Button>
+            </Link>
           </Card.Body>
         </Card>
       ))}
