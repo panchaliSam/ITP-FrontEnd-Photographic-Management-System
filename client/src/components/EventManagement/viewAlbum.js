@@ -27,13 +27,12 @@ const EventDetails = () => {
   return (
     <div>
       {eventDetails ? (
-        <div>
-          <h2>Event Details</h2>
-          <p>Event Name: {eventDetails.eventName}</p>
-          <p>Event Type: {eventDetails.eventType}</p>
-          <p>Staff Name: {eventDetails.staffName}</p>
+        <div className="event-details-card"> {/* Apply CSS class for card styling */}
+          <p className="event-detail">Event Name: {eventDetails.eventName}</p>
+          <p className="event-detail">Event Type: {eventDetails.eventType}</p>
+          <p className="event-detail">Staff Name: {eventDetails.staffName}</p>
           <Link to={`/userAccount/${userId}/myEvents/${eventId}/viewAlbum`}>
-            <button>View</button>
+            <button className="view-button">View</button>
           </Link>
         </div>
       ) : (

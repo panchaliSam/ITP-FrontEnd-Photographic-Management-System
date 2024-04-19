@@ -10,6 +10,7 @@ import './styles/EventManagement/album.css'
 import './styles/EventManagement/customerEvent.css'
 import './styles/EventManagement/allAlbums.css'
 import './styles/EventManagement/myEvents.css'
+import './styles/EventManagement/viewAlbum.css'
 
 //User Management System
 import './styles/UserManagement/userSideBar.css'

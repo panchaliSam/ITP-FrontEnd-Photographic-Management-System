@@ -10,7 +10,8 @@ const ViewAlbum = () => {
   return (
     <div>
       <SideBar />
-      <h1>View Album Page</h1>
+      <h1><center>View Album Page</center></h1>
+      <br></br>
       <ViewAlbums userId={userId} eventId={eventId} />
     </div>
   );
