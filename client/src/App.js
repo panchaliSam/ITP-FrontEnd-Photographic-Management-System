@@ -16,6 +16,7 @@ import CustomeEvent from './pages/EventManagement/userEventDetails';
 import AllAlbums from './pages/EventManagement/allAlbums';
 import MyEvents from './pages/EventManagement/myEvents'
 import ViewAlbm from './pages/EventManagement/viewAlbums'
+import AddAlbum from './pages/EventManagement/addAlbum'
 
 //User Management - Import Components
 import UserLoginPage from './components/UserManagement/userLogin';
@@ -96,6 +97,13 @@ function App() {
             path='/manageAlbums'
             element={<>
               <AllAlbums />
+              <br />
+            </>}
+          />
+          <Route
+            path='/manageAlbums/addAlbum'
+            element={<>
+              <AddAlbum />
               <br />
             </>}
           />
