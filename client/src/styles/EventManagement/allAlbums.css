@@ -47,3 +47,21 @@ tr:hover {
     color: #fff; /* Set color for link */
 }
 
+.add-button {
+    background-color: #4CAF50;
+    border: none; 
+    color: white; 
+    padding: 8px 16px; /* Adjust padding to make the button smaller */
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block; 
+    font-size: 14px; /* Decrease font size for a smaller button */
+    border-radius: 8px;
+}
+
+.button-margin {
+    margin-right: 20px; /* Increase margin-right to add more space */
+}
+
+
+

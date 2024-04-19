@@ -7,7 +7,7 @@ import Card4Image from '../images/homePage/card4.jpg';
 import Card5Image from '../images/homePage/card5.jpg';
 
 function BasicExample() {
-  const cardStyle = { width: '18rem', marginRight: '20px' }; // Adjust margin-right as needed
+  const cardStyle = { width: '18rem', height: '400px', marginRight: '20px' }
 
   return (
     <div className="d-flex"> 
@@ -88,3 +88,4 @@ function BasicExample() {
 }
 
 export default BasicExample;
+
