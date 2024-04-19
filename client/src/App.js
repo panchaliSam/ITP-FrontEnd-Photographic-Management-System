@@ -11,10 +11,11 @@ import UserAccountPage from './pages/UserManagement/userAccount'
 
 //Event Management - Import Pages
 import EventPhotos from './pages/EventManagement/selectPhotosAlbum';
-import Album from './pages/EventManagement/photoAlbum';
+// import Album from './pages/EventManagement/photoAlbum';
 import CustomeEvent from './pages/EventManagement/userEventDetails';
 import AllAlbums from './pages/EventManagement/allAlbums';
 import MyEvents from './pages/EventManagement/myEvents'
+import ViewAlbm from './pages/EventManagement/viewAlbums'
 
 //User Management - Import Components
 import UserLoginPage from './components/UserManagement/userLogin';
@@ -69,10 +70,11 @@ function App() {
             </>}
           />
           <Route
-            path='/viewAlbum'
+            path='/userAccount/:userId/myEvents/:eventId/viewAlbum'
             element={<>
-              <SideBar/>
-              <Album />
+              {/* <SideBar/> */}
+              <ViewAlbm/>
+              {/* <Album /> */}
               <br />
             </>}
           />

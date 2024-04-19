@@ -63,7 +63,7 @@ const UserEvents = () => {
               <br />
               <strong>Event Date:</strong> {event.eventDate}
             </Card.Text>
-            <Link to={`/userAccount/${userId}/myEvents/${event.reservationId}`}>
+            <Link to={`/userAccount/${userId}/myEvents/${event.reservationId}/viewAlbum`}>
               <Button variant="primary">View</Button>
             </Link>
           </Card.Body>
