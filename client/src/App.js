@@ -17,6 +17,7 @@ import AllAlbums from './pages/EventManagement/allAlbums';
 import MyEvents from './pages/EventManagement/myEvents'
 import ViewAlbm from './pages/EventManagement/viewAlbums'
 import AddAlbum from './pages/EventManagement/addAlbum'
+import SamplePhotos from './pages/EventManagement/samplePhotos'
 
 //User Management - Import Components
 import UserLoginPage from './components/UserManagement/userLogin';
@@ -75,6 +76,15 @@ function App() {
             element={<>
               {/* <SideBar/> */}
               <ViewAlbm/>
+              {/* <Album /> */}
+              <br />
+            </>}
+          />
+          <Route
+            path='/userAccount/:userId/myEvents/:eventId/viewAlbum/samplePhotos'
+            element={<>
+              {/* <SideBar/> */}
+              <SamplePhotos/>
               {/* <Album /> */}
               <br />
             </>}

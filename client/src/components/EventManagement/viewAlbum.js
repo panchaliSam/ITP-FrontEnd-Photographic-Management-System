@@ -10,6 +10,7 @@ const EventDetails = () => {
     // Fetch event details from backend API
     const fetchEventDetails = async () => {
       try {
+        console.log('Fetching event details');
         const response = await fetch(`/api/album/viewAlbum/${eventId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch event details');
@@ -31,8 +32,8 @@ const EventDetails = () => {
           <p className="event-detail">Event Name: {eventDetails.eventName}</p>
           <p className="event-detail">Event Type: {eventDetails.eventType}</p>
           <p className="event-detail">Staff Name: {eventDetails.staffName}</p>
-          <Link to={`/userAccount/${userId}/myEvents/${eventId}/viewAlbum`}>
-            <button className="view-button">View</button>
+          <Link to={`/userAccount/${userId}/myEvents/${eventId}/viewAlbum/samplePhotos`}> {/* Updated Link */}
+            <button className="view-button">View Sample Photo</button>
           </Link>
         </div>
       ) : (
