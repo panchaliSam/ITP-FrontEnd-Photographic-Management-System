@@ -64,7 +64,7 @@ const Sidebar = () => {
           }} 
         />
       </Link>
-      <Link to="/selectPhotos">
+      <Link to={`/userAccount/${userId}/myEvents/${eventId}/viewAlbum/samplePhotos`}>
         <FontAwesomeIcon icon={faImage} style={{ color: "#ffffff", marginRight: '5px' }} />
         Photos
       </Link>

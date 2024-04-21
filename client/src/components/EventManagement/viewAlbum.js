@@ -10,7 +10,7 @@ const EventDetails = () => {
     // Fetch event details from backend API
     const fetchEventDetails = async () => {
       try {
-        console.log('Fetching event details');
+        console.log('Fetching event details')
         const response = await fetch(`/api/album/viewAlbum/${eventId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch event details');

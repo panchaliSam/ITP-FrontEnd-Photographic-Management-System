@@ -83,7 +83,7 @@ function App() {
           <Route
             path='/userAccount/:userId/myEvents/:eventId/viewAlbum/samplePhotos'
             element={<>
-              {/* <SideBar/> */}
+              <SideBar/> 
               <SamplePhotos/>
               {/* <Album /> */}
               <br />
