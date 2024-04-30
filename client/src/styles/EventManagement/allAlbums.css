@@ -23,9 +23,18 @@ tr:hover {
     background-color: #f5f5f5;
 }
 
-.actions .view-button,
-.actions .edit-button,
-.actions .delete-button {
+.actions .view-button {
+    margin-right: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    background-color: #009e15;
+    color: #fff;
+    border-radius: 3px;
+    text-decoration: none; /* Remove underline */
+}
+
+.actions .edit-button {
     margin-right: 5px;
     cursor: pointer;
     padding: 5px 10px;
@@ -36,10 +45,28 @@ tr:hover {
     text-decoration: none; /* Remove underline */
 }
 
-.actions .view-button:hover,
-.actions .edit-button:hover,
-.actions .delete-button:hover {
+.actions .delete-button {
+    margin-right: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    background-color: #ff0000;
+    color: #fff;
+    border-radius: 3px;
+    text-decoration: none; /* Remove underline */
+}
+
+.actions .view-button:hover{
+    background-color: #009e15;
+}
+
+.actions .edit-button:hover {
     background-color: #0056b3;
+}
+
+
+.actions .delete-button:hover {
+    background-color: #b30000;
 }
 
 .button-link {
@@ -61,6 +88,47 @@ tr:hover {
 
 .button-margin {
     margin-right: 20px; /* Increase margin-right to add more space */
+}
+
+.editAlbumContainer {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.editAlbumTitle {
+    text-align: center;
+}
+
+.currentAlbumUrls {
+    margin-bottom: 20px;
+}
+
+.addNewUrls input[type="text"] {
+    width: calc(100% - 100px);
+    margin-right: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.addUrlButton {
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.successMessage {
+    color: green;
+}
+
+.errorMessage {
+    color: red;
 }
 
 
