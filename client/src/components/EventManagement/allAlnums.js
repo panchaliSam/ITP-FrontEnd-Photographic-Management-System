@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -106,7 +105,6 @@ const AllAlbums = () => {
 
 export default AllAlbums;
 
-=======
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -213,5 +211,3 @@ const AllAlbums = () => {
 };
 
 export default AllAlbums;
-
->>>>>>> 071da3aa72f887ef1b24b134525d6765184f2a93

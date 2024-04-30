@@ -19,7 +19,9 @@ import ViewAlbm from './pages/EventManagement/viewAlbums'
 import AddAlbum from './pages/EventManagement/addAlbum'
 import SamplePhotos from './pages/EventManagement/samplePhotos'
 import UserEventCount from './pages/EventManagement/adminNotification'
+
 import StaffViewAlbums from './pages/EventManagement/staffMyWork'
+
 
 //User Management - Import Components
 import UserLoginPage from './components/UserManagement/userLogin';
@@ -128,6 +130,7 @@ function App() {
           />
           <Route path='/customerDetails/:eventId' element={<CustomerDetails />} />
           <Route path='/editAlbum/:photoAlbumId' element={<EditPhotoAlbum />} />
+
           <Route
             path='/staff/myWork'
             element={<>
@@ -135,6 +138,7 @@ function App() {
               <br />
             </>}
           />
+
         </Routes>
         <br />
         <Footer />

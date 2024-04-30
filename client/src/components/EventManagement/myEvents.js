@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // import React, { useEffect, useState } from 'react';
 // import axios from 'axios';
 // import { Link, useParams } from 'react-router-dom';
@@ -168,7 +167,7 @@ const UserEvents = () => {
 };
 
 export default UserEvents;
-=======
+
 // import React, { useEffect, useState } from 'react';
 // import axios from 'axios';
 // import { Link, useParams } from 'react-router-dom';
@@ -338,4 +337,4 @@ const UserEvents = () => {
 };
 
 export default UserEvents;
->>>>>>> 071da3aa72f887ef1b24b134525d6765184f2a93
+
