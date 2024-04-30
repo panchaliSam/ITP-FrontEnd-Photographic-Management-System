@@ -4,7 +4,7 @@ import UserEventCounts from '../../components/EventManagement/showUserEventCount
 const UserEventCountsPage = () => {
     return (
         <div>
-            <h1>User Event Counts Page</h1>
+            <h1><center>User Event Counts Page</center></h1>
             <UserEventCounts />
         </div>
     );
