@@ -18,6 +18,7 @@ import MyEvents from './pages/EventManagement/myEvents'
 import ViewAlbm from './pages/EventManagement/viewAlbums'
 import AddAlbum from './pages/EventManagement/addAlbum'
 import SamplePhotos from './pages/EventManagement/samplePhotos'
+import UserEventCount from './pages/EventManagement/adminNotification'
 
 //User Management - Import Components
 import UserLoginPage from './components/UserManagement/userLogin';
@@ -107,6 +108,13 @@ function App() {
             path='/manageAlbums'
             element={<>
               <AllAlbums />
+              <br />
+            </>}
+          />
+          <Route
+            path='/adminNotification'
+            element={<>
+              <UserEventCount />
               <br />
             </>}
           />
