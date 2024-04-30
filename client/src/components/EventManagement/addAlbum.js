@@ -130,7 +130,6 @@ import axios from 'axios';
 const AddAlbumForm = () => {
   // State to manage form data
   const [formData, setFormData] = useState({
-    photoAlbumId: '',
     userName: '',
     eventName: '',
     eventType: '',
@@ -195,7 +194,6 @@ const AddAlbumForm = () => {
       const response = await axios.post(`/api/album/albumPhotos/add`, formData);
       
       setFormData({
-        photoAlbumId: '',
         userName: '',
         eventName: '',
         eventType: '',
@@ -212,10 +210,6 @@ const AddAlbumForm = () => {
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>Album ID:</label>
-          <input type="text" name="photoAlbumId" value={formData.photoAlbumId} onChange={handleInputChange} />
-        </div>
         <div className="form-group">
           <label>User Name:</label>
           <select name="userName" value={formData.userName} onChange={handleInputChange}>
