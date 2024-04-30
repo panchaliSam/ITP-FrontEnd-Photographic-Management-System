@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 const EventDetails = () => {
   const [eventDetails, setEventDetails] = useState(null);
   const { userId, eventId } = useParams();
 
   useEffect(() => {
-    // Fetch event details from backend API
     const fetchEventDetails = async () => {
       try {
         const response = await fetch(`/api/album/viewAlbum/${eventId}`);
@@ -25,16 +26,18 @@ const EventDetails = () => {
   }, [eventId]);
 
   return (
-    <div>
+    <div className="container mt-5" style={{ marginLeft: '200px', marginBottom: '20px' }}>
       {eventDetails ? (
-        <div className="event-details-card"> {/* Apply CSS class for card styling */}
-          <p className="event-detail">Event Name: {eventDetails.eventName}</p>
-          <p className="event-detail">Event Type: {eventDetails.eventType}</p>
-          <p className="event-detail">Staff Name: {eventDetails.staffName}</p>
-          <Link to={`/userAccount/${userId}/myEvents/${eventId}/viewAlbum`}>
-            <button className="view-button">View</button>
-          </Link>
-        </div>
+        <Card className="event-details-card">
+          <Card.Body>
+            <Card.Title>Event Name: {eventDetails.eventName}</Card.Title>
+            <Card.Text>Event Type: {eventDetails.eventType}</Card.Text>
+            <Card.Text>Staff Name: {eventDetails.staffName}</Card.Text>
+            <Link to={`/userAccount/${userId}/myEvents/${eventId}/viewAlbum/samplePhotos`}>
+              <Button variant="primary" className="view-button">View Sample Photo</Button>
+            </Link>
+          </Card.Body>
+        </Card>
       ) : (
         <p>Loading event details...</p>
       )}

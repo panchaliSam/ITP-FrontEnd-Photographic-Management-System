@@ -17,6 +17,8 @@ import AllAlbums from './pages/EventManagement/allAlbums';
 import MyEvents from './pages/EventManagement/myEvents'
 import ViewAlbm from './pages/EventManagement/viewAlbums'
 import AddAlbum from './pages/EventManagement/addAlbum'
+import SamplePhotos from './pages/EventManagement/samplePhotos'
+import UserEventCount from './pages/EventManagement/adminNotification'
 
 //User Management - Import Components
 import UserLoginPage from './components/UserManagement/userLogin';
@@ -80,6 +82,15 @@ function App() {
             </>}
           />
           <Route
+            path='/userAccount/:userId/myEvents/:eventId/viewAlbum/samplePhotos'
+            element={<>
+              <SideBar/> 
+              <SamplePhotos/>
+              {/* <Album /> */}
+              <br />
+            </>}
+          />
+          <Route
             path='/paymentHistory'
             element={<>
               <SideBar/>
@@ -97,6 +108,13 @@ function App() {
             path='/manageAlbums'
             element={<>
               <AllAlbums />
+              <br />
+            </>}
+          />
+          <Route
+            path='/adminNotification'
+            element={<>
+              <UserEventCount />
               <br />
             </>}
           />

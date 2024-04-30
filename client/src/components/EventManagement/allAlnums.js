@@ -48,8 +48,8 @@ const AllAlbums = () => {
         setSelectedAlbum(album); 
     };
 
-    const handleEdit = (id) => {
-        console.log(`Edit album with ID ${id}`);
+    const handleEdit = (albumId) => {
+        console.log(`Edit album with ID ${albumId}`);
     };
 
     useEffect(() => {
@@ -88,7 +88,7 @@ const AllAlbums = () => {
                                 <button className="view-button" onClick={() => handleView(album)}>
                                     <Link to={`/customerDetails/${album.eventId}`} className="button-link">View</Link>
                                 </button>
-                                <button className="edit-button" onClick={() => handleEdit(album._id)}>
+                                <button className="edit-button" onClick={() => handleEdit(album.albumId)}>
                                 <Link to={`/editAlbum/${album.albumId}`} className="button-link">Edit</Link>
                                 </button>
                                 <button className="delete-button" onClick={() => handleDelete(album.albumId)}>Delete</button>

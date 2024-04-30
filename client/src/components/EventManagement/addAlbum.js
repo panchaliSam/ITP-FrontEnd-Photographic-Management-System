@@ -4,7 +4,7 @@
 // const AddAlbumForm = () => {
 //   // State to manage form data
 //   const [formData, setFormData] = useState({
-//     albumId: '',
+//     photoAlbumId: '',
 //     userName: '',
 //     eventName: '',
 //     eventType: '',
@@ -28,9 +28,8 @@
 //     };
 
 //     const fetchEventTypes = async () => {
-//       // Fetch event types
 //       try {
-//         // Hardcoded event types
+//         // Event types
 //         const types = ['Wedding', 'Events', 'New Born', 'Couples', 'Graduation'];
 //         setEventTypes(types);
 //       } catch (error) {
@@ -39,7 +38,6 @@
 //     };
 
 //     const fetchStaffNames = async () => {
-//       // Fetch staff names
 //       try {
 //         const response = await axios.get(`/api/newAlbum/empNames`);
 //         setStaffNames(response.data);
@@ -64,17 +62,16 @@
 //     e.preventDefault();
 //     try {
 //       // Send formData to backend API for adding album
-//       // Replace 'YOUR_BACKEND_API_URL' with the actual URL of your backend API
-//       await axios.post('YOUR_BACKEND_API_URL', formData);
+//       const response = await axios.post(`/api/album/albumPhotos/add`, formData);
 //       // Reset form after successful submission
 //       setFormData({
-//         albumId: '',
+//         photoAlbumId: '',
 //         userName: '',
 //         eventName: '',
 //         eventType: '',
 //         staffName: ''
 //       });
-//       alert('Album added successfully!');
+//       alert(response.data.message);
 //     } catch (error) {
 //       console.error('Error adding album:', error);
 //       alert('Failed to add album. Please try again.');
@@ -86,7 +83,7 @@
 //       <form onSubmit={handleSubmit}>
 //         <div className="form-group">
 //           <label>Album ID:</label>
-//           <input type="text" name="albumId" value={formData.albumId} onChange={handleInputChange} />
+//           <input type="text" name="photoAlbumId" value={formData.photoAlbumId} onChange={handleInputChange} />
 //         </div>
 //         <div className="form-group">
 //           <label>User Name:</label>
@@ -127,19 +124,17 @@
 
 // export default AddAlbumForm;
 
-
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const AddAlbumForm = () => {
   // State to manage form data
   const [formData, setFormData] = useState({
-    photoAlbumId: '',
     userName: '',
     eventName: '',
     eventType: '',
-    staffName: ''
+    staffName: '',
+    date: '' // Add date field to formData
   });
 
   // State to store dropdown options
@@ -191,16 +186,19 @@ const AddAlbumForm = () => {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!formData.date) {
+      alert('Please provide a date.');
+      return;
+    }
     try {
-      // Send formData to backend API for adding album
       const response = await axios.post(`/api/album/albumPhotos/add`, formData);
-      // Reset form after successful submission
+      
       setFormData({
-        photoAlbumId: '',
         userName: '',
         eventName: '',
         eventType: '',
-        staffName: ''
+        staffName: '',
+        date: '' // Clear date field after submission
       });
       alert(response.data.message);
     } catch (error) {
@@ -212,10 +210,6 @@ const AddAlbumForm = () => {
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>Album ID:</label>
-          <input type="text" name="photoAlbumId" value={formData.photoAlbumId} onChange={handleInputChange} />
-        </div>
         <div className="form-group">
           <label>User Name:</label>
           <select name="userName" value={formData.userName} onChange={handleInputChange}>
@@ -247,6 +241,10 @@ const AddAlbumForm = () => {
             ))}
           </select>
         </div>
+        <div className="form-group">
+          <label>Event Date:</label>
+          <input type="text" name="date" value={formData.date} onChange={handleInputChange} />
+        </div>
         <button type="submit">Add Album</button>
       </form>
     </div>
@@ -254,3 +252,5 @@ const AddAlbumForm = () => {
 };
 
 export default AddAlbumForm;
+
+
