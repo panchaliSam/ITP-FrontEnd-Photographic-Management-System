@@ -16,6 +16,11 @@ import './styles/EventManagement/addAlbum.css'
 //User Management System
 import './styles/UserManagement/userSideBar.css'
 
+//Event Reservation Management System
+import './styles/EventReservationManagement/reservationDetails.css'
+import './styles/EventReservationManagement/allReservations.css'
+import './styles/EventReservationManagement/ReservationForm.css'
+
 import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

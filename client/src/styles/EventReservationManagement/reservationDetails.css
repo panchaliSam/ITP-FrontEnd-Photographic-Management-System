@@ -1,0 +1,60 @@
+.reservationDetails {
+    font-family: Arial, sans-serif;
+    width: 80%;
+    margin-left: 200px;
+    /* margin: 0 auto; */
+}
+
+.reservationDetails form {
+    margin-bottom: 20px;
+}
+
+.reservationDetails label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.reservationDetails input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.reservationDetails button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.reservationDetails button:hover {
+    background-color: #0056b3;
+}
+
+.reservationDetails .reservationCard {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.reservationDetails h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.reservationDetails p {
+    margin-bottom: 5px;
+}
+.Schedule-btn{
+    background-color: black !important;
+    color: white !important;
+}
+.Schedule-btn:hover{
+    background-color: #e2e5e7 !important;
+    color: black !important;
+}
