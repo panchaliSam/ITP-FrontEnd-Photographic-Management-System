@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
-import AllAlbums from '../../components/EventManagement/allAlnums'; 
+import StaffViewAlbums from '../../components/EventManagement/staffViewAlbums';
 
-const AllAlbumsPage = () => {
+const MyWork = () => {
     return (
-        <div>
-            <h1 style={{ textAlign: 'center' }}>All Albums</h1><br></br>
+        <div className="myWork">
+            <h1><center>My Work</center></h1>
             <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '10px' }}>
                 <Link to="/manageAlbums/addAlbum" className="add-button button-margin">Add Album</Link>
             </div>
-            <AllAlbums />
+            <StaffViewAlbums />
         </div>
     );
 };
 
-export default AllAlbumsPage;
+export default MyWork;

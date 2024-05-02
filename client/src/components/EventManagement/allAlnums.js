@@ -48,10 +48,9 @@ const AllAlbums = () => {
         setSelectedAlbum(album); 
     };
 
-    const handleEdit = (albumId, userId, eventId, staffId) => {
-        console.log(`Edit album with ID ${albumId}, User ID ${userId}, Event ID ${eventId}, Staff ID ${staffId}`);
+    const handleEdit = (albumId) => {
+        console.log(`Edit album with ID ${albumId}`);
     };
-      
 
     useEffect(() => {
         if (showPopup) {
@@ -89,8 +88,8 @@ const AllAlbums = () => {
                                 <button className="view-button" onClick={() => handleView(album)}>
                                     <Link to={`/customerDetails/${album.eventId}`} className="button-link">View</Link>
                                 </button>
-                                <button className="edit-button" onClick={() => handleEdit(album.albumId, album.userId, album.eventId, album.staffId)}>
-                                    <Link to={`/editAlbum/${album.albumId}/${album.userId}/${album.eventId}/${album.staffId}`} className="button-link">Edit</Link>
+                                <button className="edit-button" onClick={() => handleEdit(album.albumId)}>
+                                <Link to={`/editAlbum/${album.albumId}`} className="button-link">Edit</Link>
                                 </button>
                                 <button className="delete-button" onClick={() => handleDelete(album.albumId)}>Delete</button>
                             </td>
@@ -105,8 +104,6 @@ const AllAlbums = () => {
 };
 
 export default AllAlbums;
-
-
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -158,8 +155,8 @@ const AllAlbums = () => {
         setSelectedAlbum(album); 
     };
 
-    const handleEdit = (id) => {
-        console.log(`Edit album with ID ${id}`);
+    const handleEdit = (albumId) => {
+        console.log(`Edit album with ID ${albumId}`);
     };
 
     useEffect(() => {
@@ -198,7 +195,7 @@ const AllAlbums = () => {
                                 <button className="view-button" onClick={() => handleView(album)}>
                                     <Link to={`/customerDetails/${album.eventId}`} className="button-link">View</Link>
                                 </button>
-                                <button className="edit-button" onClick={() => handleEdit(album._id)}>
+                                <button className="edit-button" onClick={() => handleEdit(album.albumId)}>
                                 <Link to={`/editAlbum/${album.albumId}`} className="button-link">Edit</Link>
                                 </button>
                                 <button className="delete-button" onClick={() => handleDelete(album.albumId)}>Delete</button>
@@ -214,4 +211,3 @@ const AllAlbums = () => {
 };
 
 export default AllAlbums;
-

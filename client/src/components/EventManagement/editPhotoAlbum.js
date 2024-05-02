@@ -12,7 +12,7 @@ const EditAlbum = () => {
     useEffect(() => {
         const fetchAlbumData = async () => {
             try {
-                const response = await axios.get(`/api/album/albumPhotos/${photoAlbumId}/${userId}/${eventId}/${staffId}`);
+                const response = await axios.get(`/api/album/albumPhotos/${photoAlbumId}`);
                 setAlbumData(response.data);
             } catch (error) {
                 console.error('Error fetching album data:', error);
@@ -25,7 +25,7 @@ const EditAlbum = () => {
 
     const handleAddUrl = () => {
         const urlsArray = newUrls.split(',').map(url => url.trim());
-        axios.put(`/api/album/albumPhotos/${photoAlbumId}/${userId}/${eventId}/${staffId}`, { albumURL: urlsArray })
+        axios.put(`/api/album/albumPhotos/${photoAlbumId}`, { albumURL: urlsArray })
             .then(() => {
                 setNewUrls('');
                 setSuccess(true);
@@ -38,9 +38,9 @@ const EditAlbum = () => {
     };
 
     return (
-        <div className="editAlbum">
-            <h2><center>Edit Album</center></h2>
-            <div>
+        <div className="editAlbumContainer">
+            <h2 className="editAlbumTitle">Edit Album</h2>
+            <div className="currentAlbumUrls">
                 <h3>Current Album URLs:</h3>
                 <ul>
                     {albumData.albumURL && albumData.albumURL.map((url, index) => (
@@ -48,7 +48,7 @@ const EditAlbum = () => {
                     ))}
                 </ul>
             </div>
-            <div>
+            <div className="addNewUrls">
                 <h3>Add New URLs:</h3>
                 <input
                     type="text"
@@ -56,10 +56,12 @@ const EditAlbum = () => {
                     onChange={(e) => setNewUrls(e.target.value)}
                     placeholder="Enter URLs separated by comma"
                 />
-                <button onClick={handleAddUrl}>Add URLs</button>
+                <br></br>
+                <br></br>
+                <button className="addUrlButton" onClick={handleAddUrl}>Add URLs</button>
             </div>
-            {success && <p className="success">URLs added successfully!</p>}
-            {error && <p className="error">{error}</p>}
+            {success && <p className="successMessage">URLs added successfully!</p>}
+            {error && <p className="errorMessage">{error}</p>}
         </div>
     );
 };

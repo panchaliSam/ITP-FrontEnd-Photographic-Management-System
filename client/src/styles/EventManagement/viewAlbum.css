@@ -1,0 +1,28 @@
+.event-details-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-left: 200px; /* Add margin-left */
+    background-color: #f9f9f9;
+    max-width: 500px; /* Set maximum width */
+    width: 100%; /* Ensure card fills available width */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+  }
+  
+  .event-detail {
+    margin: 5px 0;
+  }
+  
+  .view-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .view-button:hover {
+    background-color: #0056b3;
+  }
+  
