@@ -1,0 +1,93 @@
+/* Custom CSS for Signup Form */
+
+.logo-container {
+    text-align: right; /* Align the logo to the right */
+    margin-right: 20px; /* Adjust the margin to move the logo further right */
+}
+
+.logo {
+    width: 100px; /* Adjust the width as needed */
+    margin-right: 100px;
+}
+/* Body styles */
+/* body {
+    background-color: #D9D9D9; 
+    font-family: Arial, sans-serif; 
+} */
+
+/* Container styles */
+/* .signup-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+} */
+
+/* Left section styles */
+/* .left-section {
+    flex: 1;
+    padding-right: 20px;
+} */
+
+/* .left-section img {
+    max-width: 100%;
+    height: auto;
+    display: flex;
+} */
+
+/* Right section styles */
+/* .right-section {
+    flex: 1;
+    padding-left: 20px;
+} */
+
+/* Logo styles */
+/* .logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    max-width: 0px;
+    height: auto;
+    display: inline-block;
+} */
+
+/* Registration title styles */
+/* h2 {
+    text-align: center;
+    margin-bottom: 20px;
+} */
+
+/* Form styles */
+/* form {
+    max-width: 400px;
+    margin: 0 auto;
+} */
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+/* Signup button styles */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Already signed up text styles */
+/* p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+p a {
+    color: #007bff;
+    text-decoration: none;
+} */
