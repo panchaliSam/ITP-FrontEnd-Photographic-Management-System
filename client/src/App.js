@@ -9,6 +9,7 @@ import SideBar from './components/Sidebar'
 //User Management - Import Pages
 import UserAccountPage from './pages/UserManagement/userAccount'
 
+
 //Event Management - Import Pages
 import EventPhotos from './pages/EventManagement/selectPhotosAlbum';
 // import Album from './pages/EventManagement/photoAlbum';
