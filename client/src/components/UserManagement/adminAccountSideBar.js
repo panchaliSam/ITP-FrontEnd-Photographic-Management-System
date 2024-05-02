@@ -20,8 +20,8 @@ const UserSideBar = ({ userId }) => {
         <Link to={`/adminLogin/adminDashboard/notifications`} className="link">
           <button className="button">NOTIFICATIONS</button>
         </Link>
-        <Link to={`/adminLogin/adminDashboard/manageUsers`} className="link">
-          <button className="button">MANAGE USERS</button>
+        <Link to={`/adminLogin/adminDashboard/manageSystem`} className="link">
+          <button className="button">MANAGE SYSTEMS</button>
         </Link>
       </div>
     </div>

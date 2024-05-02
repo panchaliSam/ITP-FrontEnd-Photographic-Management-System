@@ -9,6 +9,7 @@ import SideBar from './components/Sidebar'
 //User Management - Import Pages
 import UserAccountPage from './pages/UserManagement/userAccount'
 import UserAccountCreate from './pages/UserManagement/userSignup'
+import AdminDashboard from './pages/UserManagement/adminDashboard'
 
 //Event Management - Import Pages
 import EventPhotos from './pages/EventManagement/selectPhotosAlbum';
@@ -30,6 +31,9 @@ import UserLoginPage from './components/UserManagement/userLogin';
 //Event Management - Import Components
 import CustomerDetails from './components/EventManagement/userEventDetails'; 
 import EditPhotoAlbum from './components/EventManagement/editPhotoAlbum'; 
+
+//Staff Mnagemnet - Import Components
+import AddTask from './components/StaffManagement/addTask';
 
 function App() {
   return (
@@ -112,6 +116,23 @@ function App() {
               <br />
             </>}
           />
+
+          {/* Admin View */}
+          
+          <Route
+            path='adminLogin/adminDashboard'
+            element={<>
+              <AdminDashboard />
+              <br />
+            </>}
+          />           
+          <Route
+            path='adminLogin/adminDashboard/manageSystem'
+            element={<>
+              <AddTask />
+              <br />
+            </>}
+          /> 
           <Route
             path='/manageAlbums'
             element={<>
