@@ -8,7 +8,7 @@ import SideBar from './components/Sidebar'
 
 //User Management - Import Pages
 import UserAccountPage from './pages/UserManagement/userAccount'
-
+import UserAccountCreate from './pages/UserManagement/userSignup'
 
 //Event Management - Import Pages
 import EventPhotos from './pages/EventManagement/selectPhotosAlbum';
@@ -48,6 +48,10 @@ function App() {
           <Route
             path='/signin'
             element={<UserLoginPage />}
+          />
+          <Route
+            path='/signup'
+            element={<UserAccountCreate />}
           />
           <Route
             path='/userAccount/:userId'
