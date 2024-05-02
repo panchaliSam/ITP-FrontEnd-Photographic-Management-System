@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../images/V De Silva Logo PNG.png';
+import { FaFacebookF,FaInstagram } from 'react-icons/fa';
 
 function Footer() {
   return (
@@ -42,16 +43,16 @@ function Footer() {
           </div>
           <div className='socialmedia'>
             <h4>Let's do</h4>
-            {/* <a href='#' className='social-icon'>
+            <a href='#' className='social-icon'>
               <FaFacebookF />
             </a>
-            <a href='#' className='social-icon'>
+            {/* <a href='#' className='social-icon'>
               <FaTwitter />
-            </a>
+            </a> */}
             <a href='#' className='social-icon'>
               <FaInstagram />
             </a>
-            <a href='#' className='social-icon'>
+            {/* <a href='#' className='social-icon'>
               <FaLinkedinIn />
             </a>
             <a href='#' className='social-icon'>
