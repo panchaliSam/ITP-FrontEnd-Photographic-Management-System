@@ -38,7 +38,7 @@ const EditAlbum = () => {
     };
 
     return (
-        <div className="editAlbumContainer">
+        <div className="editAlbumContainer" style={{ marginLeft: '300px' }}>
             <h2 className="editAlbumTitle">Edit Album</h2>
             <div className="currentAlbumUrls">
                 <h3>Current Album URLs:</h3>
