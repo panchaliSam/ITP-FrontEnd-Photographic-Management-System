@@ -36,6 +36,7 @@ import ReservationForm from './pages/EventReservationManagement/reservationForm'
 
 //User Management - Import Components
 import UserLoginPage from './components/UserManagement/userLogin';
+import AdminAccountSideBar from './components/UserManagement/adminAccountSideBar';
 
 //Event Management - Import Components
 import CustomerDetails from './components/EventManagement/userEventDetails'; 
@@ -140,6 +141,9 @@ function App() {
               <br />
             </>}
           />
+
+          {/* admin */}
+          
           <Route
             path='/adminLogin/adminDashboard'
             element={<>
@@ -165,6 +169,7 @@ function App() {
           <Route
             path='/manageAlbums'
             element={<>
+              <AdminAccountSideBar />
               <AllAlbums />
               <br />
             </>}
@@ -172,6 +177,7 @@ function App() {
           <Route
             path='/adminNotification'
             element={<>
+              <AdminAccountSideBar />
               <UserEventCount />
               <br />
             </>}
@@ -179,12 +185,30 @@ function App() {
           <Route
             path='/manageAlbums/addAlbum'
             element={<>
+              <AdminAccountSideBar />
               <AddAlbum />
               <br />
             </>}
           />
-          <Route path='/customerDetails/:eventId' element={<CustomerDetails />} />
-          <Route path='/editAlbum/:photoAlbumId' element={<EditPhotoAlbum />} />
+          <Route
+            path='/customerDetails/:eventId'
+            element={<>
+              <AdminAccountSideBar />
+              <CustomerDetails />
+              <br />
+            </>}
+          />
+          <Route
+            path='/editAlbum/:photoAlbumId'
+            element={<>
+              <AdminAccountSideBar />
+              <EditPhotoAlbum />
+              <br />
+            </>}
+          />
+
+          
+          {/* Staff */}
 
           <Route
             path='/staff/myWork'

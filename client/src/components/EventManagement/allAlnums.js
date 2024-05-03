@@ -62,7 +62,7 @@ const AllAlbums = () => {
     }, [showPopup]);
 
     return (
-        <div className="allAlbums">
+        <div className="allAlbums" style={{ marginLeft: '300px' }}>
             {error && <p className="error">{error}</p>}
             {showPopup && <p className="popup">Deleted successfully!</p>}
             <table>
