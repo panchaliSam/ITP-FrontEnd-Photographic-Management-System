@@ -37,6 +37,7 @@ import ReservationForm from './pages/EventReservationManagement/reservationForm'
 //User Management - Import Components
 import UserLoginPage from './components/UserManagement/userLogin';
 import AdminAccountSideBar from './components/UserManagement/adminAccountSideBar';
+import ManageButtons from './components/UserManagement/adminMangeButtons'
 
 //Event Management - Import Components
 import CustomerDetails from './components/EventManagement/userEventDetails'; 
@@ -154,8 +155,10 @@ function App() {
           <Route
             path='/adminLogin/adminDashboard/manageSystem'
             element={<>
-              <AddTask />
-              <Task/>
+              {/* <AddTask />
+              <Task/> */}
+              <AdminAccountSideBar />
+              <ManageButtons/>
               <br />
             </>}
           />           
