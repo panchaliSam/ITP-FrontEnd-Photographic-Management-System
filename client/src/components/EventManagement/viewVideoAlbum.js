@@ -16,11 +16,11 @@ const VideoAlbum = () => {
     }, [userId, eventId]);
 
     return (
-        <div>
+        <div style={{ marginLeft: '550px' }}>
             {albumURLs.length > 0 ? (
                 albumURLs.map((url, index) => (
                     <div key={index}>
-                        <video width="320" height="240" controls>
+                        <video width="500" height="280" controls>
                             <source src={url} type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
