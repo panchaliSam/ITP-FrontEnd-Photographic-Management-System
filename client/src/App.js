@@ -22,6 +22,7 @@ import AddAlbum from './pages/EventManagement/addAlbum'
 import SamplePhotos from './pages/EventManagement/samplePhotos'
 import UserEventCount from './pages/EventManagement/adminNotification'
 import StaffViewAlbums from './pages/EventManagement/staffMyWork'
+import VideoAlbumPage from './pages/EventManagement/videoAlbum'
 
 //Staff Management - Import Pages
 import Task from './pages/StaffManagement/getTasks';
@@ -114,7 +115,13 @@ function App() {
             element={<>
               <SideBar/> 
               <SamplePhotos/>
-              {/* <Album /> */}
+              <br />
+            </>}
+          />
+          <Route
+            path='/userAccount/:userId/myEvents/:eventId/viewAlbum/VideoAlbumPage'
+            element={<>
+              <VideoAlbumPage/>
               <br />
             </>}
           />
@@ -132,9 +139,6 @@ function App() {
               <br />
             </>}
           />
-
-          {/* Admin View */}
-          
           <Route
             path='/adminLogin/adminDashboard'
             element={<>
