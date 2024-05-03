@@ -155,13 +155,23 @@ function App() {
           <Route
             path='/adminLogin/adminDashboard/manageSystem'
             element={<>
-              {/* <AddTask />
-              <Task/> */}
               <AdminAccountSideBar />
               <ManageButtons/>
               <br />
             </>}
-          />           
+          />     
+
+          {/* manageButtons */}
+
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageTasks'
+            element={<>
+              <AdminAccountSideBar />
+                <AddTask />
+                <Task/>
+              <br />
+            </>}
+          />    
           <Route
             path='/adminLogin/adminDashboard/manageSystem/updateTask/:TaskId'
             element={<>
@@ -169,8 +179,9 @@ function App() {
               <br />
             </>}
           /> 
+
           <Route
-            path='/manageAlbums'
+            path='/adminLogin/adminDashboard/manageSystem/manageAlbums'
             element={<>
               <AdminAccountSideBar />
               <AllAlbums />
@@ -186,7 +197,7 @@ function App() {
             </>}
           />
           <Route
-            path='/manageAlbums/addAlbum'
+            path='/adminLogin/adminDashboard/manageSystem/manageAlbums/manageAlbums/addAlbum'
             element={<>
               <AdminAccountSideBar />
               <AddAlbum />
@@ -194,7 +205,7 @@ function App() {
             </>}
           />
           <Route
-            path='/customerDetails/:eventId'
+            path='/adminLogin/adminDashboard/manageSystem/manageAlbums/customerDetails/:eventId'
             element={<>
               <AdminAccountSideBar />
               <CustomerDetails />
@@ -202,7 +213,7 @@ function App() {
             </>}
           />
           <Route
-            path='/editAlbum/:photoAlbumId'
+            path='/adminLogin/adminDashboard/manageSystem/manageAlbums/editAlbum/:photoAlbumId'
             element={<>
               <AdminAccountSideBar />
               <EditPhotoAlbum />
