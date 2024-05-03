@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Masonry from 'react-masonry-css';
 
 const SelectPhotos = () => {
   const { eventId } = useParams();
@@ -35,21 +36,44 @@ const SelectPhotos = () => {
     setSelectedPhoto(null);
   };
 
+  // Function to handle mouse over a photo and resize it
+  const handleMouseOver = (index) => {
+    // You can add custom styles here to resize the photo on mouse over if needed
+    // For simplicity, let's just log the index for now
+    console.log("Mouse over photo index:", index);
+  };
+
+  // Define the breakpoints and corresponding column counts
+  const breakpointColumnsObj = {
+    default: 3,
+    1100: 3,
+    700: 2,
+    500: 1
+  };
+
   return (
     <div className="home">
       <div className="photos">
         {error && <p>Error: {error}</p>}
-        {/* Map through event photos and render each image */}
-        {eventPhotos.map((photo, index) => (
-          <div key={index} className="photo-container">
-            <img
-              src={photo}
-              alt={`Event ${index + 1}`}
-              className="photo"
-              onClick={() => handleImageClick(photo)} // Handle click event
-            />
-          </div>
-        ))}
+        {/* Use the Masonry component for the layout */}
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
+          {/* Map through event photos and render each image */}
+          {eventPhotos.map((photo, index) => (
+            <div key={index}>
+              <img
+                src={photo}
+                alt={`Event ${index + 1}`}
+                className="photo"
+                onClick={() => handleImageClick(photo)}
+                onMouseOver={() => handleMouseOver(index)}
+              />
+            </div>
+          ))}
+        </Masonry>
         {/* Overlay for enlarged image view */}
         {selectedPhoto && (
           <div className="overlay" onClick={handleCloseImage}>
