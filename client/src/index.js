@@ -12,6 +12,8 @@ import './styles/EventManagement/allAlbums.css'
 // import './styles/EventManagement/myEvents.css'
 import './styles/EventManagement/viewAlbum.css'
 import './styles/EventManagement/addAlbum.css'
+import './styles/EventManagement/samplePhotos.css'
+import './styles/EventManagement/videoAlbum.css'
 
 //User Management System
 import './styles/UserManagement/userSideBar.css'

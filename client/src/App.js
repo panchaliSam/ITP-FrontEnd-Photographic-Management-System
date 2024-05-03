@@ -119,8 +119,9 @@ function App() {
             </>}
           />
           <Route
-            path='/userAccount/:userId/myEvents/:eventId/viewAlbum/VideoAlbumPage'
+            path='/userAccount/:userId/myEvents/:eventId/viewAlbum/videoAlbum'
             element={<>
+              <SideBar/> 
               <VideoAlbumPage/>
               <br />
             </>}

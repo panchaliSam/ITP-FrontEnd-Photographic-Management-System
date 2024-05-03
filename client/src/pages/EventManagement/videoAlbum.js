@@ -8,7 +8,7 @@ const VideoAlbumPage = () => {
 
     return (
         <div>
-            <h1>Video Album</h1>
+            <h1><center>Video Album</center></h1><br></br>
             <VideoAlbum 
                 userId={userId}
                 eventId={eventId}

@@ -48,3 +48,7 @@
     background-color: #333; /* Darken the background color on hover */
   }
   
+  .active .button {
+    background-color: green; /* Set background color to green for active button */
+  }
+  
