@@ -33,21 +33,21 @@ function NavScrollExample() {
         >
           <Nav.Link href="/">Home</Nav.Link>
           <NavDropdown title="Company" id="navbarScrollingDropdown">
-            <NavDropdown.Item href="#action3">About</NavDropdown.Item>
-            <NavDropdown.Item href="#action4">History</NavDropdown.Item>
-            <NavDropdown.Item href="#action5">Contact Us</NavDropdown.Item>
-            <NavDropdown.Item href="#action13">Help Center</NavDropdown.Item>
+            <NavDropdown.Item href="/about">About</NavDropdown.Item>
+            <NavDropdown.Item href="/history">History</NavDropdown.Item>
+            <NavDropdown.Item href="/contactUs">Contact Us</NavDropdown.Item>
+            <NavDropdown.Item href="/help">Help Center</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item href="#action6">Something else here</NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Community" id="navbarScrollingDropdown">
-            <NavDropdown.Item href="#action7">Staff</NavDropdown.Item>
-            <NavDropdown.Item href="#action8">Stat</NavDropdown.Item>
+            <NavDropdown.Item href="/staff">Staff</NavDropdown.Item>
+            <NavDropdown.Item href="/Stat">Stat</NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item href="#action9">Feedbacks&Comments</NavDropdown.Item>
+            <NavDropdown.Item href="/feedback&comments">Feedbacks&Comments</NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Explore" id="navbarScrollingDropdown">
-            <NavDropdown.Item href="#action10">Images</NavDropdown.Item>
+            <NavDropdown.Item href="/gallery">Images</NavDropdown.Item>
             <NavDropdown.Item href="#action11">Wallpapers</NavDropdown.Item>
             <NavDropdown.Item href="#action11">Backgrounds</NavDropdown.Item>
             <NavDropdown.Divider />
