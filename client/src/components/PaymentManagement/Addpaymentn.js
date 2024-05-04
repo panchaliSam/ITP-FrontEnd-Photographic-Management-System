@@ -1,7 +1,8 @@
+// AddPaymentForm.js
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../../styles/PaymentManagement/AddPaymentForm.css'; 
-
 
 const AddPaymentForm = () => {
   const [formData, setFormData] = useState({
@@ -59,19 +60,15 @@ const AddPaymentForm = () => {
 
 
   return (
-    <div className="outer-container">
-      <div className="form-container">
-        <div className="left-side-image">
+    <div className="add-payment-outer-container">
+      <div className="add-payment-form-container">
+        <div className="add-payment-left-side-image">
           <img src="https://img.freepik.com/free-vector/concept-credit-card-payment-landing-page_52683-24923.jpg?t=st=1713593684~exp=1713597284~hmac=f595e1fb1d2891a487ada302c017ff0316d94c0f9ba23a954114a57d2267dcaf&w=740" alt="Left Side Image" />
         </div>
-        <div className="form-wrapper">
+        <div className="add-payment-form-wrapper">
           <h2 > Add payment </h2>
           
           <form onSubmit={handleSubmit}>
-          <div>
-              <label>pin_No:</label>
-              <input type="text" name="pin_No" value={formData.pin_No} onChange={handleChange} />
-            </div>
             <div>
               <label>User ID:</label>
               <input type="text" name="UserID" value={formData.UserID} onChange={handleChange} />

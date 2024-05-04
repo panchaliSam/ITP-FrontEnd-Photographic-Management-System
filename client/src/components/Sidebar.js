@@ -77,7 +77,7 @@ const Sidebar = () => {
         <FontAwesomeIcon icon={faPhotoFilm} style={{ marginRight: '5px' }} />
         Albums
       </Link>
-      <Link to="/paymentHistory">
+      <Link to={`/userAccount/${userId}/myEvents/${eventId}/payment`}>
         <FontAwesomeIcon icon={faCreditCard} style={{ color: "#ffffff", marginRight: '5px' }} />
         Payment
       </Link>

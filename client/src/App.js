@@ -67,6 +67,8 @@ import UpdateTaskInfo from './components/StaffManagement/updateTasks';
 import ManagePayment from './components/PaymentManagement/Deletepayment'
 import ManagePackage from './components/PaymentManagement/Editpackage'
 import ViewPackage from './components/PaymentManagement/Viewpackages'
+// import AddPayment from './components/PaymentManagement/Addpayment'
+import AddPaymentn from './components/PaymentManagement/Addpaymentn'
 
 function App() {
   return (
@@ -155,7 +157,6 @@ function App() {
           <Route
             path='/userAccount/:userId/myEvents/:eventId/viewAlbum'
             element={<>
-              {/* <SideBar/> */}
               <ViewAlbm/>
               {/* <Album /> */}
               <br />
@@ -166,6 +167,15 @@ function App() {
             element={<>
               <SideBar/> 
               <SamplePhotos/>
+              <br />
+            </>}
+          />          
+          <Route
+            path='/userAccount/:userId/myEvents/:eventId/payment'
+            element={<>
+              <SideBar/> 
+              {/* <AddPayment/> */}
+              <AddPaymentn/>
               <br />
             </>}
           />
