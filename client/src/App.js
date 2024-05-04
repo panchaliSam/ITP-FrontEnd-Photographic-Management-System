@@ -13,6 +13,9 @@ import UserAccountCreate from './pages/UserManagement/userSignup'
 import AdminLogin from './pages/UserManagement/adminLogin'
 import AdminDashboard from './pages/UserManagement/adminDashboard'
 import UserAccountUpdate from './pages/UserManagement/userAccountUpdate'
+import ManageUsers from './pages/UserManagement/manageUsers'
+import AddStaff from './pages/UserManagement/addStaff'
+import AdminViewStaff from './pages/UserManagement/adminViewStaff'
 
 //Event Management - Import Pages
 import EventPhotos from './pages/EventManagement/selectPhotosAlbum';
@@ -226,12 +229,37 @@ function App() {
               <br />
             </>}
           /> 
-
+          {/* Event Management Manage Albums */}
           <Route
             path='/adminLogin/adminDashboard/manageSystem/manageAlbums'
             element={<>
               <AdminAccountSideBar />
               <AllAlbums />
+              <br />
+            </>}
+          />
+          {/* User Management Manage Users */}
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageUsers'
+            element={<>
+              <AdminAccountSideBar />
+              <ManageUsers />
+              <br />
+            </>}
+          />
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageUsers/addStaff'
+            element={<>
+              <AdminAccountSideBar />
+              <AddStaff />
+              <br />
+            </>}
+          />          
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageUsers/adminViewStaff/:staffId'
+            element={<>
+              <AdminAccountSideBar />
+              <AdminViewStaff />
               <br />
             </>}
           />
