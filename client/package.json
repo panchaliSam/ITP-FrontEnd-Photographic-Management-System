@@ -14,11 +14,16 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
+    "emailjs-com": "^3.2.0",
     "mdb-react-ui-kit": "^7.2.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
     "react-icons": "^5.2.0",
+<<<<<<< HEAD
+=======
+    "react-masonry-css": "^1.0.16",
+>>>>>>> 5f6b56c2b89e11db7ff29c05db5c6ac1b42ee1c7
     "react-router-dom": "^6.22.3",
     "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"

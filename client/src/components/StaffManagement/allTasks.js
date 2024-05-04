@@ -58,7 +58,7 @@ const Task = () => {
                             <td>{task.Time}</td>
                             <td className="actions">
                                  <button className="edit-button">
-                                    <Link to={`/updateTask/${task.TaskId}`} className="button-link">Update</Link>
+                                    <Link to={`/adminLogin/adminDashboard/manageSystem/updateTask/${task.TaskId}`} className="button-link">Update</Link>
                                 </button>
                                 <button className="delete-button" onClick={() => handleDelete(task._id)}>Delete</button>
                             </td>

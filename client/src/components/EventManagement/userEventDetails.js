@@ -24,8 +24,8 @@ const CustomerDetails = () => {
     }, [eventId]);
 
     return (
-        <div className="customerDetails">
-            <h2>Customer Details</h2>
+        <div className="customerDetails" style={{ marginLeft: '300px' }}>
+            <h2><center>Customer Details</center></h2><br></br>
             <div className="customerInfoCard">
                 <p>Customer Name: {customerData.userName}</p>
                 <p>Event Name: {customerData.eventName}</p>
