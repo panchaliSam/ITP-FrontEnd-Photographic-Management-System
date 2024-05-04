@@ -130,14 +130,7 @@ const UserDetailsPage = () => {
                     </div>
 
                 </div>
-                <div className="col">
-                    <img
-                        src={image}
-                        alt="Profile Image"
-                        className="rounded-circle"
-                        style={{ top: 10, right: 10, width: 200, height: 200, borderRadius: '50%' }}
-                    />
-                </div>
+            
             </div>
         </div>
 

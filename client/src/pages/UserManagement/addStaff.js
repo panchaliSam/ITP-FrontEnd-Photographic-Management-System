@@ -150,7 +150,7 @@ const StaffRegistration = () => {
                 
                 {/* Image Section */}
                 <div className="col-lg-5 d-flex justify-content-center align-items-center">
-                    <img src={staffRegistrationImage} alt="Staff Registration" style={{ width: '100%',marginLeft:'50%', height: 'auto' }} />
+                    <img src={staffRegistrationImage} alt="Staff Registration" style={{ width: '125%',marginLeft:'50%', height: 'auto' }} />
                 </div>
             </div>
         </div>
