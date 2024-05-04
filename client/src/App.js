@@ -5,6 +5,8 @@ import Footer from './components/Footer';
 import HomeGallery from './components/homePageGallery';
 import HomePageCard from './components/homePageCard';
 import SideBar from './components/Sidebar'
+import AboutUs from './components/aboutus'
+import ContactUs from './components/contactus'
 
 //User Management - Import Pages
 import UserAccountSideBar from './pages/UserManagement/userSideBar'
@@ -84,6 +86,18 @@ function App() {
               <HomeGallery />
               <br />
               <HomePageCard />
+            </>}
+          />
+          <Route
+            path='/aboutUs'
+            element={<>
+              <AboutUs />
+            </>}
+          />
+          <Route
+            path='/contactUs'
+            element={<>
+              <ContactUs />
             </>}
           />
           <Route
