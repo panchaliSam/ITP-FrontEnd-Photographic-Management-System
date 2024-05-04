@@ -68,7 +68,7 @@ const Sidebar = () => {
         <FontAwesomeIcon icon={faImage} style={{ color: "#ffffff", marginRight: '5px' }} />
         Photos
       </Link>
-      <Link to="/viewVideos">
+      <Link to={`/userAccount/${userId}/myEvents/${eventId}/viewAlbum/videoAlbum`}>
         <FontAwesomeIcon icon={faVideo} style={{ color: "#ffffff", marginRight: '5px' }} />
         Videos
       </Link>

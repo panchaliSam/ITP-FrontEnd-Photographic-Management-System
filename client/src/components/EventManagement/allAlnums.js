@@ -62,7 +62,7 @@ const AllAlbums = () => {
     }, [showPopup]);
 
     return (
-        <div className="allAlbums">
+        <div className="allAlbums" style={{ marginLeft: '300px' }}>
             {error && <p className="error">{error}</p>}
             {showPopup && <p className="popup">Deleted successfully!</p>}
             <table>
@@ -86,10 +86,10 @@ const AllAlbums = () => {
                             <td>{album.staffName}</td>
                             <td className="actions">
                                 <button className="view-button" onClick={() => handleView(album)}>
-                                    <Link to={`/customerDetails/${album.eventId}`} className="button-link">View</Link>
+                                    <Link to={`/adminLogin/adminDashboard/manageSystem/manageAlbums/customerDetails/${album.eventId}`} className="button-link">View</Link>
                                 </button>
                                 <button className="edit-button" onClick={() => handleEdit(album.albumId)}>
-                                <Link to={`/editAlbum/${album.albumId}`} className="button-link">Edit</Link>
+                                <Link to={`/adminLogin/adminDashboard/manageSystem/manageAlbums/editAlbum/${album.albumId}`} className="button-link">Edit</Link>
                                 </button>
                                 <button className="delete-button" onClick={() => handleDelete(album.albumId)}>Delete</button>
                             </td>
@@ -104,4 +104,3 @@ const AllAlbums = () => {
 };
 
 export default AllAlbums;
-
