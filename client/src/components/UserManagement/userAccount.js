@@ -27,18 +27,16 @@ const AccountDetailsPage = () => {
                 console.error('Error fetching user data:', error);
             });
     }, [userId]); // Dependency array with userId
-
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Make API call to update user data
-        axios.post('api/endpoint-to-update-user-data', userData)
+    const handleDelete = () => {
+        axios.delete(`/api/regUserTask/users/${userId}`)
             .then(response => {
-                console.log('User data updated successfully:', response.data);
-                // You can show a success message or redirect the user after successful update
+                console.log('User deleted successfully:', response.data);
+                window.location.href = `/`; // Redirect to the specified URL after successful update
+
             })
             .catch(error => {
-                console.error('Error updating user data:', error);
+                console.error('Error deleting user:', error);
+                // Handle error and display a message to the user
             });
     };
 
@@ -46,7 +44,7 @@ const AccountDetailsPage = () => {
     return (
         <div style={{ marginLeft: '200px' }}>
             <Container>
-                <Form onSubmit={handleSubmit}>
+                <Form>
                     <Form.Group controlId="username" className="mb-3">
                         <Form.Label>Full Name</Form.Label>
                         <Form.Control
@@ -78,22 +76,23 @@ const AccountDetailsPage = () => {
 
                         />
                     </Form.Group>
-                    <Form.Group controlId="contact" className="mb-3">
-                        <Form.Label>Contact</Form.Label>
-                        <Form.Control
-                            type="text"
-                            name="contact"
-                            value={userData.contact}
-                            disabled
 
-                        />
-                    </Form.Group>
                     <Form.Group controlId="dateOfBirth" className="mb-3">
                         <Form.Label>Date of Birth</Form.Label>
                         <Form.Control
                             type="text"
                             name="dateOfBirth"
                             value={userData.dateOfBirth}
+                            disabled
+
+                        />
+                    </Form.Group>
+                    <Form.Group controlId="contact" className="mb-3">
+                        <Form.Label>Contact</Form.Label>
+                        <Form.Control
+                            type="text"
+                            name="contact"
+                            value={userData.contact}
                             disabled
 
                         />
@@ -108,9 +107,9 @@ const AccountDetailsPage = () => {
                         />
                     </Form.Group>
                     <Link to={`/userAccount/${userId}/userAccountUpdate`}>
-                        <Button variant="primary" style={{ marginRight: '10px' }}>Update</Button>
+                        <Button variant="outline-dark" style={{ marginRight: '10px' }}>Edit</Button>
                     </Link>
-                    <Button variant="danger">Delete</Button>
+                    <Button variant="danger" onClick={handleDelete}>Delete</Button>
 
 
                 </Form>
