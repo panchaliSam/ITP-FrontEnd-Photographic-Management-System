@@ -52,6 +52,8 @@ import Ratings from './pages/FeddbackReviewManagement/ratings'
 import Progress from './pages/FeddbackReviewManagement/progressPage'
 import UpdateRatings from './pages/FeddbackReviewManagement/updatePage'
 
+//Content Management Systme - Import Pages
+
 //User Management - Import Components
 import UserLoginPage from './components/UserManagement/userLogin';
 import AdminAccountSideBar from './components/UserManagement/adminAccountSideBar';
