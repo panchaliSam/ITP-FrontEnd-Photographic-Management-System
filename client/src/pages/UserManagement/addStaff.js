@@ -51,7 +51,7 @@ const StaffRegistration = () => {
     };
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid" style={{ marginLeft: '-200px' }} >
             <div className="row">
                 <div className="col-lg-3">
                     <AdminAccountSideBar />

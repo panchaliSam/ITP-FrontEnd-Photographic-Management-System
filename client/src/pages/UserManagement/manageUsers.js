@@ -61,14 +61,14 @@ const AdminDashboard = () => {
     };
 
     const handleAddStaff = () => {
-        navigate('/adminLogin/adminDashboard/addStaff'); 
+        navigate('/adminLogin/adminDashboard/manageSystem/manageUsers/addStaff'); 
     };
 
     const handleViewStaff = async (staffId) => {
         try {
             const response = await fetch(`/api/adminTask/admin/${staffId}`);
             if (response.ok) {
-                navigate(`/adminLogin/adminDashboard/adminViewStaff/${staffId}`); 
+                navigate(`/adminLogin/adminDashboard/manageSystem/manageUsers/adminViewStaff/${staffId}`); 
             } else if (response.status === 404) {
                 console.error('Staff details not found');
             } else {
@@ -82,7 +82,7 @@ const AdminDashboard = () => {
         try {
             const response = await fetch(`/api/regUserTask/users/${userId}`); 
             if (response.ok) {
-                navigate(`/adminLogin/adminDashboard/adminViewUser/${userId}`);
+                navigate(`/adminLogin/adminDashboard/manageSystem/manageUsers/adminViewUser/${userId}`);
 
             } else if (response.status === 404) {
                 console.error('User details not found');
