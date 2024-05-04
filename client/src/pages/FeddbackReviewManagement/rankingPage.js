@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Button, Form, Dropdown, ListGroup } from 'react-bootstrap';
+import { Card, Button, Form, Dropdown, ListGroup, Col, Row } from 'react-bootstrap';
 import axios from 'axios';
+import { Route } from 'react-router-dom';
 
 const RankingPage = () => {
   const [rankings, setRankings] = useState([]);
@@ -59,6 +60,9 @@ const RankingPage = () => {
     return nameMatch && roleMatch;
   });
 
+  // Sort rankings by average rating in descending order
+  filteredRankings.sort((a, b) => b.AverageRating - a.AverageRating);
+
   return (
     <div className="container">
         <h1 className="mt-4 mb-4" style={{textAlign:'center', }}><strong>Stars behind the service</strong></h1>
@@ -78,7 +82,7 @@ const RankingPage = () => {
         </Form.Group>
         <Form.Group controlId="searchByRole" className="mb-4 d-flex align-items-center mr-3" style={{ width: '100px', marginLeft:'500px' }}>
           <Dropdown>
-            <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+            <Dropdown.Toggle variant="secondary" id="dropdown-basic" >
               {searchRole || 'Select Role'}
             </Dropdown.Toggle>
             <Dropdown.Menu>
@@ -95,8 +99,10 @@ const RankingPage = () => {
       </div>
       <div>
         {filteredRankings.map((ranking, index) => (
-          <Card key={index} className="mb-4" style={{marginLeft:'10px', width:'400px'}}>
+          <Card key={index} className="mb-4" style={{marginLeft:'10px', width:'500px'}}>
             <Card.Body>
+            <Row>
+            <Col>
               <Card.Title>{ranking.name}</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">{ranking.role}</Card.Subtitle>
               <Card.Text>
@@ -106,6 +112,15 @@ const RankingPage = () => {
                {ranking.AverageRating.toFixed(2)}
                </div>
               </Card.Text>
+              </Col>
+              <Col>
+              <Card.Text >
+              <div style={{ backgroundColor: '#BD1F32', borderRadius: '10px', textAlign: 'center', color: 'white', padding: '4px 8px', marginTop:'8px',marginBottom: '8px', width:'200px' }}>
+                {"Ranking Number " + (index + 1)}
+                </div>
+                </Card.Text>
+                </Col>
+            </Row>
             </Card.Body>
           </Card>
         ))}
