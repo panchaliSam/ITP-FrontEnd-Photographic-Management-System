@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Button, Form, Dropdown, ListGroup, Col, Row } from 'react-bootstrap';
+import { Card, Button, Form, Dropdown, Col, Row } from 'react-bootstrap';
 import axios from 'axios';
-import { Route } from 'react-router-dom';
+
 
 const RankingPage = () => {
   const [rankings, setRankings] = useState([]);
