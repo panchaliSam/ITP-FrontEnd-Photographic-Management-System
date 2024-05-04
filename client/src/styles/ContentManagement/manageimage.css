@@ -1,0 +1,37 @@
+.image-card-wrapper {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  opacity: 0; /* Initially hide overlay */
+  transition: opacity 0.3s; /* Smooth transition for overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.image-card-wrapper:hover .overlay {
+  opacity: 1; /* Show overlay on hover */
+}
+
+.details,
+.buttons {
+  display: none;
+}
+
+.overlay:hover .details,
+.overlay:hover .buttons {
+  display: block; /* Show details and buttons on overlay hover */
+}
+
+.buttons button {
+  margin: 5px;
+}
