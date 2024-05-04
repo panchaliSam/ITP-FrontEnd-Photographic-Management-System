@@ -39,6 +39,17 @@ function Footer() {
             </a>
             <a href='#' className='social-icon'>
               <FaYoutube />
+<<<<<<< HEAD
+           </a> */}
+           <h4>Subscribe</h4>
+           <p>Subscribe to stay tuned with Vidura de silva photography</p>
+           <div className='footer-content'>
+            <div className='input-button-container'>
+              <input type="text" placeholder='Enter your email Address'/>
+            </div>
+            <button className='send-message-button'>Subscribe</button>
+          </div>
+=======
             </a> */}
             <h4>Contact Us</h4>
             <p>Subscribe to stay tuned with Vidura de silva photography</p>
@@ -48,6 +59,7 @@ function Footer() {
               </div>
               <button className='send-message-button'>Subscribe</button>
             </div>
+>>>>>>> 5f6b56c2b89e11db7ff29c05db5c6ac1b42ee1c7
           </div>
         </div>
       </div>
