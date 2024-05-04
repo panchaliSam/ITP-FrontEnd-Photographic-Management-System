@@ -1,28 +1,45 @@
 .event-details-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    margin-left: 200px; /* Add margin-left */
-    background-color: #f9f9f9;
-    max-width: 500px; /* Set maximum width */
-    width: 100%; /* Ensure card fills available width */
-    box-sizing: border-box; /* Include padding and border in width calculation */
-  }
-  
-  .event-detail {
-    margin: 5px 0;
-  }
-  
-  .view-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .view-button:hover {
-    background-color: #0056b3;
-  }
-  
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-left: 200px; /* Add margin-left */
+  background-color: #f9f9f9;
+  max-width: 700px; /* Set maximum width */
+  width: 100%; /* Ensure card fills available width */
+  box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+.event-detail {
+  margin: 5px 0;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between; /* Add space between buttons */
+  margin-top: 10px; /* Adjust spacing between button group and other elements */
+}
+
+.view-button {
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px; /* Add margin between buttons */
+}
+
+.view-button:last-child {
+  margin-right: 0; /* Remove margin from the last button */
+}
+
+.view-button:hover {
+  background-color: #0056b3;
+}
+
+.view-button:nth-child(2) {
+  background-color: #ffc107; /* Yellow background for "Add Ratings" button */
+}
+
+.view-button:nth-child(2):hover {
+  background-color: #e0a800; /* Darker shade of yellow on hover */
+}

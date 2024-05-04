@@ -136,19 +136,19 @@ function Reservation() {
                     {reservations.map(reservation => (
                         <tr key={reservation._id}>
                             <td>{reservation.reservationId}</td>
-                            <td>{reservation.eventType}</td>
                             <td>{reservation.eventName}</td>
-                            <td>{reservation.eventLocation}</td>
+                            <td>{reservation.eventType}</td>
                             <td>{reservation.eventDate}</td>
+                            <td>{reservation.eventLocation}</td>
                             <td>{reservation.startTime}</td>
                             <td>{reservation.duration}</td>
                             <td>{reservation.guestCount}</td>
                             <td>{reservation.photographer}</td>
                             <td>{reservation.specialRequest}</td>
                             <td className="actions">
-                                <button className="view-button" onClick={(e) => handleViewDetails(e, reservation._id)}>
+                                {/* <button className="view-button" onClick={(e) => handleViewDetails(e, reservation._id)}>
                                     <Link to={`/Reservation/${reservation._id}`} className="button-link">View</Link>
-                                </button>
+                                </button> */}
                                 <button className="edit-button" onClick={(e) => handleEdit(reservation.reservationId, e)}>
                                     <Link to={`/editReservation/${reservation.reservationId}`} className="button-link">Edit</Link>
                                 </button>

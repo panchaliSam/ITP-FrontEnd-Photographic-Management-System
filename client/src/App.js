@@ -7,9 +7,12 @@ import HomePageCard from './components/homePageCard';
 import SideBar from './components/Sidebar'
 
 //User Management - Import Pages
+import UserAccountSideBar from './pages/UserManagement/userSideBar'
 import UserAccountPage from './pages/UserManagement/userAccount'
 import UserAccountCreate from './pages/UserManagement/userSignup'
+import AdminLogin from './pages/UserManagement/adminLogin'
 import AdminDashboard from './pages/UserManagement/adminDashboard'
+import UserAccountUpdate from './pages/UserManagement/userAccountUpdate'
 
 //Event Management - Import Pages
 import EventPhotos from './pages/EventManagement/selectPhotosAlbum';
@@ -23,6 +26,7 @@ import SamplePhotos from './pages/EventManagement/samplePhotos'
 import UserEventCount from './pages/EventManagement/adminNotification'
 import StaffViewAlbums from './pages/EventManagement/staffMyWork'
 import VideoAlbumPage from './pages/EventManagement/videoAlbum'
+import UserEventStat  from './pages/EventManagement/userEventCountPage'
 
 //Staff Management - Import Pages
 import Task from './pages/StaffManagement/getTasks';
@@ -34,8 +38,15 @@ import ReservationForm from './pages/EventReservationManagement/reservationForm'
 // import ReservationDetails from './pages/EventReservationManagement/reservationDetailsPage';
 // import EditReservation from './pages/EventReservationManagement/EditReservationPage';
 
+//Feedback Management System - Import Pages
+import Rankings from './pages/FeddbackReviewManagement/rankingPage'
+import Ratings from './pages/FeddbackReviewManagement/ratings'
+import Progress from './pages/FeddbackReviewManagement/progressPage'
+
 //User Management - Import Components
 import UserLoginPage from './components/UserManagement/userLogin';
+import AdminAccountSideBar from './components/UserManagement/adminAccountSideBar';
+import ManageButtons from './components/UserManagement/adminMangeButtons'
 
 //Event Management - Import Components
 import CustomerDetails from './components/EventManagement/userEventDetails'; 
@@ -66,15 +77,31 @@ function App() {
           <Route
             path='/signup'
             element={<UserAccountCreate />}
+          />          
+          <Route
+            path='/feedback&comments'
+            element={<Rankings />}
           />
           <Route
             path='/userAccount/:userId'
-            element={<UserAccountPage />}
-          />
+            element={<>
+              <UserAccountSideBar/>
+              <UserAccountPage />
+              <br />
+            </>}
+          /> 
+          <Route
+            path='/userAccount/:userId/userAccountUpdate'
+            element={<>
+              <UserAccountSideBar/>
+              <UserAccountUpdate />
+              <br />
+            </>}
+          />            
           <Route
             path='/userAccount/:userId/myEvents'
             element={<>
-              <UserAccountPage/>
+              <UserAccountSideBar/>
               <MyEvents />
               <br />
             </>}
@@ -119,8 +146,25 @@ function App() {
             </>}
           />
           <Route
-            path='/userAccount/:userId/myEvents/:eventId/viewAlbum/VideoAlbumPage'
+            path='/userAccount/:userId/myEvents/:eventId/viewAlbum/ratings'
             element={<>
+              <SideBar/> 
+              <Ratings/>
+              <br />
+            </>}
+          />
+          <Route
+            path='/userAccount/:userId/myEvents/:eventId/viewAlbum/viewMyRatings'
+            element={<>
+              <SideBar/> 
+              <Progress/>
+              <br />
+            </>}
+          />
+          <Route
+            path='/userAccount/:userId/myEvents/:eventId/viewAlbum/videoAlbum'
+            element={<>
+              <SideBar/> 
               <VideoAlbumPage/>
               <br />
             </>}
@@ -139,6 +183,15 @@ function App() {
               <br />
             </>}
           />
+
+          {/* admin */}
+          <Route
+            path='/adminLogin'
+            element={<>
+              <AdminLogin />
+              <br />
+            </>}
+          />
           <Route
             path='/adminLogin/adminDashboard'
             element={<>
@@ -149,11 +202,23 @@ function App() {
           <Route
             path='/adminLogin/adminDashboard/manageSystem'
             element={<>
-              <AddTask />
-              <Task/>
+              <AdminAccountSideBar />
+              <ManageButtons/>
               <br />
             </>}
-          />           
+          />     
+
+          {/* manageButtons */}
+
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageTasks'
+            element={<>
+              <AdminAccountSideBar />
+                <AddTask />
+                <Task/>
+              <br />
+            </>}
+          />    
           <Route
             path='/adminLogin/adminDashboard/manageSystem/updateTask/:TaskId'
             element={<>
@@ -161,9 +226,11 @@ function App() {
               <br />
             </>}
           /> 
+
           <Route
-            path='/manageAlbums'
+            path='/adminLogin/adminDashboard/manageSystem/manageAlbums'
             element={<>
+              <AdminAccountSideBar />
               <AllAlbums />
               <br />
             </>}
@@ -171,19 +238,38 @@ function App() {
           <Route
             path='/adminNotification'
             element={<>
+              <AdminAccountSideBar />
               <UserEventCount />
               <br />
             </>}
           />
           <Route
-            path='/manageAlbums/addAlbum'
+            path='/adminLogin/adminDashboard/manageSystem/manageAlbums/manageAlbums/addAlbum'
             element={<>
+              <AdminAccountSideBar />
               <AddAlbum />
               <br />
             </>}
           />
-          <Route path='/customerDetails/:eventId' element={<CustomerDetails />} />
-          <Route path='/editAlbum/:photoAlbumId' element={<EditPhotoAlbum />} />
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageAlbums/customerDetails/:eventId'
+            element={<>
+              <AdminAccountSideBar />
+              <CustomerDetails />
+              <br />
+            </>}
+          />
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageAlbums/editAlbum/:photoAlbumId'
+            element={<>
+              <AdminAccountSideBar />
+              <EditPhotoAlbum />
+              <br />
+            </>}
+          />
+
+          
+          {/* Staff */}
 
           <Route
             path='/staff/myWork'
@@ -191,8 +277,14 @@ function App() {
               <StaffViewAlbums />
               <br />
             </>}
+          />          
+          <Route
+            path='/staff/userEventStat'
+            element={<>
+              <UserEventStat />
+              <br />
+            </>}
           />
-
         </Routes>
         <br />
         <Footer />
