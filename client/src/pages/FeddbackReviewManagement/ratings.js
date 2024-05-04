@@ -1,5 +1,5 @@
 import React from "react";
-import RatingsCards from '../../components/FeedbackReviewManagement/ratingCard'
+import RatingsCards from '../../components/FeddbackReviewManagement/ratingCard'
 
 const RatingsCard = () =>{
     return(

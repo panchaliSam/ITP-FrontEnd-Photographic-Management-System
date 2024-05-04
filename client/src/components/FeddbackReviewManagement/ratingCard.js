@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Form, Button, Row, Col, Dropdown } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
 const StaffRatingForm = () => {
   const navigate = useNavigate();
+  const { userId } = useParams(); // Extracting userId from URL
 
   const [searchName, setSearchName] = useState('');
   const [searchRole, setSearchRole] = useState('');
@@ -14,7 +15,6 @@ const StaffRatingForm = () => {
   const [progressData, setProgressData] = useState([]);
   const [staffName, setStaffName] = useState('');
   const [staffRole, setStaffRole] = useState('');
-  const [userId, setUserId] = useState('');
 
   useEffect(() => {
     const fetchRatingData = async () => {
@@ -24,9 +24,9 @@ const StaffRatingForm = () => {
 
         const updatedFormData = ratingData.map(item => ({
           RatingID: '',
-          UserID: '',
+          UserID: userId, // Set UserID from useParams
           StaffID: item.staffId,
-          JobTitle: item.role, // Fill Job Title with role
+          JobTitle: item.role,
           Description: '',
           NoOfStars: '',
           ...item
@@ -42,7 +42,7 @@ const StaffRatingForm = () => {
     };
 
     fetchRatingData();
-  }, []);
+  }, [userId]); // Fetch data when userId changes
 
   const handleNameSearchChange = (e) => {
     setSearchName(e.target.value);
@@ -80,7 +80,7 @@ const StaffRatingForm = () => {
           toast.success('Rating submitted successfully');
           console.log('Rating submitted successfully');
           const updatedFormData = [...formData];
-          updatedFormData[index] = { ...updatedFormData[index], RatingID: '', UserID: '', StaffID: '', JobTitle: '', Description: '', NoOfStars: '' };
+          updatedFormData[index] = { ...updatedFormData[index], RatingID: '', UserID: userId, StaffID: '', JobTitle: '', Description: '', NoOfStars: '' };
           setFormData(updatedFormData);
           alert("Submitted successfully")
 
@@ -108,7 +108,7 @@ const StaffRatingForm = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container" style={{ marginLeft: '220px'}}>
       <h1 className="mt-4 mb-4" style={{textAlign:'center', }}><strong>Rate Our Staff</strong></h1>
       <h4 className="mt-4 mb-4" style={{textAlign:'center'}}>“Your rating shapes our journey towards excellence.</h4>
       <br/>
@@ -175,10 +175,11 @@ const StaffRatingForm = () => {
                         <Form.Group controlId="UserID">
                           <Form.Label>User ID</Form.Label>
                           <Form.Control
+                            disabled
                             type="text"
                             name="UserID"
-                            value={formData[index].UserID}
-                            onChange={(e) => handleInputChange(e, index)}
+                            value={userId}
+                            readOnly // Make it read-only to prevent user modification
                           />
                         </Form.Group>
                       </Col>

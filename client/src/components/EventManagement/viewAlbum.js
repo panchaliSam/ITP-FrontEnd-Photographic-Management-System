@@ -33,9 +33,14 @@ const EventDetails = () => {
             <Card.Title>Event Name: {eventDetails.eventName}</Card.Title>
             <Card.Text>Event Type: {eventDetails.eventType}</Card.Text>
             <Card.Text>Staff Name: {eventDetails.staffName}</Card.Text>
-            <Link to={`/userAccount/${userId}/myEvents/${eventId}/viewAlbum/samplePhotos`}>
-              <Button variant="primary" className="view-button">View Sample Photo</Button>
-            </Link>
+            <div className="button-group">
+              <Link to={`/userAccount/${userId}/myEvents/${eventId}/viewAlbum/samplePhotos`}>
+                <Button variant="primary" className="view-button">View Sample Photo</Button>
+              </Link>
+              <Link to={`/userAccount/${userId}/myEvents/${eventId}/viewAlbum/ratings`}>
+                <Button variant="warning" className="view-button">Add Ratings</Button>
+              </Link>
+            </div>
           </Card.Body>
         </Card>
       ) : (
@@ -46,4 +51,3 @@ const EventDetails = () => {
 };
 
 export default EventDetails;
-

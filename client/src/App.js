@@ -9,6 +9,7 @@ import SideBar from './components/Sidebar'
 //User Management - Import Pages
 import UserAccountPage from './pages/UserManagement/userAccount'
 import UserAccountCreate from './pages/UserManagement/userSignup'
+import AdminLogin from './pages/UserManagement/adminLogin'
 import AdminDashboard from './pages/UserManagement/adminDashboard'
 
 //Event Management - Import Pages
@@ -33,6 +34,10 @@ import ReservationForm from './pages/EventReservationManagement/reservationForm'
 // import AllReservations from './pages/EventReservationManagement/allReservations';
 // import ReservationDetails from './pages/EventReservationManagement/reservationDetailsPage';
 // import EditReservation from './pages/EventReservationManagement/EditReservationPage';
+
+//Feedback Management System - Import Pages
+import Rankings from './pages/FeddbackReviewManagement/rankingPage'
+import Ratings from './pages/FeddbackReviewManagement/ratings'
 
 //User Management - Import Components
 import UserLoginPage from './components/UserManagement/userLogin';
@@ -68,6 +73,10 @@ function App() {
           <Route
             path='/signup'
             element={<UserAccountCreate />}
+          />          
+          <Route
+            path='/feedback&comments'
+            element={<Rankings />}
           />
           <Route
             path='/userAccount/:userId'
@@ -121,6 +130,14 @@ function App() {
             </>}
           />
           <Route
+            path='/userAccount/:userId/myEvents/:eventId/viewAlbum/ratings'
+            element={<>
+              <SideBar/> 
+              <Ratings/>
+              <br />
+            </>}
+          />
+          <Route
             path='/userAccount/:userId/myEvents/:eventId/viewAlbum/videoAlbum'
             element={<>
               <SideBar/> 
@@ -144,7 +161,13 @@ function App() {
           />
 
           {/* admin */}
-          
+          <Route
+            path='/adminLogin'
+            element={<>
+              <AdminLogin />
+              <br />
+            </>}
+          />
           <Route
             path='/adminLogin/adminDashboard'
             element={<>
