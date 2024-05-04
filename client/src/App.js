@@ -46,6 +46,7 @@ import ReservationForm from './pages/EventReservationManagement/reservationForm'
 import Rankings from './pages/FeddbackReviewManagement/rankingPage'
 import Ratings from './pages/FeddbackReviewManagement/ratings'
 import Progress from './pages/FeddbackReviewManagement/progressPage'
+import UpdateRatings from './pages/FeddbackReviewManagement/updatePage'
 
 //User Management - Import Components
 import UserLoginPage from './components/UserManagement/userLogin';
@@ -83,7 +84,7 @@ function App() {
             element={<UserAccountCreate />}
           />          
           <Route
-            path='/feedback&comments'
+            path='/stat'
             element={<Rankings />}
           />
           <Route
@@ -165,6 +166,13 @@ function App() {
               <br />
             </>}
           />
+          <Route
+            path='/userAccount/:userId/myEvents/:eventId/viewAlbum/viewMyRatings/update/:ratingId'
+            element={<>
+              <UpdateRatings/>
+              <br />
+            </>}
+          />          
           <Route
             path='/userAccount/:userId/myEvents/:eventId/viewAlbum/videoAlbum'
             element={<>
