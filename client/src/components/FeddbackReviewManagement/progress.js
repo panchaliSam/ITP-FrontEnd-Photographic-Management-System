@@ -1,17 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { Card, Form, Button, Row, Col } from 'react-bootstrap';
-import { useNavigate, Link } from 'react-router-dom';
+import { Card,Button, Row, Col } from 'react-bootstrap';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const ProgressComponent = () => {
   const navigate = useNavigate();
-  const [userId, setUserId] = useState('');
+  const { userId } = useParams();
   const [progressData, setProgressData] = useState([]);
-
-  const handleUserIdChange = (e) => {
-    setUserId(e.target.value);
-  };
 
   const fetchProgressData = async () => {
     try {
@@ -24,35 +19,24 @@ const ProgressComponent = () => {
   };
 
   useEffect(() => {
-    if (userId !== '') {
+    if (userId) {
       fetchProgressData();
     }
   }, [userId]);
 
-  const handleSubmit = () => {
-    fetchProgressData();
-  };
-
-  const handleDelete = (ratingId) => {
-    axios.delete(`/api/staffRating/staffRating/${ratingId}`);
-    window.location.reload();
-    alert("Deleted successfully")
-
+  const handleDelete = async (ratingId) => {
+    try {
+      await axios.delete(`/api/staffRating/staffRating/${ratingId}`);
+      // Remove the deleted item from the progressData state instead of reloading the page
+      setProgressData(prevProgressData => prevProgressData.filter(progress => progress.RatingID !== ratingId));
+      alert("Deleted successfully");
+    } catch (error) {
+      console.error('Error deleting progress:', error);
+    }
   };
 
   return (
-    <div>
-      <Form.Group controlId="userId">
-        <Form.Label >Enter User ID</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="User ID"
-          value={userId}
-          onChange={handleUserIdChange}
-          style={{ padding: '10px', backgroundColor: '#F2F2F2' }}
-        />
-      </Form.Group>
-
+    <div style={{ marginLeft: '200px' }}>
       <Row>
         {progressData.map((progress, index) => (
           <Col key={index} md={6} lg={4} className="mb-3">

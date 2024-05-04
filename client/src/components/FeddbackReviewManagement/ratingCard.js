@@ -3,10 +3,12 @@ import { Card, Form, Button, Row, Col, Dropdown } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
+
 
 const StaffRatingForm = () => {
   const navigate = useNavigate();
-  const { userId } = useParams(); // Extracting userId from URL
+  const { userId , eventId} = useParams(); // Extracting userId from URL
 
   const [searchName, setSearchName] = useState('');
   const [searchRole, setSearchRole] = useState('');
@@ -141,9 +143,12 @@ const StaffRatingForm = () => {
           </Dropdown>
         </Form.Group>
         
-        <Button variant="secondary" onClick={handleViewRatings} style={{ height: '40px', marginLeft: '20px',marginRight:'10px', backgroundColor:'black' }}>
-          View my ratings
-        </Button>
+        <Link to={`/userAccount/${userId}/myEvents/${eventId}/viewAlbum/viewMyRatings`} style={{ textDecoration: 'none' }}>
+          <Button variant="secondary" style={{ height: '40px', marginLeft: '20px', marginRight: '10px', backgroundColor: 'black' }}>
+            View My Ratings
+          </Button>
+        </Link>
+
       </div>
       <br/>
       <br/>
