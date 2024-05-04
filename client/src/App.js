@@ -19,7 +19,7 @@ import AdminViewStaff from './pages/UserManagement/adminViewStaff'
 import AdminViewUser from './pages/UserManagement/adminViewUser'
 
 //Event Management - Import Pages
-import EventPhotos from './pages/EventManagement/selectPhotosAlbum';
+// import EventPhotos from './pages/EventManagement/selectPhotosAlbum';
 // import Album from './pages/EventManagement/photoAlbum';
 import CustomeEvent from './pages/EventManagement/userEventDetails';
 import AllAlbums from './pages/EventManagement/allAlbums';
@@ -69,6 +69,8 @@ import ManagePackage from './components/PaymentManagement/Editpackage'
 import ViewPackage from './components/PaymentManagement/Viewpackages'
 // import AddPayment from './components/PaymentManagement/Addpayment'
 import AddPaymentn from './components/PaymentManagement/Addpaymentn'
+import UserAccountBtn  from './components/PaymentManagement/paymentUserAccountBtn'
+import AddCard from './components/PaymentManagement/Addcardn'
 
 function App() {
   return (
@@ -131,22 +133,23 @@ function App() {
               <MyEvents />
               <br />
             </>}
-          />          
+          />     
           <Route
-            path='/selectPhotos'
+            path='/userAccount/:userId/payments'
             element={<>
-              <SideBar/>
-              <EventPhotos />
+              <UserAccountSideBar/>
+              <UserAccountBtn />
               <br />
             </>}
           />
           <Route
-            path='/viewVideos'
+            path='/userAccount/:userId/payments/addCard'
             element={<>
-              <SideBar/>
+              <UserAccountSideBar/>
+              <AddCard />
               <br />
             </>}
-          />
+          />        
           <Route
             path='/userAccount/:userId/myEvents/addEvents'
             element={<>              
@@ -207,13 +210,6 @@ function App() {
             element={<>
               <SideBar/> 
               <VideoAlbumPage/>
-              <br />
-            </>}
-          />
-          <Route
-            path='/paymentHistory'
-            element={<>
-              <SideBar/>
               <br />
             </>}
           />
@@ -328,7 +324,7 @@ function App() {
             </>}
           />
           <Route
-            path='/adminNotification'
+            path='/adminLogin/adminDashboard/promotion'
             element={<>
               <AdminAccountSideBar />
               <UserEventCount />
