@@ -65,17 +65,6 @@ const StaffRegistration = () => {
                         {showErrorAlert && <Alert variant="danger">Error adding staff. Please try again.</Alert>}
                         <Form onSubmit={handleSubmit}>
                             <div className="form-group">
-                                <Form.Label>Staff ID</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    placeholder="Enter Staff ID"
-                                    name="staffId"
-                                    value={formData.staffId}
-                                    onChange={handleChange}
-                                    style={{ width: '600px' }}
-                                />
-                            </div>
-                            <div className="form-group">
                                 <Form.Label>Full Name</Form.Label>
                                 <Form.Control
                                     type="text"
