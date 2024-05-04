@@ -40,8 +40,8 @@ const EventDetails = () => {
               <Link to={`/userAccount/${userId}/myEvents/${eventId}/viewAlbum/ratings`}>
                 <Button variant="warning" className="view-button">Add Staff Ratings</Button>
               </Link>
-              <Link to={`/userAccount/${userId}/myEvents/${eventId}/viewAlbum/ratings`}>
-                <Button variant="warning" className="view-button">Add Staff Ratings</Button>
+              <Link to={`/userAccount/${userId}/myEvents/${eventId}/viewAlbum/feedbacks`}>
+                <Button variant="warning" className="view-button">Add Feedback</Button>
               </Link>
             </div>
           </Card.Body>
