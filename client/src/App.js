@@ -7,6 +7,7 @@ import HomePageCard from './components/homePageCard';
 import SideBar from './components/Sidebar'
 
 //User Management - Import Pages
+import UserAccountSideBar from './pages/UserManagement/userSideBar'
 import UserAccountPage from './pages/UserManagement/userAccount'
 import UserAccountCreate from './pages/UserManagement/userSignup'
 import AdminLogin from './pages/UserManagement/adminLogin'
@@ -80,12 +81,16 @@ function App() {
           />
           <Route
             path='/userAccount/:userId'
-            element={<UserAccountPage />}
-          />
+            element={<>
+              <UserAccountSideBar/>
+              <UserAccountPage />
+              <br />
+            </>}
+          />           
           <Route
             path='/userAccount/:userId/myEvents'
             element={<>
-              <UserAccountPage/>
+              <UserAccountSideBar/>
               <MyEvents />
               <br />
             </>}
