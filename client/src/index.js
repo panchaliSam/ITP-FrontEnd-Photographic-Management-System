@@ -18,6 +18,10 @@ import './styles/EventManagement/videoAlbum.css'
 //User Management System
 import './styles/UserManagement/userSideBar.css'
 import './styles/UserManagement/adminManageButtons.css'
+import './styles/UserManagement/adminDashboard.css'
+import './styles/UserManagement/adminViewStaff.css'
+import './styles/UserManagement/signup.css'
+import './styles/UserManagement/adminSideBar.css'
 
 //Event Reservation Management System
 import './styles/EventReservationManagement/reservationDetails.css'
