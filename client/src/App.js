@@ -12,6 +12,7 @@ import UserAccountPage from './pages/UserManagement/userAccount'
 import UserAccountCreate from './pages/UserManagement/userSignup'
 import AdminLogin from './pages/UserManagement/adminLogin'
 import AdminDashboard from './pages/UserManagement/adminDashboard'
+import UserAccountUpdate from './pages/UserManagement/userAccountUpdate'
 
 //Event Management - Import Pages
 import EventPhotos from './pages/EventManagement/selectPhotosAlbum';
@@ -25,6 +26,7 @@ import SamplePhotos from './pages/EventManagement/samplePhotos'
 import UserEventCount from './pages/EventManagement/adminNotification'
 import StaffViewAlbums from './pages/EventManagement/staffMyWork'
 import VideoAlbumPage from './pages/EventManagement/videoAlbum'
+import UserEventStat  from './pages/EventManagement/userEventCountPage'
 
 //Staff Management - Import Pages
 import Task from './pages/StaffManagement/getTasks';
@@ -87,7 +89,15 @@ function App() {
               <UserAccountPage />
               <br />
             </>}
-          />           
+          /> 
+          <Route
+            path='/userAccount/:userId/userAccountUpdate'
+            element={<>
+              <UserAccountSideBar/>
+              <UserAccountUpdate />
+              <br />
+            </>}
+          />            
           <Route
             path='/userAccount/:userId/myEvents'
             element={<>
@@ -267,8 +277,14 @@ function App() {
               <StaffViewAlbums />
               <br />
             </>}
+          />          
+          <Route
+            path='/staff/userEventStat'
+            element={<>
+              <UserEventStat />
+              <br />
+            </>}
           />
-
         </Routes>
         <br />
         <Footer />

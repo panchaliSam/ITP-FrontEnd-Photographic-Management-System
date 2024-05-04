@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
 import axios from 'axios'; // Assuming you use axios for API calls
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 
 const AccountDetailsPage = () => {
     const { userId } = useParams();
@@ -105,7 +107,9 @@ const AccountDetailsPage = () => {
                             disabled
                         />
                     </Form.Group>
-                    <Button variant="primary" style={{ marginRight: '10px' }}>Update</Button>
+                    <Link to={`/userAccount/${userId}/userAccountUpdate`}>
+                        <Button variant="primary" style={{ marginRight: '10px' }}>Update</Button>
+                    </Link>
                     <Button variant="danger">Delete</Button>
 
 
