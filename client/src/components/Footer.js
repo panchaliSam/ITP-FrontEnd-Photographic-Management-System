@@ -39,37 +39,45 @@ function Footer() {
             </a>
             <a href='#' className='social-icon'>
               <FaYoutube />
-            </a> */}
-            <h4>Contact Us</h4>
-            <p>Subscribe to stay tuned with Vidura de silva photography</p>
-            <div className='footer-content'>
-              <div className='input-button-container'>
-                <input type="text" placeholder='Enter your email Address'/>
-              </div>
-              <button className='send-message-button'>Subscribe</button>
+           </a> */}
+           <h4>Subscribe</h4>
+           <p>Subscribe to stay tuned with Vidura de silva photography</p>
+           <div className='footer-content'>
+            <div className='input-button-container'>
+              <input type="text" placeholder='Enter your email Address'/>
             </div>
+            <button className='send-message-button'>Subscribe</button>
+          </div>
+          <h4>Contact Us</h4>
+          <p>Subscribe to stay tuned with Vidura de silva photography</p>
+          <div className='footer-content'>
+            <div className='input-button-container'>
+              <input type="text" placeholder='Enter your email Address'/>
+            </div>
+            <button className='send-message-button'>Subscribe</button>
           </div>
         </div>
       </div>
+    </div>
 
-      <hr></hr>
+    <hr />
 
-      <div className='sb_footer-below'>
-        <div className='sb_footer-below-links'>
-          <a href="/Privacy Policy"><p>Privacy Policy</p></a>
-          <a href="/Terms of Use"><p>Terms of Use</p></a>
-          <a href="/Sales and Refunds"><p>Sales and Refunds</p></a>
-          <a href="/Legal"><p>Legal</p></a>
-          <a href="/Site Map"><p>Site Map</p></a>
-        </div>
-        <div className='sb_footer-copyright'>
-          <p>
-            @{new Date().getFullYear()} All Rights Reserved
-          </p>
-        </div>
+    <div className='sb_footer-below'>
+      <div className='sb_footer-below-links'>
+        <a href="/Privacy Policy"><p>Privacy Policy</p></a>
+        <a href="/Terms of Use"><p>Terms of Use</p></a>
+        <a href="/Sales and Refunds"><p>Sales and Refunds</p></a>
+        <a href="/Legal"><p>Legal</p></a>
+        <a href="/Site Map"><p>Site Map</p></a>
+      </div>
+      <div className='sb_footer-copyright'>
+        <p>
+          @{new Date().getFullYear()} All Rights Reserved
+        </p>
       </div>
     </div>
-  );
+  </div>
+);
 }
 
 export default Footer;
