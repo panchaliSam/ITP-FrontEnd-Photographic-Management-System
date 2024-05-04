@@ -48,14 +48,6 @@ function Footer() {
             </div>
             <button className='send-message-button'>Subscribe</button>
           </div>
-          <h4>Contact Us</h4>
-          <p>Subscribe to stay tuned with Vidura de silva photography</p>
-          <div className='footer-content'>
-            <div className='input-button-container'>
-              <input type="text" placeholder='Enter your email Address'/>
-            </div>
-            <button className='send-message-button'>Subscribe</button>
-          </div>
         </div>
       </div>
     </div>
