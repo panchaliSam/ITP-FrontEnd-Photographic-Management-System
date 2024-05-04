@@ -6,7 +6,7 @@
     const AccountDetailsPage = () => {
         const { userId } = useParams();
         const [userData, setUserData] = useState({
-            fullName: '',
+            username: '',
             email: '',
             address: '',
             contact: '',
@@ -56,7 +56,7 @@
                     <Form.Control
                         type="text"
                         name="fullName"
-                        value={userData.fullName}
+                        value={userData.username}
                         onChange={handleChange}
                         required
                     />
