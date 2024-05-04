@@ -1,3 +1,5 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Card1Image from '../images/homePage/card1.jpg';
@@ -21,7 +23,9 @@ function BasicExample() {
                 From cap and gown portraits to candid shots with friends and family, preserve 
                 the memories of this significant milestone in life.
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Link to="/viewPackages">
+              <Button variant="primary">View Package</Button>
+            </Link>
           </Card.Body>
         </Card>
       </div>
@@ -35,7 +39,9 @@ function BasicExample() {
                 Whether it's engagement sessions, anniversary portraits, or simply moments
                 of togetherness, our system helps you cherish the special bond between two people.
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Link to="/viewPackages">
+              <Button variant="primary">View Package</Button>
+            </Link>
           </Card.Body>
         </Card>
       </div>
@@ -49,7 +55,9 @@ function BasicExample() {
                 Document those precious early days of life with adorable baby portraits,
                 tender family moments, and heartwarming memories to cherish for a lifetime.
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Link to="/viewPackages">
+              <Button variant="primary">View Package</Button>
+            </Link>
           </Card.Body>
         </Card>
       </div>
@@ -64,7 +72,9 @@ function BasicExample() {
                 capture every magical moment,ensuring your special
                 day is preserved in all its beauty
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Link to="/viewPackages">
+              <Button variant="primary">View Package</Button>
+            </Link>
           </Card.Body>
         </Card>
       </div>
@@ -79,7 +89,9 @@ function BasicExample() {
                 our system helps you organize and share photos from every occasion, making
                 it easy to relive the excitement again and again
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Link to="/viewPackages">
+              <Button variant="primary">View Package</Button>
+            </Link>
           </Card.Body>
         </Card>
       </div>
@@ -88,4 +100,3 @@ function BasicExample() {
 }
 
 export default BasicExample;
-

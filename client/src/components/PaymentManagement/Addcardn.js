@@ -31,7 +31,7 @@ const AddCardForm = () => {
   }
     emailjs.sendForm('service_wdz3xxy','template_hhdv6fq',e.target,'AkzAqUAg1H4ox9vlo')
     try {
-      const response = await axios.post('http://localhost:4002/api/card/Card/add', formData);
+      const response = await axios.post('/api/card/Card/add', formData);
       console.log(' Card Payment added successfully:', response.data);
       // Optionally, you can clear the form fields after successful submission
       setFormData({

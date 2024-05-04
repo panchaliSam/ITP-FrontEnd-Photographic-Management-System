@@ -28,7 +28,7 @@ const AddCardForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:4002/api/card/card/add', formData);
+      const response = await axios.post('/api/card/card/add', formData);
       console.log('Card Payment added successfully:', response.data);
       // Optionally, you can clear the form fields after successful submission
       setFormData({

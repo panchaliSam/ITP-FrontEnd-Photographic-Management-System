@@ -22,7 +22,7 @@ const PaymentList = () => {
 
   const fetchPayments = async () => {
     try {
-      const response = await axios.get('http://localhost:4002/api/pay/payment');
+      const response = await axios.get('/api/pay/payment');
       const uniquePaymentIDs = [...new Set(response.data.map(payment => payment.paymentID))];
       const uniquePaymentList = response.data.filter(payment => uniquePaymentIDs.includes(payment.paymentID));
       setUniquePayments(uniquePaymentList);
@@ -34,7 +34,7 @@ const PaymentList = () => {
 
   const handleDelete = async (paymentID) => {
     try {
-      await axios.delete(`http://localhost:4002/api/pay/payment/${paymentID}`);
+      await axios.delete(`/api/pay/payment/${paymentID}`);
       fetchPayments(); // Refresh payments after deletion
     } catch (error) {
       console.error('Error deleting payment:', error);
@@ -48,7 +48,7 @@ const PaymentList = () => {
   };
 
   return (
-    <div>
+    <div style={{ marginLeft: '250px' }}>
       <h2>All Payments</h2>
       <div>
         <label htmlFor="searchUserId">Search by User ID:</label>

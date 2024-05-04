@@ -39,7 +39,7 @@ const AddPaymentForm = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:4001/api/pay/payment/add', formData);
+      const response = await axios.post('/api/pay/payment/add', formData);
       console.log('Payment added successfully:', response.data);
       // Optionally, you can clear the form fields after successful submission
       setFormData({
