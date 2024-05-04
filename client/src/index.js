@@ -28,6 +28,10 @@ import './styles/EventReservationManagement/reservationDetails.css'
 import './styles/EventReservationManagement/allReservations.css'
 import './styles/EventReservationManagement/ReservationForm.css'
 
+//Payment Management System
+import './styles/PaymentManagement/AddPaymentForm.css'
+import './styles/PaymentManagement/packageList.css'
+
 import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
