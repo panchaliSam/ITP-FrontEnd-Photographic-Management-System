@@ -81,7 +81,7 @@ const UpdateRating = () => {
 
     return (
         <div>   
-        <h1 style={{ textAlign: 'center'}}>Update Rating</h1>
+        <h1 style={{ textAlign: 'center', marginLeft: '200px'}}>Update Rating</h1>
 
         <Card style={{ padding: '20px' }}>
           <Card.Body>

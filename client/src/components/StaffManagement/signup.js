@@ -43,7 +43,7 @@ const SignUp = () => {
   };
 
   return (
-    <Row>
+    <Row style={{ marginLeft: '200px' }}>
       <Col md={6}>
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="formStaffId">

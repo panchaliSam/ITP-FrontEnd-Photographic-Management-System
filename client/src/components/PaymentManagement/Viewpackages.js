@@ -8,7 +8,7 @@ function PackageList() {
 
   useEffect(() => {
     // Fetch packages from backend when component mounts
-    axios.get('http://localhost:4002/api/eventPackage/package')
+    axios.get('/api/eventPackage/package')
       .then(response => {
         setPackages(response.data);
       })
@@ -19,7 +19,7 @@ function PackageList() {
 
   return (
     <>
-      <h1> Packages</h1>
+      <h1><center>Packages</center></h1>
       <br/>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', padding: '20px' }}>
         {packages.map((pkg, index) => (

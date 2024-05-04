@@ -17,7 +17,7 @@ function PackageList() {
 
   useEffect(() => {
     // Fetch packages from backend when component mounts
-    axios.get('http://localhost:4002/api/eventPackage/package')
+    axios.get('/api/eventPackage/package')
       .then(response => {
         setPackages(response.data);
       })
@@ -29,7 +29,7 @@ function PackageList() {
   const handleDelete = async (packageID) => {
     try {
       // Send delete request to backend
-      await axios.delete(`http://localhost:4002/api/eventPackage/package/${packageID}`);
+      await axios.delete(`/api/eventPackage/package/${packageID}`);
       
       // Remove the deleted package from the state
       setPackages(packages.filter(pkg => pkg.packageID !== packageID));
@@ -41,7 +41,7 @@ function PackageList() {
   const handleUpdate = async () => {
     try {
       // Send update request to backend
-      await axios.put(`http://localhost:4002/api/eventPackage/package/${updatedPackage.packageID}`, updatedPackage);
+      await axios.put(`/api/eventPackage/package/${updatedPackage.packageID}`, updatedPackage);
       
       // Update the state to reflect the changes
       setPackages(packages.map(pkg => pkg.packageID === updatedPackage.packageID ? updatedPackage : pkg));
@@ -68,7 +68,7 @@ function PackageList() {
   };
 
   return (
-    <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
+    <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px', marginLeft: '200px'}}>
       <h1 style={{ textAlign: 'center', fontSize: '24px', marginBottom: '20px' }}>Package List</h1>
       <table style={{ width: '100%', borderCollapse: 'collapse' }}>
         <thead>

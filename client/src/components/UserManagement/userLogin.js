@@ -162,7 +162,7 @@ function LoginPage() {
             <p className="small mb-5 pb-lg-3 ms-5">
               <a className="text-muted" href="#!">Forgot password?</a>
             </p>
-            <p className='ms-5'>Don't have an account? <Link to="/register" className="link-info">Register here</Link></p>
+            <p className='ms-5'>Don't have an account? <Link to="/registert" className="link-info">Register here</Link></p>
           </div>
         </MDBCol>
 
