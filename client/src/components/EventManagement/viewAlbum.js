@@ -38,7 +38,10 @@ const EventDetails = () => {
                 <Button variant="primary" className="view-button">View Sample Photo</Button>
               </Link>
               <Link to={`/userAccount/${userId}/myEvents/${eventId}/viewAlbum/ratings`}>
-                <Button variant="warning" className="view-button">Add Ratings</Button>
+                <Button variant="warning" className="view-button">Add Staff Ratings</Button>
+              </Link>
+              <Link to={`/userAccount/${userId}/myEvents/${eventId}/viewAlbum/ratings`}>
+                <Button variant="warning" className="view-button">Add Staff Ratings</Button>
               </Link>
             </div>
           </Card.Body>
