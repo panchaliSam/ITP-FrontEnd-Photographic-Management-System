@@ -96,7 +96,7 @@ const StaffRegistration = () => {
         window.location.href = '/adminLogin/adminDashboard/manageSystem/manageUsers';
     };
     return (
-        <div className="container-fluid">
+        <div className="container-fluid" style={{ marginLeft: '-500px' }}>
             <div className="row">
                 <div className="col-lg-3">
                     <AdminAccountSideBar />
