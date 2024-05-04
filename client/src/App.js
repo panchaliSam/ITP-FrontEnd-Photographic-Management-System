@@ -1,94 +1,3 @@
-// import React from 'react';
-// import{BrowserRouter, Routes, Route} from 'react-router-dom'
-
-// //pages and compoenets
-// // import Home from './pages/Home'
-// import Navbar from './components/Navbar'
-// import Sidebar from './components/Sidebar'
-// // import UserSelectPhotos from './pages/UserSelectPhotos'
-// import Footer from './components/Footer'
-// import HomeGallery from './components/homePageGallery'
-// import HomePageCard from './components/homePageCard'
-// import UserLoginPage from './components/UserManagement/userLogin'
-
-// //Import pages - Event Management
-// import EventPhotos from './pages/EventManagement/selectPhotosAlbum'
-// import Album from './pages/EventManagement/photoAlbum'
-// import CustomeEvent from './pages/EventManagement/userEventDetails'
-// import AllAlbums from './pages/EventManagement/allAlbums'
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <BrowserRouter>
-//         <Navbar/>
-//           <Routes>
-//             <Route
-//               path='/'
-//               element={<>
-//                 <HomeGallery />
-//                 <br></br>
-//                 <HomePageCard />
-//               </>}
-//             />
-//             <Route
-//               path='/signin'
-//               element={<UserLoginPage/>}
-//             />
-//             <Route
-//               path='/selectPhotos'
-//               element={<>
-//                 <Sidebar />
-//                 <EventPhotos/>
-//                 <br></br>
-//               </>}
-//             />
-//             <Route
-//               path='/viewVideos'
-//               element={<>
-//                 <Sidebar />
-//                 <br></br>
-//               </>}
-//             />
-//             <Route
-//               path='/viewAlbum'
-//               element={<>
-//                 <Sidebar />
-//                 <Album/>
-//                 <br></br>
-//               </>}
-//             />
-//             <Route
-//               path='/paymentHistory'
-//               element={<>
-//                 <Sidebar />
-//                 <br></br>
-//               </>}
-//             />
-//             <Route
-//               path='/cusEventInfo'
-//               element={<>
-//                 <CustomeEvent />
-//                 <br></br>
-//               </>}
-//             />
-//             <Route
-//               path='/manageAlbums'
-//               element={<>
-//                 <AllAlbums />
-//                 <br></br>
-//               </>}
-//             />
-//           </Routes>
-//           <br></br>
-//         <Footer/>
-//       </BrowserRouter>
-//     </div>
-//   );
-// }
-
-// export default App;
-
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -98,17 +7,45 @@ import HomePageCard from './components/homePageCard';
 import SideBar from './components/Sidebar'
 
 //User Management - Import Pages
-import UserLoginPage from './components/UserManagement/userLogin';
+import UserAccountPage from './pages/UserManagement/userAccount'
+import UserAccountCreate from './pages/UserManagement/userSignup'
+import AdminDashboard from './pages/UserManagement/adminDashboard'
 
 //Event Management - Import Pages
 import EventPhotos from './pages/EventManagement/selectPhotosAlbum';
-import Album from './pages/EventManagement/photoAlbum';
+// import Album from './pages/EventManagement/photoAlbum';
 import CustomeEvent from './pages/EventManagement/userEventDetails';
 import AllAlbums from './pages/EventManagement/allAlbums';
+import MyEvents from './pages/EventManagement/myEvents'
+import ViewAlbm from './pages/EventManagement/viewAlbums'
+import AddAlbum from './pages/EventManagement/addAlbum'
+import SamplePhotos from './pages/EventManagement/samplePhotos'
+import UserEventCount from './pages/EventManagement/adminNotification'
+import StaffViewAlbums from './pages/EventManagement/staffMyWork'
+import VideoAlbumPage from './pages/EventManagement/videoAlbum'
+
+//Staff Management - Import Pages
+import Task from './pages/StaffManagement/getTasks';
+
+// Event Reservation Management - Import pages
+// import Reservation from './pages/EventReservationManagement/reservationDetailsPage'
+import ReservationForm from './pages/EventReservationManagement/reservationForm';
+// import AllReservations from './pages/EventReservationManagement/allReservations';
+// import ReservationDetails from './pages/EventReservationManagement/reservationDetailsPage';
+// import EditReservation from './pages/EventReservationManagement/EditReservationPage';
+
+//User Management - Import Components
+import UserLoginPage from './components/UserManagement/userLogin';
+import AdminAccountSideBar from './components/UserManagement/adminAccountSideBar';
+import ManageButtons from './components/UserManagement/adminMangeButtons'
 
 //Event Management - Import Components
 import CustomerDetails from './components/EventManagement/userEventDetails'; 
 import EditPhotoAlbum from './components/EventManagement/editPhotoAlbum'; 
+
+//Staff Mnagemnet - Import Components
+import AddTask from './components/StaffManagement/addTask';
+import UpdateTaskInfo from './components/StaffManagement/updateTasks';
 
 function App() {
   return (
@@ -129,6 +66,22 @@ function App() {
             element={<UserLoginPage />}
           />
           <Route
+            path='/signup'
+            element={<UserAccountCreate />}
+          />
+          <Route
+            path='/userAccount/:userId'
+            element={<UserAccountPage />}
+          />
+          <Route
+            path='/userAccount/:userId/myEvents'
+            element={<>
+              <UserAccountPage/>
+              <MyEvents />
+              <br />
+            </>}
+          />          
+          <Route
             path='/selectPhotos'
             element={<>
               <SideBar/>
@@ -144,10 +97,34 @@ function App() {
             </>}
           />
           <Route
-            path='/viewAlbum'
+            path='/userAccount/:userId/myEvents/addEvents'
+            element={<>              
+              <ReservationForm/>
+              <br />
+            </>}
+          />
+          <Route
+            path='/userAccount/:userId/myEvents/:eventId/viewAlbum'
             element={<>
-              <SideBar/>
-              <Album />
+              {/* <SideBar/> */}
+              <ViewAlbm/>
+              {/* <Album /> */}
+              <br />
+            </>}
+          />
+          <Route
+            path='/userAccount/:userId/myEvents/:eventId/viewAlbum/samplePhotos'
+            element={<>
+              <SideBar/> 
+              <SamplePhotos/>
+              <br />
+            </>}
+          />
+          <Route
+            path='/userAccount/:userId/myEvents/:eventId/viewAlbum/videoAlbum'
+            element={<>
+              <SideBar/> 
+              <VideoAlbumPage/>
               <br />
             </>}
           />
@@ -165,15 +142,96 @@ function App() {
               <br />
             </>}
           />
+
+          {/* admin */}
+          
           <Route
-            path='/manageAlbums'
+            path='/adminLogin/adminDashboard'
             element={<>
+              <AdminDashboard />
+              <br />
+            </>}
+          />           
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem'
+            element={<>
+              <AdminAccountSideBar />
+              <ManageButtons/>
+              <br />
+            </>}
+          />     
+
+          {/* manageButtons */}
+
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageTasks'
+            element={<>
+              <AdminAccountSideBar />
+                <AddTask />
+                <Task/>
+              <br />
+            </>}
+          />    
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/updateTask/:TaskId'
+            element={<>
+              <UpdateTaskInfo />
+              <br />
+            </>}
+          /> 
+
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageAlbums'
+            element={<>
+              <AdminAccountSideBar />
               <AllAlbums />
               <br />
             </>}
           />
-          <Route path='/customerDetails/:eventId' element={<CustomerDetails />} />
-          <Route path='/editAlbum/:photoAlbumId' element={<EditPhotoAlbum />} />
+          <Route
+            path='/adminNotification'
+            element={<>
+              <AdminAccountSideBar />
+              <UserEventCount />
+              <br />
+            </>}
+          />
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageAlbums/manageAlbums/addAlbum'
+            element={<>
+              <AdminAccountSideBar />
+              <AddAlbum />
+              <br />
+            </>}
+          />
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageAlbums/customerDetails/:eventId'
+            element={<>
+              <AdminAccountSideBar />
+              <CustomerDetails />
+              <br />
+            </>}
+          />
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageAlbums/editAlbum/:photoAlbumId'
+            element={<>
+              <AdminAccountSideBar />
+              <EditPhotoAlbum />
+              <br />
+            </>}
+          />
+
+          
+          {/* Staff */}
+
+          <Route
+            path='/staff/myWork'
+            element={<>
+              <StaffViewAlbums />
+              <br />
+            </>}
+          />
+
         </Routes>
         <br />
         <Footer />
