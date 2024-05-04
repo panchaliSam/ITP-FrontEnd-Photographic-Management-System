@@ -42,7 +42,7 @@ function NavScrollExample() {
           </NavDropdown>
           <NavDropdown title="Community" id="navbarScrollingDropdown">
             <NavDropdown.Item href="/staff">Staff</NavDropdown.Item>
-            <NavDropdown.Item href="/Stat">Stat</NavDropdown.Item>
+            <NavDropdown.Item href="/stat">Stat</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item href="/feedback&comments">Feedbacks&Comments</NavDropdown.Item>
           </NavDropdown>

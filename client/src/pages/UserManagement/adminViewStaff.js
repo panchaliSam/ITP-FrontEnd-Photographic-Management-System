@@ -52,7 +52,7 @@ const StaffRegistration = () => {
     };
     const handleNavigationAfterUpdate = () => {
         // Navigate back to manageUsers.js page using window.location or any other method
-        window.location.href = '/adminLogin/adminDashboard/manageUsers';
+        window.location.href = '/adminLogin/adminDashboard/manageSystem/manageUsers';
     };
     useEffect(() => {
         async function fetchStaffDetails() {
@@ -93,7 +93,7 @@ const StaffRegistration = () => {
 
     const handleNavigationAfterDelete = () => {
         // Navigate to another page after successful deletion
-        window.location.href = '/adminLogin/adminDashboard/manageUsers';
+        window.location.href = '/adminLogin/adminDashboard/manageSystem/manageUsers';
     };
     return (
         <div className="container-fluid">

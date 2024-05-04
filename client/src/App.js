@@ -16,6 +16,7 @@ import UserAccountUpdate from './pages/UserManagement/userAccountUpdate'
 import ManageUsers from './pages/UserManagement/manageUsers'
 import AddStaff from './pages/UserManagement/addStaff'
 import AdminViewStaff from './pages/UserManagement/adminViewStaff'
+import AdminViewUser from './pages/UserManagement/adminViewUser'
 
 //Event Management - Import Pages
 import EventPhotos from './pages/EventManagement/selectPhotosAlbum';
@@ -33,6 +34,8 @@ import UserEventStat  from './pages/EventManagement/userEventCountPage'
 
 //Staff Management - Import Pages
 import Task from './pages/StaffManagement/getTasks';
+import StaffUp from './pages/StaffManagement/signup'
+import StaffIn from './pages/StaffManagement/login'
 
 // Event Reservation Management - Import pages
 // import Reservation from './pages/EventReservationManagement/reservationDetailsPage'
@@ -45,6 +48,7 @@ import ReservationForm from './pages/EventReservationManagement/reservationForm'
 import Rankings from './pages/FeddbackReviewManagement/rankingPage'
 import Ratings from './pages/FeddbackReviewManagement/ratings'
 import Progress from './pages/FeddbackReviewManagement/progressPage'
+import UpdateRatings from './pages/FeddbackReviewManagement/updatePage'
 
 //User Management - Import Components
 import UserLoginPage from './components/UserManagement/userLogin';
@@ -58,6 +62,11 @@ import EditPhotoAlbum from './components/EventManagement/editPhotoAlbum';
 //Staff Mnagemnet - Import Components
 import AddTask from './components/StaffManagement/addTask';
 import UpdateTaskInfo from './components/StaffManagement/updateTasks';
+
+//Payment Mnagement System - Import Components
+import ManagePayment from './components/PaymentManagement/Deletepayment'
+import ManagePackage from './components/PaymentManagement/Editpackage'
+import ViewPackage from './components/PaymentManagement/Viewpackages'
 
 function App() {
   return (
@@ -74,15 +83,27 @@ function App() {
             </>}
           />
           <Route
+            path='/viewPackages'
+            element={<ViewPackage />}
+          />
+          <Route
             path='/signin'
             element={<UserLoginPage />}
           />
           <Route
+            path='/signin/staffsignIn'
+            element={<StaffIn />}
+          />
+          <Route
             path='/signup'
             element={<UserAccountCreate />}
-          />          
+          />    
           <Route
-            path='/feedback&comments'
+            path='/signup/staffSignUp'
+            element={<StaffUp />}
+          />      
+          <Route
+            path='/stat'
             element={<Rankings />}
           />
           <Route
@@ -164,6 +185,13 @@ function App() {
               <br />
             </>}
           />
+          <Route
+            path='/userAccount/:userId/myEvents/:eventId/viewAlbum/viewMyRatings/update/:ratingId'
+            element={<>
+              <UpdateRatings/>
+              <br />
+            </>}
+          />          
           <Route
             path='/userAccount/:userId/myEvents/:eventId/viewAlbum/videoAlbum'
             element={<>
@@ -254,12 +282,38 @@ function App() {
               <AddStaff />
               <br />
             </>}
-          />          
+          /> 
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageUsers/adminViewUser/:userId'
+            element={<>
+              <AdminAccountSideBar />
+              <AdminViewUser />
+              <br />
+            </>}
+          />        
           <Route
             path='/adminLogin/adminDashboard/manageSystem/manageUsers/adminViewStaff/:staffId'
             element={<>
               <AdminAccountSideBar />
               <AdminViewStaff />
+              <br />
+            </>}
+          />
+          {/* Payment Management - Manage Payments*/}
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/managePayments'
+            element={<>
+              <AdminAccountSideBar />
+              <ManagePayment />
+              <br />
+            </>}
+          />
+           {/* Payment Management - Manage Packages*/}
+           <Route
+            path='/adminLogin/adminDashboard/manageSystem/managePackages'
+            element={<>
+              <AdminAccountSideBar />
+              <ManagePackage />
               <br />
             </>}
           />
