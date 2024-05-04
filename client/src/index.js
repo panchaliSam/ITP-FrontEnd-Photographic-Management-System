@@ -31,6 +31,7 @@ import './styles/EventReservationManagement/ReservationForm.css'
 //Payment Management System
 import './styles/PaymentManagement/AddPaymentForm.css'
 import './styles/PaymentManagement/packageList.css'
+import './styles/PaymentManagement/paymentUserAccountBtn.css'
 
 import App from './App';
 
