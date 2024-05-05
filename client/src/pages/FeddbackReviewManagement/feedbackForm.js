@@ -57,9 +57,9 @@ const FeedbackSubmissionPage = () => {
     });
   };
 
-  const handleViewFeedback = () => {
-    navigate(`/userAccount/${userId}/myEvents/${eventId}/viewAlbum/feedbacks/myFeedback`); // Navigate with dynamic userId and eventId
-  };
+  // const handleViewFeedback = () => {
+  //   navigate(`/userAccount/${userId}/myEvents/${eventId}/viewAlbum/feedbacks/myFeedback`); // Navigate with dynamic userId and eventId
+  // };
 
   return (
     <div>
@@ -67,9 +67,9 @@ const FeedbackSubmissionPage = () => {
         <h1 className="mt-4 mb-4"><strong>FEEDBACK</strong></h1>
       </div>
       <br />
-      <Button variant="secondary" onClick={handleViewFeedback} style={{ borderRadius: '10px', marginLeft: '1300px', backgroundColor: '#BD1F32' }}>
+      {/* <Button variant="secondary" onClick={handleViewFeedback} style={{ borderRadius: '10px', marginLeft: '1300px', backgroundColor: '#BD1F32' }}>
         My Feedback
-      </Button>
+      </Button> */}
       <br />
       <br />
       <Container style={{
