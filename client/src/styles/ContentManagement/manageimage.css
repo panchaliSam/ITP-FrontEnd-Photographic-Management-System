@@ -2,7 +2,7 @@
   position: relative;
 }
 
-.overlay {
+.image-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -18,7 +18,7 @@
   flex-direction: column;
 }
 
-.image-card-wrapper:hover .overlay {
+.image-card-wrapper:hover .image-overlay {
   opacity: 1; /* Show overlay on hover */
 }
 
@@ -27,8 +27,8 @@
   display: none;
 }
 
-.overlay:hover .details,
-.overlay:hover .buttons {
+.image-overlay:hover .details,
+.image-overlay:hover .buttons {
   display: block; /* Show details and buttons on overlay hover */
 }
 

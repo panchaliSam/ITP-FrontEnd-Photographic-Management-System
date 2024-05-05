@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Button, Card, Container, Row, Col, Form, Dropdown, Modal } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
-import gallary from '../../styles/ContentManagement/gallary.css';
+
 
 const PublicGallery = () => {
     const [imageManages, setImageManages] = useState([]);
