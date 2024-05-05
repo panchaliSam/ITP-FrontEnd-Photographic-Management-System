@@ -25,7 +25,7 @@ const StaffRatingForm = () => {
         const ratingData = response.data;
 
         const updatedFormData = ratingData.map(item => ({
-          RatingID: '',
+
           UserID: userId, // Set UserID from useParams
           StaffID: item.staffId,
           JobTitle: item.role,
@@ -165,17 +165,7 @@ const StaffRatingForm = () => {
                 <Card.Body>
                   <Form onSubmit={(e) => handleSubmit(e, index)}>
                     <Row>
-                      <Col>
-                        <Form.Group controlId="RatingID">
-                          <Form.Label>Rating ID</Form.Label>
-                          <Form.Control
-                            type="text"
-                            name="RatingID"
-                            value={formData[index].RatingID}
-                            onChange={(e) => handleInputChange(e, index)}
-                          />
-                        </Form.Group>
-                      </Col>
+                    
                       <Col>
                         <Form.Group controlId="UserID">
                           <Form.Label>User ID</Form.Label>
