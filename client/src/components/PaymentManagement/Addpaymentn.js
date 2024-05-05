@@ -1,8 +1,9 @@
 // AddPaymentForm.js
 
-import React, { useState, useEffect } from 'react';
+import React, { useState,  } from 'react';
 import axios from 'axios';
 import '../../styles/PaymentManagement/AddPaymentForm.css'; 
+import emailjs from '@emailjs/browser'
 
 const AddPaymentForm = () => {
   const [formData, setFormData] = useState({
@@ -16,18 +17,7 @@ const AddPaymentForm = () => {
     PaymentMethod: 'card'
   });
 
-  useEffect(() => {
-    // Generate a unique payment ID when component mounts
-    const generatePaymentID = () => {
-      const generatedID = `PAY-${Math.floor(1000 + Math.random() * 9000)}-${Date.now()}`;
-      setFormData(prevState => ({
-        ...prevState,
-        paymentID: generatedID
-      }));
-    };
-
-    generatePaymentID();
-  }, []);
+ 
 
   const handleChange = (e) => {
     setFormData({
@@ -38,7 +28,10 @@ const AddPaymentForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  //   if (!validateForm()) {
+  //     return;
+  // }
+    emailjs.sendForm('service_wdz3xxy','template_hhdv6fq',e.target,'AkzAqUAg1H4ox9vlo')
     try {
       const response = await axios.post('/api/pay/payment/add', formData);
       console.log('Payment added successfully:', response.data);
@@ -57,7 +50,17 @@ const AddPaymentForm = () => {
       console.error('Error adding payment:', error);
     }
   };
+  // const validateForm = () => {
+  //   const { UserID, paymentID, packageID, Date, InvoiceNumber, Amount, Advance_or_Full, PaymentMethod} = formData;
+  //   // Perform your form validation logic here
+  //   // For example, check if required fields are filled
+  //   if ( !UserID || !paymentID || !packageID || !Date || !InvoiceNumber || !Amount || !Advance_or_Full || !PaymentMethod) {
+  //       alert("Please fill out all required fields.");
+  //       return false;
+  //   }
 
+  //   return true;
+  //   };
 
   return (
     <div className="add-payment-outer-container">
@@ -74,8 +77,8 @@ const AddPaymentForm = () => {
               <input type="text" name="UserID" value={formData.UserID} onChange={handleChange} />
             </div>
             <div>
-              <label>Payment ID:</label>
-              <input type="text" name="paymentID" value={formData.paymentID} disabled />
+              <label>payment ID:</label>
+              <input type="text" name="paymentID" value={formData.paymentID} onChange={handleChange} />
             </div>
             <div>
               <label>Package ID:</label>

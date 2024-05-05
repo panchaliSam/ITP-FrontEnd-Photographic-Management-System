@@ -65,7 +65,7 @@ const PaymentList = () => {
       <table>
         <thead>
           <tr>
-            <th>pin_No</th>
+            
             <th>User ID</th>
             <th>Payment ID</th>
             <th>Package ID</th>
@@ -76,7 +76,7 @@ const PaymentList = () => {
         <tbody>
           {filteredPayments.map((payment) => (
             <tr key={payment.paymentID}>
-              <td>{payment.pin_No}</td>
+              
               <td>{payment.UserID}</td>
               <td>{payment.paymentID}</td>
               <td>{payment.packageID}</td>
