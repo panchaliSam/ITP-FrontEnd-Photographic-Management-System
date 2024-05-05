@@ -56,7 +56,7 @@ const ScheduleTable = () => {
                                 </div>
                                 <div className="card-footer bg-transparent border-0 d-flex justify-content-between">
                                     <div>
-                                        <Link to={`/adminLogin/adminDashboard/schedules/viewSchedule/${schedule.ScheduleId}`} className="btn btn-primary">Edit</Link>
+                                        <Link to={`/adminLogin/adminDashboard/manageSystem/manageSchedules/${schedule.ScheduleId}`} className="btn btn-primary">Edit</Link>
                                     </div>
                                     <div>
                                         <button onClick={() => handleDelete(schedule.ScheduleId)} className="btn btn-danger ml-2">Delete</button>

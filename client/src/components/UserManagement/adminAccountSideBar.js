@@ -14,9 +14,9 @@ const UserSideBar = ({ userId }) => {
         <Link to={`/adminLogin/adminDashboard/promotion`} className="link">
           <button className="button">PROMOTION</button>
         </Link>
-        <Link to={`/adminLogin/adminDashboard/schedules`} className="link">
+        {/* <Link to={`/adminLogin/adminDashboard/schedules`} className="link">
           <button className="button">SCHEDULES</button>
-        </Link>
+        </Link> */}
         {/* <Link to={`/adminLogin/adminDashboard/notifications`} className="link">
           <button className="button">NOTIFICATIONS</button>
         </Link> */}
