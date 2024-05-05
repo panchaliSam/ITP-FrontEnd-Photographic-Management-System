@@ -42,9 +42,9 @@ import StaffIn from './pages/StaffManagement/login'
 // Event Reservation Management - Import pages
 // import Reservation from './pages/EventReservationManagement/reservationDetailsPage'
 import ReservationForm from './pages/EventReservationManagement/reservationForm';
-// import AllReservations from './pages/EventReservationManagement/allReservations';
-// import ReservationDetails from './pages/EventReservationManagement/reservationDetailsPage';
-// import EditReservation from './pages/EventReservationManagement/EditReservationPage';
+import AllReservations from './pages/EventReservationManagement/allReservations';
+import ReservationDetails from './pages/EventReservationManagement/reservationDetailsPage';
+import EditReservation from './pages/EventReservationManagement/EditReservationPage';
 
 //Feedback Management System - Import Pages
 import Rankings from './pages/FeddbackReviewManagement/rankingPage'
@@ -352,14 +352,36 @@ function App() {
               <br />
             </>}
           />
-          {/* Calendar and Scheduling */}
+          {/* Calendar and Scheduling - Manage Schedules*/}
           <Route
             path='/adminLogin/adminDashboard/manageSystem/manageSchedules'
             element={<>
               <ScheduleTable />
               <br />
             </>}
-          />          
+          />    
+          {/* Event Reservation System - Manage Image */}
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageEvents'
+            element={<>
+              <AllReservations />
+              <br />
+            </>}
+          />             
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageEvents/:reservationId'
+            element={<>
+              <ReservationDetails />
+              <br />
+            </>}
+          />           
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageEvents/editReservation/:reservationId'
+            element={<>
+              <EditReservation />
+              <br />
+            </>}
+          /> 
           <Route
             path='/adminLogin/adminDashboard/manageSystem/manageSchedules/:sheduleId'
             element={<>

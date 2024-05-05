@@ -83,9 +83,9 @@ function LoginPage() {
             >
               Login
             </MDBBtn>            
-            <p className="small mb-5 pb-lg-3 ms-5">
+            {/* <p className="small mb-5 pb-lg-3 ms-5">
               <a className="text-muted" href="#!">Forgot password?</a>
-            </p>
+            </p> */}
             <p className='ms-5'>Don't have an account? <Link to="/signup" className="link-info">Register here</Link><br /><br></br>
             <Link to="/adminLogin" className="link-info">Click Here to Admin Login</Link><br />
             <Link to="/signin/staffsignIn" className="link-info">Click Here to Staff Login</Link></p>
