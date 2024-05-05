@@ -52,6 +52,9 @@ import Ratings from './pages/FeddbackReviewManagement/ratings'
 import Progress from './pages/FeddbackReviewManagement/progressPage'
 import UpdateRatings from './pages/FeddbackReviewManagement/updatePage'
 
+//Content Management Systme - Import Pages
+import PhotographerDashboard from './pages/ContentManagement/photographerDashPage'
+
 //User Management - Import Components
 import UserLoginPage from './components/UserManagement/userLogin';
 import AdminAccountSideBar from './components/UserManagement/adminAccountSideBar';
@@ -337,6 +340,15 @@ function App() {
               <br />
             </>}
           />
+          {/* Content Management - Manage Content */}
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageContent'
+            element={<>
+              <PhotographerDashboard />
+              <br />
+            </>}
+          />
+          {/* Event Management Special Function */}
           <Route
             path='/adminLogin/adminDashboard/promotion'
             element={<>
