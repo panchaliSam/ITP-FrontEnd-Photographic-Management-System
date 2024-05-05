@@ -1,0 +1,40 @@
+.schedule-table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.schedule-table th, .schedule-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.schedule-table th {
+    background-color: #f2f2f2;
+}
+
+.schedule-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.schedule-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+.schedule-table button {
+    padding: 6px 10px;
+    margin-right: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.schedule-table button:hover {
+    background-color: #0056b3;
+}
