@@ -63,7 +63,7 @@ const SignupForm = () => {
                             {successMessage && <Alert variant="success">{successMessage}</Alert>}
                             {errorMessage && <Alert variant="danger">{errorMessage}</Alert>}
                             <Form onSubmit={handleSubmit}>
-                                <Form.Group controlId="formUserId">
+                                {/* <Form.Group controlId="formUserId">
                                     <Form.Label>User ID</Form.Label>
                                     <Form.Control
                                         type="text"
@@ -72,7 +72,7 @@ const SignupForm = () => {
                                         value={formData.userId}
                                         onChange={handleChange}
                                     />
-                                </Form.Group>
+                                </Form.Group> */}
                                 <Form.Group controlId="formUsername">
                                     <Form.Label>Username</Form.Label>
                                     <Form.Control
