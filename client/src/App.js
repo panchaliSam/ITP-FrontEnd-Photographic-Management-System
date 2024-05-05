@@ -367,7 +367,14 @@ function App() {
               <AllReservations />
               <br />
             </>}
-          />             
+          />    
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageEvents/addEvents'
+            element={<>
+              <ReservationForm />
+              <br />
+            </>}
+          />           
           <Route
             path='/adminLogin/adminDashboard/manageSystem/manageEvents/:reservationId'
             element={<>

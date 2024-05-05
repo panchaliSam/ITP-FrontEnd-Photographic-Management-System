@@ -7,7 +7,7 @@ import { FiAlertCircle } from "react-icons/fi";
 import emailjs from '@emailjs/browser';
 
 const ReservationForm = () => {
-    const [reservationId, setReservationId] = useState('');
+    // const [reservationId, setReservationId] = useState('');
     const [customer_name, setCustomerName] = useState('');
     const [address, setAddress] = useState('');
     const [contactNo1, setContactNo1] = useState('');
@@ -81,12 +81,12 @@ const ReservationForm = () => {
         }
         emailjs.sendForm('service_xdjolbn','template_r0f6f6l',e.target,'8L3Hr9GpDV5QssDZx')
 
-        if (parseInt(reservationId) <= 0) {
-            alert('Reservation ID should be a positive number.');
-            return;
-        }
+        // if (parseInt(reservationId) <= 0) {
+        //     alert('Reservation ID should be a positive number.');
+        //     return;
+        // }
         const reservation={
-            reservationId,
+            // reservationId,
             customer_name,
             // dateOfBirth,
             address,
@@ -134,10 +134,10 @@ const ReservationForm = () => {
                 <form onSubmit={handleSubmit}>
                     <h3>Customer Details</h3>
                     <div className="row mb-3" style={{fontSize: '18px'}} >
-                        <div className="col-sm-3">
+                        {/* <div className="col-sm-3">
                             <label htmlFor="reservationId" className="col-sm-5 col-form-label">Reservation Id:</label>
                             <input type="text" className="form-control" id="reservationId" name="reservationId" value={reservationId} onChange={(e) => setReservationId(e.target.value)} required/>
-                        </div>
+                        </div> */}
 
                         <div className="col-sm-10">
                             <label htmlFor="customer_name" className="col-sm-2 col-form-label">Customer Name:</label>
