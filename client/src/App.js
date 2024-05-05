@@ -19,6 +19,7 @@ import ManageUsers from './pages/UserManagement/manageUsers'
 import AddStaff from './pages/UserManagement/addStaff'
 import AdminViewStaff from './pages/UserManagement/adminViewStaff'
 import AdminViewUser from './pages/UserManagement/adminViewUser'
+import UpdateUserDetails from './pages/UserManagement/updateUserDetailsAdmin'
 
 //Event Management - Import Pages
 // import EventPhotos from './pages/EventManagement/selectPhotosAlbum';
@@ -327,7 +328,15 @@ function App() {
               <AdminViewUser />
               <br />
             </>}
-          />        
+          />  
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageUsers/adminViewUser/:userId/edit'
+            element={<>
+              <AdminAccountSideBar />
+              <UpdateUserDetails />
+              <br />
+            </>}
+          />  
           <Route
             path='/adminLogin/adminDashboard/manageSystem/manageUsers/adminViewStaff/:staffId'
             element={<>
