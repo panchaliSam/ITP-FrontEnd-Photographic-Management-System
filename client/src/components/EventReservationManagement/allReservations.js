@@ -74,7 +74,7 @@ function Reservation() {
         <div className="allReservations">
             {error && <p className="error">{error}</p>}
             {showPopup && <p className="popup">Deleted successfully!</p>}
-            <Link to = "/ReservationForm" className='btn btn-success'>Add Reservation +</Link>
+            <Link to = "/adminLogin/adminDashboard/manageSystem/manageEvents/addEvents" className='btn btn-success'>Add Reservation +</Link>
             <br></br><br></br>
             <h5>User Details</h5>
             <table>
