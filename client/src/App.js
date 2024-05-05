@@ -53,7 +53,10 @@ import Progress from './pages/FeddbackReviewManagement/progressPage'
 import UpdateRatings from './pages/FeddbackReviewManagement/updatePage'
 
 //Content Management Systme - Import Pages
-import PhotographerDashboard from './pages/ContentManagement/photographerDashPage'
+import PhotographerDashboard from './pages/ContentManagement/manageImagePage'
+import PublicGallery from './pages/ContentManagement/publicgallarypage'
+import AddImage from './pages/ContentManagement/addImagePage'
+import EditImage from './pages/ContentManagement/editImage'
 
 //Calendar and Scheduling System - Import Pages
 import ScheduleTable from './pages/CalendarSchedulingManagement/adminView'
@@ -107,6 +110,13 @@ function App() {
               <ContactUs />
             </>}
           />
+          
+          <Route
+            path='/viewGallery'
+            element={<>
+              <PublicGallery />
+            </>}
+          /> 
           <Route
             path='/viewPackages'
             element={<ViewPackage />}
@@ -349,6 +359,20 @@ function App() {
             path='/adminLogin/adminDashboard/manageSystem/manageContent'
             element={<>
               <PhotographerDashboard />
+              <br />
+            </>}
+          />
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageContent/addImage'
+            element={<>
+              <AddImage />
+              <br />
+            </>}
+          />
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageContent/editImage/:imageId'
+            element={<>
+              <EditImage />
               <br />
             </>}
           />

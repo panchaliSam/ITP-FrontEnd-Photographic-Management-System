@@ -47,7 +47,7 @@ function NavScrollExample() {
             <NavDropdown.Item href="/feedback&comments">Feedbacks&Comments</NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Explore" id="navbarScrollingDropdown">
-            <NavDropdown.Item href="/gallery">Images</NavDropdown.Item>
+            <NavDropdown.Item href="/viewGallery">Images</NavDropdown.Item>
             <NavDropdown.Item href="#action11">Wallpapers</NavDropdown.Item>
             <NavDropdown.Item href="#action11">Backgrounds</NavDropdown.Item>
             <NavDropdown.Divider />
