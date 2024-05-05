@@ -55,6 +55,10 @@ import UpdateRatings from './pages/FeddbackReviewManagement/updatePage'
 //Content Management Systme - Import Pages
 import PhotographerDashboard from './pages/ContentManagement/photographerDashPage'
 
+//Calendar and Scheduling System - Import Pages
+import ScheduleTable from './pages/CalendarSchedulingManagement/adminView'
+import EditSchedule from './pages/CalendarSchedulingManagement/adminEdit'
+
 //User Management - Import Components
 import UserLoginPage from './components/UserManagement/userLogin';
 import AdminAccountSideBar from './components/UserManagement/adminAccountSideBar';
@@ -345,6 +349,21 @@ function App() {
             path='/adminLogin/adminDashboard/manageSystem/manageContent'
             element={<>
               <PhotographerDashboard />
+              <br />
+            </>}
+          />
+          {/* Calendar and Scheduling */}
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageSchedules'
+            element={<>
+              <ScheduleTable />
+              <br />
+            </>}
+          />          
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageSchedules/:sheduleId'
+            element={<>
+              <EditSchedule />
               <br />
             </>}
           />

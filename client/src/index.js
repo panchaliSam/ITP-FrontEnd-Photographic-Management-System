@@ -39,6 +39,11 @@ import './styles/ContentManagement/addImage.css'
 import './styles/ContentManagement/getImageDetails.css'
 // import './styles/ContentManagement/manageimage.css'
 
+//Calendar and Scheduling System
+import './styles/CalendarSchedulingManagement/adminEdit.css'
+import './styles/CalendarSchedulingManagement/adminViewTable.css'
+import './styles/CalendarSchedulingManagement/ScheduleCreate.css'
+
 import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
