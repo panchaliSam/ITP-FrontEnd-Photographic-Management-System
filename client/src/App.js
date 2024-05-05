@@ -91,6 +91,7 @@ import ViewPackage from './components/PaymentManagement/Viewpackages'
 import AddPaymentn from './components/PaymentManagement/Addpaymentn'
 import UserAccountBtn  from './components/PaymentManagement/paymentUserAccountBtn'
 import AddCard from './components/PaymentManagement/Addcardn'
+import MyPaymentHistory from './components/PaymentManagement/MyPaymentHistory'
 
 function App() {
   return (
@@ -222,6 +223,15 @@ function App() {
               <SideBar/> 
               {/* <AddPayment/> */}
               <AddPaymentn/>
+              <br />
+            </>}
+          />
+          <Route
+            path='/userAccount/:userId/payments/paymentsHistory'
+            element={<>
+              <SideBar/> 
+              {/* <AddPayment/> */}
+              <MyPaymentHistory/>
               <br />
             </>}
           />
