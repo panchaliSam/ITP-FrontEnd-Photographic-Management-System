@@ -15,13 +15,13 @@ const StaffSideBar = () => {
         <span className="username">{staffname}</span>
       </div>
       <div className="buttons">
-        <Link to={`/userAccount/${staffId}`} className="link">
+        <Link to={`/staffAccount/${staffId}`} className="link">
           <button className="button">ACCOUNT</button>
         </Link>
-        <Link to={`/`} className="link">
+        <Link to={`/staffAccount/staff/myWork`} className="link">
           <button className="button">MY EVENTS</button>
         </Link>
-        <Link to={`/staffView`} className="link">
+        <Link to={`/staffAccount/staffView`} className="link">
           <button className="button">TASKS</button>
         </Link>
         {/* <Link to={`/userAccount/${userId}/notifications`} className="link">

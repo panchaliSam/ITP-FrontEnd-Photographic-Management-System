@@ -44,6 +44,9 @@ import './styles/CalendarSchedulingManagement/adminEdit.css'
 import './styles/CalendarSchedulingManagement/adminViewTable.css'
 import './styles/CalendarSchedulingManagement/ScheduleCreate.css'
 
+//Staff Management System
+import './styles/StaffManagement/staffAccountSideBar.css'
+
 import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

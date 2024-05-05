@@ -233,7 +233,7 @@ const AllAlbums = () => {
                         <th>Event Type</th>
                         <th>Staff Name</th>
                         <th>Works</th> {/* New column */}
-                        <th>Actions</th>
+                        {/* <th>Actions</th> */}
                     </tr>
                 </thead>
                 <tbody>
@@ -268,7 +268,7 @@ const AllAlbums = () => {
                                     <label htmlFor={`inprogress-${album.albumId}`} style={{ display: 'inline-block', marginLeft: '5px' }}>In Progress</label>
                                 </div>
                             </td>
-                            <td className="actions">
+                            {/* <td className="actions">
                                 <button className="view-button" onClick={() => handleView(album)}>
                                     <Link to={`/customerDetails/${album.eventId}`} className="button-link">View</Link>
                                 </button>
@@ -276,7 +276,7 @@ const AllAlbums = () => {
                                     <Link to={`/editAlbum/${album.albumId}`} className="button-link">Edit</Link>
                                 </button>
                                 <button className="delete-button" onClick={() => handleDelete(album.albumId)}>Delete</button>
-                            </td>
+                            </td> */}
                         </tr>
                     ))}
                 </tbody>
