@@ -47,7 +47,7 @@ const AdminLoginPage = () => {
                 setLoginSuccess(true);
                 
                 // Navigate to adminDashboard on successful login
-                window.location.href = '/adminLogin/adminDashboard';
+                window.location.href = '/adminLogin/adminDashboard/manageSystem';
 
             } else {
                 const errorData = await response.json();

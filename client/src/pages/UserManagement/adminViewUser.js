@@ -46,7 +46,7 @@ const UserDetailsPage = () => {
     }, [userId]);
 
     const handleEditUser = () => {
-        navigate(`/adminLogin/adminDashboard/adminViewUser/update/${userId}`,{ state: { userDetails } });
+        navigate(`/adminLogin/adminDashboard/manageSystem/manageUsers/adminViewUser/${userId}/edit`,{ state: { userDetails } });
     };
 
     const handleDeleteUser = () => {

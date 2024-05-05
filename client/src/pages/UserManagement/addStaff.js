@@ -48,7 +48,7 @@ const StaffRegistration = () => {
 
     
     const handleCancel = () => {
-        window.location.href = '/adminLogin/adminDashboard/manageUsers'; // Changed the URL for navigation
+        window.location.href = '/adminLogin/adminDashboard/manageSystem/manageUsers'; // Changed the URL for navigation
     };
 
     return (
