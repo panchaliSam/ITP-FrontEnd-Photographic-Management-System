@@ -53,6 +53,7 @@ import Progress from './pages/FeddbackReviewManagement/progressPage'
 import UpdateRatings from './pages/FeddbackReviewManagement/updatePage'
 
 //Content Management Systme - Import Pages
+import PhotographerDashboard from './pages/ContentManagement/photographerDashPage'
 
 //User Management - Import Components
 import UserLoginPage from './components/UserManagement/userLogin';
@@ -339,6 +340,15 @@ function App() {
               <br />
             </>}
           />
+          {/* Content Management - Manage Content */}
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageContent'
+            element={<>
+              <PhotographerDashboard />
+              <br />
+            </>}
+          />
+          {/* Event Management Special Function */}
           <Route
             path='/adminLogin/adminDashboard/promotion'
             element={<>

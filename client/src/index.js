@@ -35,9 +35,9 @@ import './styles/PaymentManagement/paymentUserAccountBtn.css'
 
 //Content Management System
 import './styles/ContentManagement/addImage.css'
-import './styles/ContentManagement/gallary.css'
+// import './styles/ContentManagement/gallary.css'
 import './styles/ContentManagement/getImageDetails.css'
-import './styles/ContentManagement/manageimage.css'
+// import './styles/ContentManagement/manageimage.css'
 
 import App from './App';
 
