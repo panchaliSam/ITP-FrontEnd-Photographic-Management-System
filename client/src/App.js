@@ -53,6 +53,9 @@ import Rankings from './pages/FeddbackReviewManagement/rankingPage'
 import Ratings from './pages/FeddbackReviewManagement/ratings'
 import Progress from './pages/FeddbackReviewManagement/progressPage'
 import UpdateRatings from './pages/FeddbackReviewManagement/updatePage'
+import AllFeedbackPage from './pages/FeddbackReviewManagement/feedbackPage'
+import FeedbackForm from './pages/FeddbackReviewManagement/feedbackForm'
+import MyFeedback from './pages/FeddbackReviewManagement/myFeedback'
 
 //Content Management Systme - Import Pages
 import PhotographerDashboard from './pages/ContentManagement/manageImagePage'
@@ -88,6 +91,7 @@ import ViewPackage from './components/PaymentManagement/Viewpackages'
 import AddPaymentn from './components/PaymentManagement/Addpaymentn'
 import UserAccountBtn  from './components/PaymentManagement/paymentUserAccountBtn'
 import AddCard from './components/PaymentManagement/Addcardn'
+import MyPaymentHistory from './components/PaymentManagement/MyPaymentHistory'
 
 function App() {
   return (
@@ -145,6 +149,10 @@ function App() {
           <Route
             path='/stat'
             element={<Rankings />}
+          />         
+          <Route
+            path='/feedback&comments'
+            element={< AllFeedbackPage />}
           />
           <Route
             path='/userAccount/:userId'
@@ -219,10 +227,35 @@ function App() {
             </>}
           />
           <Route
+            path='/userAccount/:userId/payments/paymentsHistory'
+            element={<>
+              <SideBar/> 
+              {/* <AddPayment/> */}
+              <MyPaymentHistory/>
+              <br />
+            </>}
+          />
+          <Route
             path='/userAccount/:userId/myEvents/:eventId/viewAlbum/ratings'
             element={<>
               <SideBar/> 
               <Ratings/>
+              <br />
+            </>}
+          />          
+          <Route
+            path='/userAccount/:userId/myEvents/:eventId/viewAlbum/feedbacks'
+            element={<>
+              <SideBar/> 
+              <FeedbackForm/>
+              <br />
+            </>}
+          />          
+          <Route
+            path='/userAccount/:userId/myEvents/:eventId/viewAlbum/feedbacks/myFeedback'
+            element={<>
+              <SideBar/> 
+              <MyFeedback/>
               <br />
             </>}
           />
