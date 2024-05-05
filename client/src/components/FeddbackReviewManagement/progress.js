@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const ProgressComponent = () => {
   const navigate = useNavigate();
-  const { userId } = useParams();
+  const { userId, eventId } = useParams();
   const [progressData, setProgressData] = useState([]);
 
   const fetchProgressData = async () => {
@@ -48,7 +48,7 @@ const ProgressComponent = () => {
                 <Card.Text>Description: {progress.Description}</Card.Text>
                 <Card.Text>No of Stars: {progress.NoOfStars}</Card.Text>
               </Card.Body>
-              <Button style= {{ backgroundColor:'#E6B31E' }} variant="primary" onClick={() => navigate(`/update/${progress.RatingID}`)}>Update</Button>
+              <Button style= {{ backgroundColor:'#E6B31E' }} variant="primary" onClick={() => navigate(`update/${progress.RatingID}`)}>Update</Button>
               <Button style= {{ backgroundColor:'black' }} variant="danger" onClick={() => handleDelete(progress.RatingID)}>Delete</Button>
             </Card>
           </Col>

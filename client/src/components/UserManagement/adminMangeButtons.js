@@ -38,6 +38,11 @@ const ManageButtons = () => {
                     Manage Payments
                 </button>
             </Link><br></br>
+            <Link to="/adminLogin/adminDashboard/manageSystem/managePackages" className="manage-button-link">
+                <button className="manage-button">
+                    Manage Packages
+                </button>
+            </Link><br></br>
             <Link to="/adminLogin/adminDashboard/manageSystem/manageFeedbacks" className="manage-button-link">
                 <button className="manage-button">
                     Manage Feedbacks

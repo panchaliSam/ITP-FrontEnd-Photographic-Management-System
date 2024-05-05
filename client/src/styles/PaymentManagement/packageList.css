@@ -1,0 +1,74 @@
+/* packageList.css */
+
+.package-list-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .package-list-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .package-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .package-table th,
+  .package-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .package-table th {
+    background-color: #f0f0f0;
+    text-align: left;
+  }
+  
+  .package-table td {
+    text-align: center;
+  }
+  
+  .package-table button {
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    background-color: #dc3545;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .package-table button + button {
+    margin-left: 5px;
+  }
+  
+  .package-form {
+    margin-top: 20px;
+  }
+  
+  .package-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .package-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .package-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

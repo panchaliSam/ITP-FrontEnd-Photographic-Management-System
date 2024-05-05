@@ -5,6 +5,8 @@ import Footer from './components/Footer';
 import HomeGallery from './components/homePageGallery';
 import HomePageCard from './components/homePageCard';
 import SideBar from './components/Sidebar'
+import AboutUs from './components/aboutus'
+import ContactUs from './components/contactus'
 
 //User Management - Import Pages
 import UserAccountSideBar from './pages/UserManagement/userSideBar'
@@ -19,7 +21,7 @@ import AdminViewStaff from './pages/UserManagement/adminViewStaff'
 import AdminViewUser from './pages/UserManagement/adminViewUser'
 
 //Event Management - Import Pages
-import EventPhotos from './pages/EventManagement/selectPhotosAlbum';
+// import EventPhotos from './pages/EventManagement/selectPhotosAlbum';
 // import Album from './pages/EventManagement/photoAlbum';
 import CustomeEvent from './pages/EventManagement/userEventDetails';
 import AllAlbums from './pages/EventManagement/allAlbums';
@@ -34,6 +36,8 @@ import UserEventStat  from './pages/EventManagement/userEventCountPage'
 
 //Staff Management - Import Pages
 import Task from './pages/StaffManagement/getTasks';
+import StaffUp from './pages/StaffManagement/signup'
+import StaffIn from './pages/StaffManagement/login'
 
 // Event Reservation Management - Import pages
 // import Reservation from './pages/EventReservationManagement/reservationDetailsPage'
@@ -46,6 +50,10 @@ import ReservationForm from './pages/EventReservationManagement/reservationForm'
 import Rankings from './pages/FeddbackReviewManagement/rankingPage'
 import Ratings from './pages/FeddbackReviewManagement/ratings'
 import Progress from './pages/FeddbackReviewManagement/progressPage'
+import UpdateRatings from './pages/FeddbackReviewManagement/updatePage'
+
+//Content Management Systme - Import Pages
+import PhotographerDashboard from './pages/ContentManagement/photographerDashPage'
 
 //User Management - Import Components
 import UserLoginPage from './components/UserManagement/userLogin';
@@ -59,6 +67,15 @@ import EditPhotoAlbum from './components/EventManagement/editPhotoAlbum';
 //Staff Mnagemnet - Import Components
 import AddTask from './components/StaffManagement/addTask';
 import UpdateTaskInfo from './components/StaffManagement/updateTasks';
+
+//Payment Mnagement System - Import Components
+import ManagePayment from './components/PaymentManagement/Deletepayment'
+import ManagePackage from './components/PaymentManagement/Editpackage'
+import ViewPackage from './components/PaymentManagement/Viewpackages'
+// import AddPayment from './components/PaymentManagement/Addpayment'
+import AddPaymentn from './components/PaymentManagement/Addpaymentn'
+import UserAccountBtn  from './components/PaymentManagement/paymentUserAccountBtn'
+import AddCard from './components/PaymentManagement/Addcardn'
 
 function App() {
   return (
@@ -75,15 +92,39 @@ function App() {
             </>}
           />
           <Route
+            path='/aboutUs'
+            element={<>
+              <AboutUs />
+            </>}
+          />
+          <Route
+            path='/contactUs'
+            element={<>
+              <ContactUs />
+            </>}
+          />
+          <Route
+            path='/viewPackages'
+            element={<ViewPackage />}
+          />
+          <Route
             path='/signin'
             element={<UserLoginPage />}
           />
           <Route
+            path='/signin/staffsignIn'
+            element={<StaffIn />}
+          />
+          <Route
             path='/signup'
             element={<UserAccountCreate />}
-          />          
+          />    
           <Route
-            path='/feedback&comments'
+            path='/signup/staffSignUp'
+            element={<StaffUp />}
+          />      
+          <Route
+            path='/stat'
             element={<Rankings />}
           />
           <Route
@@ -109,22 +150,23 @@ function App() {
               <MyEvents />
               <br />
             </>}
-          />          
+          />     
           <Route
-            path='/selectPhotos'
+            path='/userAccount/:userId/payments'
             element={<>
-              <SideBar/>
-              <EventPhotos />
+              <UserAccountSideBar/>
+              <UserAccountBtn />
               <br />
             </>}
           />
           <Route
-            path='/viewVideos'
+            path='/userAccount/:userId/payments/addCard'
             element={<>
-              <SideBar/>
+              <UserAccountSideBar/>
+              <AddCard />
               <br />
             </>}
-          />
+          />        
           <Route
             path='/userAccount/:userId/myEvents/addEvents'
             element={<>              
@@ -135,7 +177,6 @@ function App() {
           <Route
             path='/userAccount/:userId/myEvents/:eventId/viewAlbum'
             element={<>
-              {/* <SideBar/> */}
               <ViewAlbm/>
               {/* <Album /> */}
               <br />
@@ -146,6 +187,15 @@ function App() {
             element={<>
               <SideBar/> 
               <SamplePhotos/>
+              <br />
+            </>}
+          />          
+          <Route
+            path='/userAccount/:userId/myEvents/:eventId/payment'
+            element={<>
+              <SideBar/> 
+              {/* <AddPayment/> */}
+              <AddPaymentn/>
               <br />
             </>}
           />
@@ -166,17 +216,17 @@ function App() {
             </>}
           />
           <Route
+            path='/userAccount/:userId/myEvents/:eventId/viewAlbum/viewMyRatings/update/:ratingId'
+            element={<>
+              <UpdateRatings/>
+              <br />
+            </>}
+          />          
+          <Route
             path='/userAccount/:userId/myEvents/:eventId/viewAlbum/videoAlbum'
             element={<>
               <SideBar/> 
               <VideoAlbumPage/>
-              <br />
-            </>}
-          />
-          <Route
-            path='/paymentHistory'
-            element={<>
-              <SideBar/>
               <br />
             </>}
           />
@@ -272,8 +322,35 @@ function App() {
               <br />
             </>}
           />
+          {/* Payment Management - Manage Payments*/}
           <Route
-            path='/adminNotification'
+            path='/adminLogin/adminDashboard/manageSystem/managePayments'
+            element={<>
+              <AdminAccountSideBar />
+              <ManagePayment />
+              <br />
+            </>}
+          />
+           {/* Payment Management - Manage Packages*/}
+           <Route
+            path='/adminLogin/adminDashboard/manageSystem/managePackages'
+            element={<>
+              <AdminAccountSideBar />
+              <ManagePackage />
+              <br />
+            </>}
+          />
+          {/* Content Management - Manage Content */}
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageContent'
+            element={<>
+              <PhotographerDashboard />
+              <br />
+            </>}
+          />
+          {/* Event Management Special Function */}
+          <Route
+            path='/adminLogin/adminDashboard/promotion'
             element={<>
               <AdminAccountSideBar />
               <UserEventCount />

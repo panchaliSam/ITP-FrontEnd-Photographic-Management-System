@@ -26,7 +26,7 @@ const UserEventCounts = () => {
     };
 
     return (
-        <div style={{ marginLeft: '200px', marginRight: '200px' }}>
+        <div style={{ marginLeft: '250px', marginRight: '200px' }}>
             {error && <p className="error">{error}</p>}
             <Table striped bordered hover>
                 <thead>
