@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../../styles/PaymentManagement/AddPaymentForm.css'; 
-import emailjs from '@emailjs/browser'
+
 
 const AddCardForm = () => {
   const [formData, setFormData] = useState({
@@ -29,7 +29,6 @@ const AddCardForm = () => {
     if (!validateForm()) {
       return;
   }
-    emailjs.sendForm('service_wdz3xxy','template_hhdv6fq',e.target,'AkzAqUAg1H4ox9vlo')
     try {
       const response = await axios.post('/api/card/Card/add', formData);
       console.log(' Card Payment added successfully:', response.data);
