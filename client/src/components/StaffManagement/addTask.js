@@ -44,13 +44,7 @@ export default function AddTask() {
     return (
         <div className='container'>
             <Form onSubmit={sendData}>
-                <Form.Group className="mb-3" controlId="formBasicId">
-                    <Form.Label>TaskId</Form.Label>
-                    <Form.Control type="text" placeholder="Enter TaskId"
-                        value={TaskId}
-                        onChange={(e) => setId(e.target.value)} />
-
-                </Form.Group>
+                
 
                 <Form.Group className="mb-3" controlId="formBasicName">
                     <Form.Label>Task Name</Form.Label>

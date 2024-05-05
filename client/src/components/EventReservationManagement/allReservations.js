@@ -11,7 +11,6 @@ function Reservation() {
     // const [userId, setUserId] = useState('');
     const [reservationDetails, setReservationDetails] = useState({});
 
-
     useEffect(() => {
         axios.get('/api/eventReservation/reservation')
         .then(result => setReservations(result.data))
@@ -38,7 +37,7 @@ function Reservation() {
 
       const handleEdit = (reservationId, e) => {
         e.preventDefault();
-        navigate(`/editReservation/${reservationId}`);
+        navigate(`/adminLogin/adminDashboard/manageSystem/manageEvents/editReservation/${reservationId}`);
       };
 
     const handleDelete = (id) => {
@@ -74,7 +73,7 @@ function Reservation() {
         <div className="allReservations">
             {error && <p className="error">{error}</p>}
             {showPopup && <p className="popup">Deleted successfully!</p>}
-            <Link to = "/ReservationForm" className='btn btn-success'>Add Reservation +</Link>
+            <Link to = "/adminLogin/adminDashboard/manageSystem/manageEvents/addEvents" className='btn btn-success'>Add Reservation +</Link>
             <br></br><br></br>
             <h5>User Details</h5>
             <table>
@@ -150,7 +149,7 @@ function Reservation() {
                                     <Link to={`/Reservation/${reservation._id}`} className="button-link">View</Link>
                                 </button> */}
                                 <button className="edit-button" onClick={(e) => handleEdit(reservation.reservationId, e)}>
-                                    <Link to={`/editReservation/${reservation.reservationId}`} className="button-link">Edit</Link>
+                                    <Link to={`/adminLogin/adminDashboard/manageSystem/manageEvents/editReservation/${reservation.reservationId}`} className="button-link">Edit</Link>
                                 </button>
                                 <button className="delete-button" onClick={() => handleDelete(reservation._id)}>Delete</button>
                             </td>

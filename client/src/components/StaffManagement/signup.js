@@ -35,6 +35,9 @@ const SignUp = () => {
           setContact("");
           setRole("");
           setPassword("");
+
+          // Redirect the staff user to the staff dashboard or some other protected route
+        window.location.href = '/signin/staffsignIn';
       })
       .catch((err) => {
           console.error(err);

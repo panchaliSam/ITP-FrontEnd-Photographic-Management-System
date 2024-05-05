@@ -34,15 +34,18 @@ import './styles/PaymentManagement/packageList.css'
 import './styles/PaymentManagement/paymentUserAccountBtn.css'
 
 //Content Management System
-import './styles/ContentManagement/addImage.css'
-// import './styles/ContentManagement/gallary.css'
-import './styles/ContentManagement/getImageDetails.css'
+// import './styles/ContentManagement/addImage.css'
+//  import './styles/ContentManagement/gallary.css'
+// import './styles/ContentManagement/getImageDetails.css'
 // import './styles/ContentManagement/manageimage.css'
 
 //Calendar and Scheduling System
 import './styles/CalendarSchedulingManagement/adminEdit.css'
 import './styles/CalendarSchedulingManagement/adminViewTable.css'
 import './styles/CalendarSchedulingManagement/ScheduleCreate.css'
+
+//Staff Management System
+import './styles/StaffManagement/staffAccountSideBar.css'
 
 import App from './App';
 

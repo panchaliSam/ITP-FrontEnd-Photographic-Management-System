@@ -19,6 +19,7 @@ import ManageUsers from './pages/UserManagement/manageUsers'
 import AddStaff from './pages/UserManagement/addStaff'
 import AdminViewStaff from './pages/UserManagement/adminViewStaff'
 import AdminViewUser from './pages/UserManagement/adminViewUser'
+import UpdateUserDetails from './pages/UserManagement/updateUserDetailsAdmin'
 
 //Event Management - Import Pages
 // import EventPhotos from './pages/EventManagement/selectPhotosAlbum';
@@ -37,7 +38,8 @@ import UserEventStat  from './pages/EventManagement/userEventCountPage'
 //Staff Management - Import Pages
 import Task from './pages/StaffManagement/getTasks';
 import StaffUp from './pages/StaffManagement/signup'
-import StaffIn from './pages/StaffManagement/login'
+import StaffIn from './pages/StaffManagement/login';
+import StaffView from './pages/StaffManagement/staffView';
 
 // Event Reservation Management - Import pages
 // import Reservation from './pages/EventReservationManagement/reservationDetailsPage'
@@ -53,7 +55,10 @@ import Progress from './pages/FeddbackReviewManagement/progressPage'
 import UpdateRatings from './pages/FeddbackReviewManagement/updatePage'
 
 //Content Management Systme - Import Pages
-import PhotographerDashboard from './pages/ContentManagement/photographerDashPage'
+import PhotographerDashboard from './pages/ContentManagement/manageImagePage'
+import PublicGallery from './pages/ContentManagement/publicgallarypage'
+import AddImage from './pages/ContentManagement/addImagePage'
+import EditImage from './pages/ContentManagement/editImage'
 
 //Calendar and Scheduling System - Import Pages
 import ScheduleTable from './pages/CalendarSchedulingManagement/adminView'
@@ -71,6 +76,9 @@ import EditPhotoAlbum from './components/EventManagement/editPhotoAlbum';
 //Staff Mnagemnet - Import Components
 import AddTask from './components/StaffManagement/addTask';
 import UpdateTaskInfo from './components/StaffManagement/updateTasks';
+import StaffSideBar from './components/StaffManagement/staffAccountSideBar'
+import StaffDetailsPage from './components/StaffManagement/staffAccount.js'
+
 
 //Payment Mnagement System - Import Components
 import ManagePayment from './components/PaymentManagement/Deletepayment'
@@ -107,6 +115,13 @@ function App() {
               <ContactUs />
             </>}
           />
+          
+          <Route
+            path='/viewGallery'
+            element={<>
+              <PublicGallery />
+            </>}
+          /> 
           <Route
             path='/viewPackages'
             element={<ViewPackage />}
@@ -317,7 +332,15 @@ function App() {
               <AdminViewUser />
               <br />
             </>}
-          />        
+          />  
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageUsers/adminViewUser/:userId/edit'
+            element={<>
+              <AdminAccountSideBar />
+              <UpdateUserDetails />
+              <br />
+            </>}
+          />  
           <Route
             path='/adminLogin/adminDashboard/manageSystem/manageUsers/adminViewStaff/:staffId'
             element={<>
@@ -352,6 +375,20 @@ function App() {
               <br />
             </>}
           />
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageContent/addImage'
+            element={<>
+              <AddImage />
+              <br />
+            </>}
+          />
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageContent/editImage/:imageId'
+            element={<>
+              <EditImage />
+              <br />
+            </>}
+          />
           {/* Calendar and Scheduling - Manage Schedules*/}
           <Route
             path='/adminLogin/adminDashboard/manageSystem/manageSchedules'
@@ -367,7 +404,14 @@ function App() {
               <AllReservations />
               <br />
             </>}
-          />             
+          />    
+          <Route
+            path='/adminLogin/adminDashboard/manageSystem/manageEvents/addEvents'
+            element={<>
+              <ReservationForm />
+              <br />
+            </>}
+          />           
           <Route
             path='/adminLogin/adminDashboard/manageSystem/manageEvents/:reservationId'
             element={<>
@@ -421,18 +465,31 @@ function App() {
               <EditPhotoAlbum />
               <br />
             </>}
-          />
-
-          
+          />          
           {/* Staff */}
-
+          
           <Route
-            path='/staff/myWork'
+            path='/staff/dashboard'
+            element={<>
+              <StaffSideBar />
+              <StaffDetailsPage/>
+              <br />
+            </>}
+          /> 
+          <Route
+            path='/staffAccount/staff/myWork'
             element={<>
               <StaffViewAlbums />
               <br />
             </>}
-          />          
+          />
+          <Route
+            path='/staffAccount/staffView'
+            element={<>
+              <StaffView />
+              <br />
+            </>}
+          />             
           <Route
             path='/staff/userEventStat'
             element={<>
