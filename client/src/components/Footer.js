@@ -17,11 +17,11 @@ function Footer() {
           </div>
           <div className='sb_footer-links_div'>
             <h4>Company</h4>
-            <p>About Us</p>
-            <p>Careers</p>
-            <p>FAQs</p>
-            <p>Teams</p>
-            <p>Contact Us</p>
+            <a href="/aboutUs"><p>About Us</p></a>
+            <a href="/#"><p>Careers</p></a>
+            <a href="/#"><p>FAQs</p></a>
+            <a href="/#"><p>Teams</p></a>
+            <a href="/contactUs"><p>Contact Us</p></a>
           </div>
           <div className='socialmedia'>
             <h4>Let's do</h4>

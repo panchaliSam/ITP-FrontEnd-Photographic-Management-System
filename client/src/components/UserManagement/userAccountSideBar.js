@@ -41,9 +41,9 @@ const UserSideBar = () => {
         <Link to={`/userAccount/${userId}/payments`} className="link">
           <button className="button">PAYMENTS</button>
         </Link>
-        <Link to={`/userAccount/${userId}/notifications`} className="link">
+        {/* <Link to={`/userAccount/${userId}/notifications`} className="link">
           <button className="button">NOTIFICATION</button>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
