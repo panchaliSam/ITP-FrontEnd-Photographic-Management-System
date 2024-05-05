@@ -5,7 +5,7 @@ import '../../styles/PaymentManagement/AddPaymentForm.css';
 
 const AddPaymentForm = () => {
   const [formData, setFormData] = useState({
-    pin_No:'',
+    
     UserID: '',
     paymentID: '',
     packageID: '',
@@ -30,7 +30,7 @@ const AddPaymentForm = () => {
       console.log('Payment added successfully:', response.data);
       // Optionally, you can clear the form fields after successful submission
       setFormData({
-        pin_No:'',
+        
         UserID: '',
         paymentID: '',
         packageID: '',
@@ -49,10 +49,7 @@ const AddPaymentForm = () => {
     <div>
       <h2>Add Payment</h2>
       <form onSubmit={handleSubmit}>
-      <div>
-          <label>pin_No:</label>
-          <input type="text" name="pin_No" value={formData.pin_No} onChange={handleChange} />
-        </div>
+     
         <div>
           <label>User ID:</label>
           <input type="text" name="UserID" value={formData.UserID} onChange={handleChange} />
