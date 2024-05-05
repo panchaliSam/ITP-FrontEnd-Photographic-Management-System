@@ -102,11 +102,11 @@ function Reservation() {
                             <td>{reservation.email}</td>
                             <td className="actions">
                                 <button className="view-button" onClick={(e) => handleViewDetails(e, reservation.reservationId)}>
-                                    <Link to={`/reservation/${reservation.reservationId}`} className="button-link">View</Link>
+                                    <Link to={`/adminLogin/adminDashboard/manageSystem/manageEvents/${reservation.reservationId}`} className="button-link">View</Link>
                                 </button>
 
                                 <button className="edit-button" onClick={(e) => handleEdit(reservation.reservationId, e)}>
-                                    <Link to={`/editReservationPage/${reservation.reservationId}`} className="button-link">Edit</Link>
+                                    <Link to={`/adminLogin/adminDashboard/manageSystem/manageEvents/editReservation/${reservation.reservationId}`} className="button-link">Edit</Link>
                                 </button>
                                 <button className="delete-button" onClick={() => handleDelete(reservation._id)}>Delete</button>
                             </td>
