@@ -72,7 +72,7 @@ const StaffRegistration = () => {
                                     name="empName"
                                     value={formData.empName}
                                     onChange={handleChange}
-                                    style={{ width: '600px' }}
+                                    style={{ width: '450px' }}
 
                                 />
                             </div>
@@ -84,7 +84,7 @@ const StaffRegistration = () => {
                                     name="email"
                                     value={formData.email}
                                     onChange={handleChange}
-                                    style={{ width: '600px' }}
+                                    style={{ width: '450px' }}
 
                                 />
                             </div>
@@ -96,7 +96,7 @@ const StaffRegistration = () => {
                                     name="contact"
                                     value={formData.contact}
                                     onChange={handleChange}
-                                    style={{ width: '600px' }}
+                                    style={{ width: '450px' }}
 
                                 />
                             </div>
@@ -108,7 +108,7 @@ const StaffRegistration = () => {
                                     name="role"
                                     value={formData.role}
                                     onChange={handleChange}
-                                    style={{ width: '600px' }}
+                                    style={{ width: '450px' }}
 
                                 />
                             </div>
@@ -120,7 +120,7 @@ const StaffRegistration = () => {
                                     name="password"
                                     value={formData.password}
                                     onChange={handleChange}
-                                    style={{ width: '600px' }}
+                                    style={{ width: '450px' }}
 
                                 />
                             </div>
@@ -139,7 +139,7 @@ const StaffRegistration = () => {
                 
                 {/* Image Section */}
                 <div className="col-lg-5 d-flex justify-content-center align-items-center">
-                    <img src={staffRegistrationImage} alt="Staff Registration" style={{ width: '125%',marginLeft:'50%', height: 'auto' }} />
+                    <img src={staffRegistrationImage} alt="Staff Registration" style={{ width: '140%',marginLeft:'50%', height: 'auto' }} />
                 </div>
             </div>
         </div>
